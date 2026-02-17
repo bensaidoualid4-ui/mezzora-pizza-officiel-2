@@ -160,20 +160,16 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
                       <p className="font-bold text-red-700 text-lg mb-2">
                         2 Pizzas Achetées = La 3ème OFFERTE !
                       </p>
-                      <p className="text-sm text-gray-600">
-                        Sur pizzas Sénior et Méga uniquement
-                      </p>
-                      <p className="text-xs text-gray-500 italic mt-2">
+                      <p className="text-xs text-gray-500 italic">
                         * Sauf Nordic & 1000 & 1 Nuits
                       </p>
                     </div>
-                    <div className="flex justify-between items-center border-t pt-3">
-                      <span className="text-sm font-semibold text-gray-700">Pizza Sénior</span>
-                      <span className="text-lg font-bold text-green-600">22,00 €</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-semibold text-gray-700">Pizza Méga</span>
-                      <span className="text-lg font-bold text-green-600">27,00 €</span>
+                    <div className="bg-green-50 p-3 rounded-lg">
+                      <p className="text-sm font-semibold text-green-700 mb-1">
+                        💰 Offres spéciales :
+                      </p>
+                      <p className="text-sm text-gray-700">• 2 Pizzas Senior → 22,00 €</p>
+                      <p className="text-sm text-gray-700">• 2 Pizzas Méga → 27,00 €</p>
                     </div>
                   </div>
                 </div>
@@ -188,24 +184,20 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
                       <p className="font-bold text-blue-700 text-lg mb-2">
                         2 Pizzas Achetées = La 3ème OFFERTE !
                       </p>
-                      <p className="text-sm text-gray-600">
-                        Sur pizzas Sénior et Méga uniquement
-                      </p>
-                      <p className="text-xs text-gray-500 italic mt-2">
+                      <p className="text-xs text-gray-500 italic">
                         * Sauf Nordic & 1000 & 1 Nuits
                       </p>
                     </div>
-                    <div className="flex justify-between items-center border-t pt-3">
-                      <span className="text-sm font-semibold text-gray-700">Pizza Sénior</span>
-                      <span className="text-lg font-bold text-blue-600">28,00 €</span>
+                    <div className="bg-green-50 p-3 rounded-lg">
+                      <p className="text-sm font-semibold text-green-700 mb-1">
+                        💰 Offres spéciales :
+                      </p>
+                      <p className="text-sm text-gray-700">• 2 Pizzas Senior → 28,00 €</p>
+                      <p className="text-sm text-gray-700">• 2 Pizzas Méga → 36,00 €</p>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-semibold text-gray-700">Pizza Méga</span>
-                      <span className="text-lg font-bold text-blue-600">36,00 €</span>
-                    </div>
-                    <div className="bg-yellow-100 p-3 rounded-lg mt-3">
-                      <p className="text-xs text-yellow-800 font-semibold">
-                        + Frais de livraison : 6,00 € inclus dans les prix
+                    <div className="bg-yellow-100 p-3 rounded-lg">
+                      <p className="text-sm text-yellow-800 font-semibold">
+                        🎁 Frais de livraison GRATUITS le soir à partir de 12€
                       </p>
                     </div>
                   </div>
