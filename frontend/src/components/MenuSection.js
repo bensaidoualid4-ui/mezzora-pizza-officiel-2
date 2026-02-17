@@ -220,7 +220,12 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
           )}
         </div>
 
-        <Tabs defaultValue="pizzas-tomate" className="w-full">
+        <Tabs defaultValue="pizzas-tomate" className="w-full" onValueChange={() => {
+          // Scroll to top of menu section when tab changes
+          setTimeout(() => {
+            document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }}>
           <div className="sticky top-20 z-20 bg-white shadow-md py-4 mb-8">
             <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
               <TabsTrigger value="pizzas-tomate" className="px-6 py-3 data-[state=active]:bg-red-600 data-[state=active]:text-white">🍅 Base Tomate</TabsTrigger>
