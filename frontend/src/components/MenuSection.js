@@ -16,9 +16,211 @@ import {
 import { useCart } from '../context/CartContext';
 import { ShoppingCart, Flame, Award } from 'lucide-react';
 
-const MenuSection = ({ activeRubric = 'table' }) => {
+const MenuSection = ({ activeRubric = 'menu' }) => {
   const { addToCart } = useCart();
   const [selectedSizes, setSelectedSizes] = useState({});
+
+  const handleSizeSelect = (itemId, size) => {
+    setSelectedSizes(prev => ({ ...prev, [itemId]: size }));
+  };
+
+  const handleAddPizzaToCart = (pizza) => {
+    const size = selectedSizes[pizza.id] || 'junior';
+    addToCart({
+      id: pizza.id,
+      name: pizza.name,
+      price: pizza[size],
+      size: size,
+      category: 'pizza',
+      ingredients: pizza.ingredients,
+    });
+  };
+
+  const handleAddItemToCart = (item, category) => {
+    addToCart({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      category: category,
+      size: 'standard',
+      description: item.description || item.ingredients,
+    });
+  };
+
+  const PizzaCard = ({ pizza }) => {
+    const selectedSize = selectedSizes[pizza.id] || 'junior';
+
+    return (
+      <div className="menu-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500 relative">
+        {pizza.premium && (
+          <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+            <Award className="w-3 h-3" />
+            PREMIUM
+          </div>
+        )}
+        <h3 className="text-xl font-bold text-black mb-2">{pizza.name}</h3>
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed">{pizza.ingredients}</p>
+
+        <div className="mb-4">
+          <p className="text-xs text-gray-500 mb-2 font-semibold">Choisir la taille :</p>
+          <div className="flex gap-2">
+            {['junior', 'senior', 'mega'].map((size) => (
+              <button
+                key={size}
+                onClick={() => handleSizeSelect(pizza.id, size)}
+                className={`flex-1 py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                  selectedSize === size
+                    ? 'bg-black text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {size.charAt(0).toUpperCase() + size.slice(1)}
+                <br />
+                <span className="text-xs">{pizza[size].toFixed(2)}€</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <button
+          onClick={() => handleAddPizzaToCart(pizza)}
+          className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 font-semibold"
+        >
+          <ShoppingCart className="w-4 h-4" />
+          Ajouter au panier
+        </button>
+      </div>
+    );
+  };
+
+  const SimpleItemCard = ({ item, category }) => (
+    <div className="menu-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500">
+      <h3 className="text-xl font-bold text-black mb-2">{item.name}</h3>
+      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+        {item.description || item.ingredients}
+      </p>
+
+      <div className="flex items-center justify-between">
+        <span className="text-2xl font-bold text-green-600">
+          {item.price.toFixed(2)} €
+        </span>
+        <button
+          onClick={() => handleAddItemToCart(item, category)}
+          className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-semibold"
+        >
+          <ShoppingCart className="w-4 h-4" />
+          Ajouter
+        </button>
+      </div>
+    </div>
+  );
+
+  return (
+    <section className="py-16 bg-white" id="menu">
+      <div className="container mx-auto px-4">
+        {/* Active Rubric Indicator */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-100 to-gray-50 px-8 py-4 rounded-full shadow-md">
+            <span className="text-gray-600 font-semibold">Mode sélectionné :</span>
+            {activeRubric === 'menu' && (
+              <span className="bg-green-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                🍕 Mezzora Menu
+              </span>
+            )}
+            {activeRubric === 'click-collect' && (
+              <span className="bg-red-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                <ShoppingCart className="w-4 h-4" /> Click & Collect
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* Rubric Description */}
+        <div className="max-w-4xl mx-auto mb-8">
+          {activeRubric === 'menu' && (
+            <div className="bg-green-50 p-6 rounded-xl shadow-md border-2 border-green-200">
+              <p className="text-gray-700 font-semibold text-lg text-center">
+                🍕 Découvrez toutes nos pizzas, pâtes, salades, tex-mex et plus encore
+              </p>
+            </div>
+          )}
+          {activeRubric === 'click-collect' && (
+            <div className="bg-gradient-to-r from-red-50 to-blue-50 p-8 rounded-xl shadow-lg border-2 border-red-200">
+              <h3 className="text-2xl font-bold text-center text-black mb-6">
+                🎁 OFFRES SPÉCIALES CLICK & COLLECT
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* À Emporter */}
+                <div className="bg-white p-6 rounded-xl shadow-md border-2 border-red-400">
+                  <h4 className="text-xl font-bold text-red-600 mb-3 flex items-center gap-2">
+                    🛍️ À EMPORTER
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="bg-red-50 p-4 rounded-lg">
+                      <p className="font-bold text-red-700 text-lg mb-2">
+                        2 Pizzas Achetées = La 3ème OFFERTE !
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Sur pizzas Sénior et Méga uniquement
+                      </p>
+                      <p className="text-xs text-gray-500 italic mt-2">
+                        * Sauf Nordic & 1000 & 1 Nuits
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center border-t pt-3">
+                      <span className="text-sm font-semibold text-gray-700">Pizza Sénior</span>
+                      <span className="text-lg font-bold text-green-600">22,00 €</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-semibold text-gray-700">Pizza Méga</span>
+                      <span className="text-lg font-bold text-green-600">27,00 €</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Livraison */}
+                <div className="bg-white p-6 rounded-xl shadow-md border-2 border-blue-400">
+                  <h4 className="text-xl font-bold text-blue-600 mb-3 flex items-center gap-2">
+                    🚗 LIVRAISON
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <p className="font-bold text-blue-700 text-lg mb-2">
+                        2 Pizzas Achetées = La 3ème OFFERTE !
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Sur pizzas Sénior et Méga uniquement
+                      </p>
+                      <p className="text-xs text-gray-500 italic mt-2">
+                        * Sauf Nordic & 1000 & 1 Nuits
+                      </p>
+                    </div>
+                    <div className="flex justify-between items-center border-t pt-3">
+                      <span className="text-sm font-semibold text-gray-700">Pizza Sénior</span>
+                      <span className="text-lg font-bold text-blue-600">28,00 €</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-semibold text-gray-700">Pizza Méga</span>
+                      <span className="text-lg font-bold text-blue-600">36,00 €</span>
+                    </div>
+                    <div className="bg-yellow-100 p-3 rounded-lg mt-3">
+                      <p className="text-xs text-yellow-800 font-semibold">
+                        + Frais de livraison : 6,00 € inclus dans les prix
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-yellow-50 p-4 rounded-lg text-center border border-yellow-300">
+                <p className="text-sm text-gray-700">
+                  <strong>🌟 Conseil :</strong> Profitez de notre offre 2+1 pour les pizzas Sénior et Méga !
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
 
   const handleSizeSelect = (itemId, size) => {
     setSelectedSizes(prev => ({ ...prev, [itemId]: size }));
