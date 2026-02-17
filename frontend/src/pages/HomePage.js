@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import CartSidebar from '../components/CartSidebar';
 
 const HomePage = () => {
-  const [activeRubric, setActiveRubric] = useState('menu');
+  const [activeRubric, setActiveRubric] = useState(null);
 
   const handleRubricSelect = (rubric) => {
     setActiveRubric(rubric);
@@ -16,7 +16,7 @@ const HomePage = () => {
     setTimeout(() => {
       if (rubric === 'offres-midi') {
         document.getElementById('formules')?.scrollIntoView({ behavior: 'smooth' });
-      } else {
+      } else if (rubric === 'menu' || rubric === 'click-collect') {
         document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100);
@@ -32,9 +32,8 @@ const HomePage = () => {
           onRubricSelect={handleRubricSelect}
           activeRubric={activeRubric}
         />
-        {activeRubric === 'offres-midi' ? (
-          <FormulesMidi />
-        ) : (
+        {activeRubric === 'offres-midi' && <FormulesMidi />}
+        {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
           <MenuSection activeRubric={activeRubric} />
         )}
       </main>
