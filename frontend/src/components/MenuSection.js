@@ -10,7 +10,8 @@ import {
   salades,
   paninisClassiques,
   paninisGourmands,
-  desserts, 
+  dessertsPatisseries,
+  dessertsGlaces,
   boissons 
 } from '../data/menuData';
 import { useCart } from '../context/CartContext';
