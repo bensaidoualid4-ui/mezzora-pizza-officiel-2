@@ -3,63 +3,108 @@ import { Phone, MapPin, Clock } from 'lucide-react';
 
 const Hero = () => {
   const scrollToMenu = () => {
-    document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('rubrics')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1754799565084-b381bd0b4db7)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
-      </div>
+    <>
+      <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1754799565084-b381bd0b4db7)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+        </div>
 
-      <div className="container mx-auto px-4 z-10 relative">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-white text-black font-bold text-sm tracking-wider rounded-md mb-4">
-              PÂTE FRAÎCHE
-            </span>
-          </div>
-
-          <h1 className="hero-title text-white mb-6">
-            Mezzora Pizza
-          </h1>
-          
-          <p className="hero-subtitle text-white/90 mb-4 text-xl md:text-2xl">
-            28 ans de passion à Rueil-Malmaison
-          </p>
-
-          <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            La qualité artisanale avec une pâte fraîche préparée chaque jour, des légumes et de la viande frais
-          </p>
-
-          <button
-            onClick={scrollToMenu}
-            className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 mb-6"
-          >
-            <Phone className="w-5 h-5" />
-            COMMANDER MAINTENANT
-          </button>
-
-          <div className="flex flex-wrap gap-6 justify-center text-white/90 text-sm">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>4-6 Avenue du Président Georges Pompidou</span>
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 bg-white text-black font-bold text-sm tracking-wider rounded-md mb-4">
+                PÂTE FRAÎCHE
+              </span>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>Ouvert 7j/7</span>
+
+            <h1 className="hero-title text-white mb-6">
+              Mezzora Pizza
+            </h1>
+            
+            <p className="hero-subtitle text-white/90 mb-4 text-xl md:text-2xl">
+              28 ans de passion à Rueil-Malmaison
+            </p>
+
+            <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+              La qualité artisanale avec une pâte fraîche préparée chaque jour, des légumes et de la viande frais
+            </p>
+
+            <button
+              onClick={scrollToMenu}
+              className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 mb-6"
+            >
+              <Phone className="w-5 h-5" />
+              COMMANDER MAINTENANT
+            </button>
+
+            <div className="flex flex-wrap gap-6 justify-center text-white/90 text-sm">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <span>4-6 Avenue du Président Georges Pompidou</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span>Ouvert 7j/7</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Gallery Section - Pour vos photos de pizzeria */}
+      <section className="py-12 bg-primary-bg">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-black mb-2">Notre Pizzeria</h2>
+            <p className="text-gray-600">28 ans d'authenticité et de savoir-faire</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+            {/* Placeholders pour vos photos - Remplacez les URLs */}
+            <div className="relative overflow-hidden rounded-xl shadow-lg group h-64">
+              <img 
+                src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94" 
+                alt="Intérieur pizzeria" 
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Notre salle</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-xl shadow-lg group h-64">
+              <img 
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591" 
+                alt="Four à pizza" 
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Notre four artisanal</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-xl shadow-lg group h-64">
+              <img 
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" 
+                alt="Équipe pizzeria" 
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                <p className="text-white font-semibold">Notre équipe passionnée</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
