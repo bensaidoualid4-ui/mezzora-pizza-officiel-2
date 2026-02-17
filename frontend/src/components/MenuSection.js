@@ -16,10 +16,9 @@ import {
 import { useCart } from '../context/CartContext';
 import { ShoppingCart, Flame, Award } from 'lucide-react';
 
-const MenuSection = () => {
+const MenuSection = ({ activeRubric = 'table' }) => {
   const { addToCart } = useCart();
   const [selectedSizes, setSelectedSizes] = useState({});
-  const [activeRubric, setActiveRubric] = useState('table');
 
   const handleSizeSelect = (itemId, size) => {
     setSelectedSizes(prev => ({ ...prev, [itemId]: size }));
