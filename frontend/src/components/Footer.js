@@ -82,12 +82,18 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
             <p>&copy; 2025 Mezzora Pizza. Tous droits réservés.</p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               <a href="#" className="hover:text-white transition-colors">
                 Mentions légales
               </a>
               <a href="#" className="hover:text-white transition-colors">
+                CGV
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
                 Politique de confidentialité
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                Cookies
               </a>
             </div>
           </div>
