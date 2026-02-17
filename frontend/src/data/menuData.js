@@ -101,7 +101,8 @@ export const paninisGourmands = [
 ];
 
 // DESSERTS
-export const desserts = [
+// DESSERTS - Séparés en 2 catégories
+export const dessertsPatisseries = [
   { id: 'brownie', name: 'Brownie', description: 'Brownie au chocolat', price: 2.0 },
   { id: 'big-cookie', name: 'Big Cookie', description: 'Cookie géant aux pépites de chocolat', price: 2.0 },
   { id: 'tarte-daim', name: 'Tarte Daim', description: 'Tarte au caramel et amandes', price: 3.0 },
@@ -110,11 +111,16 @@ export const desserts = [
   { id: 'panini-nutella', name: 'Panini Nutella', description: 'Panini chaud au Nutella', price: 3.0 },
   { id: 'muffin', name: 'Muffin', description: 'Muffin du moment', price: 2.5 },
   { id: 'yaourt', name: 'Yaourt', description: 'Yaourt nature ou aux fruits', price: 1.8 },
-  { id: 'bj-465-pb', name: 'Ben & Jerry\'s Peanut Butter Brownie 465ml', description: 'Pot familial', price: 6.9 },
-  { id: 'bj-465-caramel', name: 'Ben & Jerry\'s Caramel Cookie Dough 465ml', description: 'Pot familial', price: 6.9 },
-  { id: 'bj-465-vanilla', name: 'Ben & Jerry\'s Vanilla Pecan Fudge 465ml', description: 'Pot familial', price: 6.9 },
-  { id: 'bj-465-choco', name: 'Ben & Jerry\'s Chocolate Fudge Brownie 465ml', description: 'Pot familial', price: 6.9 },
 ];
+
+export const dessertsGlaces = [
+  { id: 'bj-465-pb', name: 'Ben & Jerry\'s Peanut Butter Brownie', description: 'Pot 465ml', price: 6.9 },
+  { id: 'bj-465-caramel', name: 'Ben & Jerry\'s Caramel Cookie Dough', description: 'Pot 465ml', price: 6.9 },
+  { id: 'bj-465-vanilla', name: 'Ben & Jerry\'s Vanilla Pecan Fudge', description: 'Pot 465ml', price: 6.9 },
+  { id: 'bj-465-choco', name: 'Ben & Jerry\'s Chocolate Fudge Brownie', description: 'Pot 465ml', price: 6.9 },
+];
+
+export const desserts = [...dessertsPatisseries, ...dessertsGlaces];
 
 // BOISSONS
 export const boissons = [
