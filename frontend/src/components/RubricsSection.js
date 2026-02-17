@@ -128,11 +128,8 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
                 <h3 className="text-4xl font-black mb-2 text-center" style={{ fontFamily: 'Impact, sans-serif' }}>
                   Click &<br />COLLECT
                 </h3>
-                <p className="text-sm text-center opacity-90 mb-2">
-                  À emporter ou en livraison
-                </p>
-                <p className="text-xs text-center text-yellow-300 font-bold mb-4">
-                  2 pizzas = 3ème OFFERTE !
+                <p className="text-sm text-center opacity-90 mb-4">
+                  À emporter ou en livraison - Offres spéciales
                 </p>
                 <div className="flex justify-center">
                   <span className="bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2">
