@@ -1,26 +1,52 @@
-// Menu data for Mezzora Pizza
+// Menu data for Mezzora Pizza - Updated from flyer
 
+// PIZZAS BASE TOMATE
 export const pizzasBaseTomate = [
-  { id: 'royale', name: 'Royale', ingredients: 'Tomate, mozzarella, jambon, champignons', junior: 8.5, senior: 11.0, mega: 14.0 },
-  { id: 'margherita', name: 'Margherita', ingredients: 'Tomate, mozzarella, basilic frais', junior: 7.0, senior: 9.5, mega: 12.0 },
-  { id: 'orientale', name: 'Orientale', ingredients: 'Tomate, mozzarella, merguez, poivrons, oignons', junior: 8.5, senior: 11.0, mega: 14.0 },
-  { id: 'mezzora', name: 'Mezzora', ingredients: 'Tomate, mozzarella, viande hachée, œuf, oignons', junior: 9.0, senior: 11.5, mega: 14.5 },
-  { id: 'regina', name: 'Regina', ingredients: 'Tomate, mozzarella, jambon, champignons, olives', junior: 8.5, senior: 11.0, mega: 14.0 },
-  { id: 'napolitaine', name: 'Napolitaine', ingredients: 'Tomate, mozzarella, anchois, câpres, olives', junior: 8.5, senior: 11.0, mega: 14.0 },
-  { id: 'quatre-saisons', name: 'Quatre Saisons', ingredients: 'Tomate, mozzarella, jambon, champignons, artichauts, olives', junior: 9.0, senior: 11.5, mega: 14.5 },
+  { id: 'solo', name: 'Solo', ingredients: 'Mozzarella, olives', junior: 8.0, senior: 12.0, mega: 16.0 },
+  { id: 'vegetarienne', name: 'Végétarienne', ingredients: 'Mozzarella, viande hachée, origan, beurre d\'ail persillé, tomates fraîches', junior: 9.0, senior: 15.0, mega: 22.0 },
+  { id: 'epaula', name: 'Epaula', ingredients: 'Mozzarella, jambon', junior: 9.0, senior: 14.0, mega: 19.0 },
+  { id: 'jardiniere', name: 'Jardinière', ingredients: 'Mozzarella, tomates fraîches, aubergines grillées, courgettes grillées, poivrons, olives', junior: 9.0, senior: 15.0, mega: 22.0 },
+  { id: 'quatro', name: 'Quatro', ingredients: 'Mozzarella, jambon, champignons', junior: 9.0, senior: 15.0, mega: 20.0 },
+  { id: 'speciale', name: 'Spéciale', ingredients: 'Mozzarella, jambon, chorizo, champignons, poivrons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'lolita', name: 'Lolita', ingredients: 'Mozzarella, chorizo, champignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'royale', name: 'Royale', ingredients: 'Mozzarella, jambon, câpres, champignons, poivrons, olives', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'orientale', name: 'Orientale', ingredients: 'Mozzarella, merguez, poivrons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'chef', name: 'Chef', ingredients: 'Mozzarella, jambon, chorizo, merguez, œuf, olives', junior: 10.0, senior: 17.0, mega: 23.0 },
+  { id: 'piccante', name: 'Piccante', ingredients: 'Mozzarella, viande hachée, poivrons, oignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'pantagruelle', name: 'Pantagruelle', ingredients: 'Mozzarella, jambon, merguez, chorizo, œuf, champignons, poivrons, olives', junior: 11.0, senior: 17.0, mega: 24.0 },
+  { id: '4-jambons', name: '4 Jambons', ingredients: 'Mozzarella, jambon, mortadelle, chorizo, salami', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'mezzora', name: 'Mezzora', ingredients: 'Mozzarella, champignons, olives, poivrons, câpres, pommes de terre', junior: 9.0, senior: 15.0, mega: 22.0 },
+  { id: '4-saisons', name: '4 Saisons', ingredients: 'Mozzarella, jambon, champignons, artichauts, olives, poivrons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'althono', name: 'Althono', ingredients: 'Mozzarella, thon, champignons, poivrons, câpres, olives', junior: 9.0, senior: 16.0, mega: 22.0 },
 ];
 
+// PIZZAS BASE CREME
 export const pizzasBaseCreme = [
-  { id: 'savoyarde', name: 'Savoyarde', ingredients: 'Crème fraîche, mozzarella, pommes de terre, lardons, oignons', junior: 9.0, senior: 11.5, mega: 14.5 },
-  { id: 'nordic', name: 'Nordic', ingredients: 'Crème fraîche, mozzarella, saumon fumé, aneth', junior: 10.0, senior: 12.5, mega: 15.5 },
-  { id: 'mille-nuits', name: '1000 & 1 Nuits', ingredients: 'Crème fraîche, mozzarella, poulet, champignons, curry', junior: 9.0, senior: 11.5, mega: 14.5 },
-  { id: 'chevre-miel', name: 'Chèvre Miel', ingredients: 'Crème fraîche, mozzarella, chèvre, miel, noix', junior: 9.5, senior: 12.0, mega: 15.0 },
-  { id: 'tartiflette', name: 'Tartiflette', ingredients: 'Crème fraîche, mozzarella, pommes de terre, reblochon, lardons', junior: 9.5, senior: 12.0, mega: 15.0 },
+  { id: 'chevre-miel', name: 'Chèvre-Miel', ingredients: 'Mozzarella, fromage de chèvre, touche de miel', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'pescador', name: 'Pescador', ingredients: 'Mozzarella, thon, câpres, œuf, oignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: '4-fromages', name: '4 Fromages', ingredients: 'Mozzarella, chèvre, roquefort, camembert, champignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'cow-boy', name: 'Cow-Boy', ingredients: 'Mozzarella, viande hachée, œuf, oignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'alsacienne', name: 'Alsacienne', ingredients: 'Mozzarella, lardons, oignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'savoyarde', name: 'Savoyarde', ingredients: 'Mozzarella, jambon, pommes de terre, fromage à raclette', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'carbo', name: 'Carbo', ingredients: 'Mozzarella, lardons, champignons, œuf', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'reblochonne', name: 'Reblochonne', ingredients: 'Mozzarella, lardons, pommes de terre, reblochon', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'fermiere', name: 'Fermière', ingredients: 'Mozzarella, poulet, poivrons, champignons, origan', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'nordic', name: 'Nordic', ingredients: 'Mozzarella, saumon fumé, citron', junior: 11.0, senior: 17.0, mega: 24.0, premium: true },
+  { id: 'tropicale', name: 'Tropicale', ingredients: 'Mozzarella, poulet, rondelles d\'ananas', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: '1000-nuits', name: '1000 & 1 Nuits', ingredients: 'Mozzarella, poulet, oignons, amandes effilées, raisins secs, ananas, touche de miel', junior: 11.0, senior: 17.0, mega: 24.0, premium: true },
 ];
 
+// PIZZAS BASE BBQ
 export const pizzasBaseBBQ = [
-  { id: 'bbq-chicken', name: 'BBQ Chicken', ingredients: 'Sauce BBQ, mozzarella, poulet grillé, oignons rouges', junior: 9.0, senior: 11.5, mega: 14.5 },
-  { id: 'bbq-beef', name: 'BBQ Beef', ingredients: 'Sauce BBQ, mozzarella, bœuf, poivrons, oignons', junior: 9.5, senior: 12.0, mega: 15.0 },
+  { id: 'supreme', name: 'Suprême', ingredients: 'Mozzarella, poulet, viande hachée, oignons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'country', name: 'Country', ingredients: 'Mozzarella, poulet, pommes de terre', junior: 9.0, senior: 16.0, mega: 22.0 },
+];
+
+// CALZONES (Pizzas pliées)
+export const calzones = [
+  { id: 'soufflee', name: 'Soufflée', ingredients: 'Tomate, mozzarella, jambon, œuf', junior: 9.0, senior: 15.0, mega: 20.0 },
+  { id: 'spanna', name: 'Spanna', ingredients: 'Tomate, mozzarella, œuf, jambon, chorizo, poivrons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: '3-fromages', name: '3 Fromages', ingredients: 'Crème fraîche, mozzarella, roquefort, chèvre, champignons', junior: 9.0, senior: 16.0, mega: 22.0 },
 ];
 
 export const pates = [
