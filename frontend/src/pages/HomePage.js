@@ -4,7 +4,6 @@ import Hero from '../components/Hero';
 import RubricsSection from '../components/RubricsSection';
 import FormulesMidi from '../components/FormulesMidi';
 import MenuSection from '../components/MenuSection';
-import Tarifs from '../components/Tarifs';
 import Footer from '../components/Footer';
 import CartSidebar from '../components/CartSidebar';
 
