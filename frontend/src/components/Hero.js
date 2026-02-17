@@ -55,7 +55,7 @@ const Hero = () => {
             className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 mb-6"
           >
             <Phone className="w-5 h-5" />
-            COMMANDER MAINTENANT : 01.47.49.49.04
+            COMMANDER MAINTENANT
           </button>
 
           <div className="flex flex-wrap gap-6 justify-center text-white/90 text-sm">
