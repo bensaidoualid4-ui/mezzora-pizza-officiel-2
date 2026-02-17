@@ -49,85 +49,128 @@ export const calzones = [
   { id: '3-fromages', name: '3 Fromages', ingredients: 'Crème fraîche, mozzarella, roquefort, chèvre, champignons', junior: 9.0, senior: 16.0, mega: 22.0 },
 ];
 
+// PATES
 export const pates = [
-  { id: 'bolognaise', name: 'Penne Bolognaise', description: 'Sauce tomate, viande hachée, parmesan', price: 9.0 },
-  { id: 'carbonara', name: 'Penne Carbonara', description: 'Crème fraîche, lardons, parmesan, œuf', price: 9.5 },
-  { id: 'fermiere', name: 'Penne Fermière', description: 'Crème fraîche, poulet, champignons, parmesan', price: 9.5 },
-  { id: 'napolitaine-penne', name: 'Penne Napolitaine', description: 'Sauce tomate, ail, basilic, parmesan', price: 8.5 },
-  { id: 'saumon', name: 'Penne Saumon', description: 'Crème fraîche, saumon, aneth, parmesan', price: 10.5 },
+  { id: 'saumon', name: 'Penne Saumon', description: 'Crème fraîche, saumon, persil', price: 9.5 },
+  { id: 'bolognaise', name: 'Penne Bolognaise', description: 'Sauce tomate, viande hachée, oignons, persil', price: 9.5 },
+  { id: 'carbonara', name: 'Penne Carbonara', description: 'Crème fraîche, lardons, parmesan, jaune d\'œuf', price: 9.5 },
+  { id: 'fermiere', name: 'Penne Fermière', description: 'Crème fraîche, poulet, champignons', price: 9.5 },
+  { id: 'napolitaine', name: 'Penne Napolitaine', description: 'Crème fraîche, thon au naturel, parmesan', price: 9.5 },
 ];
 
+// TEX-MEX
 export const texMex = [
-  { id: 'nuggets', name: 'Nuggets de Poulet', description: '6 pièces avec sauce au choix', price: 5.5 },
-  { id: 'wings', name: 'Chicken Wings', description: '6 pièces épicées avec sauce', price: 6.5 },
-  { id: 'mozza-sticks', name: 'Mozza Sticks', description: '6 bâtonnets de mozzarella panés', price: 5.5 },
-  { id: 'tenders', name: 'Tenders de Poulet', description: '4 pièces croustillantes avec sauce', price: 6.0 },
+  { id: 'wings', name: 'Chicken Wings', description: '6 pièces croustillantes', price: 6.0 },
+  { id: 'nuggets', name: 'Nuggets de Poulet', description: '6 pièces tendres', price: 6.0 },
+  { id: 'tenders', name: 'Tenders de Poulet', description: '4 pièces panées', price: 6.0 },
+  { id: 'donut-poulet', name: 'Donut Poulet', description: 'Beignet de poulet croustillant', price: 2.5 },
+  { id: 'bouchees-camembert', name: 'Bouchées Camembert', description: 'Camembert pané fondant', price: 5.0 },
+  { id: 'mozza-sticks', name: 'Mozza Sticks', description: 'Bâtonnets de mozzarella panés', price: 5.0 },
+  { id: 'oignons-rings', name: 'Onion Rings', description: 'Rondelles d\'oignons croustillantes', price: 5.0 },
+  { id: 'jalapenos', name: 'Jalapeños', description: 'Piments jalapeños panés', price: 5.0 },
+  { id: 'potatoes', name: 'Potatoes', description: 'Pommes de terre épicées', price: 2.5 },
 ];
 
+// SALADES
 export const salades = [
-  { id: 'nicoise', name: 'Salade Niçoise', description: 'Salade, tomates, œuf, thon, olives, oignons', price: 8.5 },
-  { id: 'norvegienne', name: 'Salade Norvégienne', description: 'Salade, saumon fumé, avocat, tomates cerises', price: 9.5 },
-  { id: 'italienne', name: 'Salade Italienne', description: 'Salade, mozzarella, tomates, basilic, huile d\'olive', price: 8.0 },
-  { id: 'fromagere', name: 'Salade Fromagère', description: 'Salade, chèvre chaud, noix, miel, tomates', price: 9.0 },
-  { id: 'chevre-chaud', name: 'Salade Chèvre Chaud', description: 'Salade, chèvre sur toast, miel, noix', price: 9.0 },
+  { id: 'chef', name: 'Salade Chef', description: 'Salade verte, tomates, thon, maïs, artichauts, œuf', price: 6.5 },
+  { id: 'nicoise', name: 'Salade Niçoise', description: 'Salade verte, tomates, thon, œuf, pommes de terre', price: 6.5 },
+  { id: 'norvegienne', name: 'Salade Norvégienne', description: 'Salade verte, tomates, saumon, crème fraîche', price: 6.5 },
+  { id: 'fromagere', name: 'Salade Fromagère', description: 'Salade verte, tomates, chèvre, brie, mozzarella', price: 6.5 },
+  { id: 'italienne', name: 'Salade Italienne', description: 'Salade verte, tomates, poivrons, mozzarella', price: 6.5 },
+  { id: 'chevre', name: 'Salade Chèvre', description: 'Salade verte, tomates, chèvre chaud sur toast', price: 6.5 },
 ];
 
+// PANINIS
+export const paninisClassiques = [
+  { id: 'jambon', name: 'Panini Jambon', description: 'Jambon, fromage', price: 5.0 },
+  { id: 'viande', name: 'Panini Viande Hachée', description: 'Viande hachée, fromage', price: 5.0 },
+  { id: 'thon', name: 'Panini Thon', description: 'Thon, fromage', price: 5.0 },
+  { id: 'chorizo', name: 'Panini Chorizo', description: 'Chorizo, fromage', price: 5.0 },
+  { id: 'poulet', name: 'Panini Poulet', description: 'Poulet, fromage', price: 5.0 },
+];
+
+export const paninisGourmands = [
+  { id: 'poulet-chorizo', name: 'Panini Poulet & Chorizo', description: 'Poulet, chorizo, fromage', price: 5.5 },
+  { id: 'poulet-viande', name: 'Panini Poulet & Viande', description: 'Poulet, viande hachée, fromage', price: 5.5 },
+  { id: 'jambon-chorizo', name: 'Panini Jambon & Chorizo', description: 'Jambon, chorizo, fromage', price: 5.5 },
+  { id: 'jambon-chevre', name: 'Panini Jambon & Chèvre', description: 'Jambon, chèvre, fromage', price: 5.5 },
+  { id: 'jambon-reblochon', name: 'Panini Jambon & Reblochon', description: 'Jambon, reblochon', price: 5.5 },
+  { id: '4-fromages-panini', name: 'Panini 4 Fromages', description: 'Mozzarella, chèvre, brie, fromage à raclette', price: 5.5 },
+  { id: 'saumon-panini', name: 'Panini Saumon', description: 'Saumon, fromage, crème', price: 5.5 },
+];
+
+// DESSERTS
 export const desserts = [
-  { id: 'tiramisu', name: 'Tiramisu Maison', description: 'Spécialité italienne au café', price: 4.5 },
-  { id: 'tarte-daim', name: 'Tarte Daim', description: 'Tarte au caramel et amandes', price: 4.0 },
-  { id: 'bj-100', name: 'Ben & Jerry\'s 100ml', description: 'Parfum au choix', price: 3.5 },
-  { id: 'bj-465', name: 'Ben & Jerry\'s 465ml', description: 'Pot familial, parfum au choix', price: 8.5 },
-  { id: 'panini-nutella', name: 'Panini Nutella', description: 'Panini chaud au Nutella', price: 3.5 },
+  { id: 'brownie', name: 'Brownie', description: 'Brownie au chocolat', price: 2.0 },
+  { id: 'big-cookie', name: 'Big Cookie', description: 'Cookie géant aux pépites de chocolat', price: 2.0 },
+  { id: 'tarte-daim', name: 'Tarte Daim', description: 'Tarte au caramel et amandes', price: 3.0 },
+  { id: 'tiramisu', name: 'Tiramisu Maison', description: 'Spécialité italienne au café', price: 3.0 },
+  { id: 'salade-fruits', name: 'Salade de Fruits', description: 'Fruits frais de saison', price: 2.5 },
+  { id: 'panini-nutella', name: 'Panini Nutella', description: 'Panini chaud au Nutella', price: 3.0 },
+  { id: 'muffin', name: 'Muffin', description: 'Muffin du moment', price: 2.5 },
+  { id: 'yaourt', name: 'Yaourt', description: 'Yaourt nature ou aux fruits', price: 1.8 },
+  { id: 'bj-465-pb', name: 'Ben & Jerry\'s Peanut Butter Brownie 465ml', description: 'Pot familial', price: 6.9 },
+  { id: 'bj-465-caramel', name: 'Ben & Jerry\'s Caramel Cookie Dough 465ml', description: 'Pot familial', price: 6.9 },
+  { id: 'bj-465-vanilla', name: 'Ben & Jerry\'s Vanilla Pecan Fudge 465ml', description: 'Pot familial', price: 6.9 },
+  { id: 'bj-465-choco', name: 'Ben & Jerry\'s Chocolate Fudge Brownie 465ml', description: 'Pot familial', price: 6.9 },
 ];
 
+// BOISSONS
 export const boissons = [
-  { id: 'coca-33', name: 'Coca-Cola 33cl', price: 2.0 },
-  { id: 'coca-50', name: 'Coca-Cola 50cl', price: 3.0 },
-  { id: 'coca-1l', name: 'Coca-Cola 1L', price: 4.0 },
-  { id: 'coca-15l', name: 'Coca-Cola 1.5L', price: 5.0 },
-  { id: 'coca-2l', name: 'Coca-Cola 2L', price: 6.0 },
-  { id: 'fanta-33', name: 'Fanta 33cl', price: 2.0 },
-  { id: 'sprite-33', name: 'Sprite 33cl', price: 2.0 },
-  { id: 'ice-tea-33', name: 'Ice Tea 33cl', price: 2.0 },
-  { id: 'eau-50', name: 'Eau 50cl', price: 1.5 },
-  { id: 'eau-1l', name: 'Eau 1L', price: 2.5 },
-  { id: 'perrier-33', name: 'Perrier 33cl', price: 2.5 },
+  { id: 'coca-33', name: 'Coca-Cola 33cl', price: 1.6 },
+  { id: 'coca-50', name: 'Coca-Cola 50cl', price: 1.8 },
+  { id: 'coca-15l', name: 'Coca-Cola 1.5L', price: 3.0 },
+  { id: 'coca-2l', name: 'Coca-Cola 2L', price: 3.5 },
+  { id: 'fanta-33', name: 'Fanta 33cl', price: 1.6 },
+  { id: 'sprite-33', name: 'Sprite 33cl', price: 1.6 },
+  { id: 'ice-tea-33', name: 'Ice Tea 33cl', price: 1.6 },
+  { id: 'eau-50', name: 'Eau 50cl', price: 1.0 },
+  { id: 'eau-gaz-50', name: 'Eau Gazeuse 50cl', price: 1.6 },
+  { id: 'perrier-33', name: 'Perrier 33cl', price: 1.6 },
 ];
 
+// FORMULES MIDI
 export const formulesMidi = [
   {
     id: 'formule-pizza',
-    name: 'Menu Pizza',
-    description: 'Pizza Junior + Boisson 33cl',
+    name: 'Formule Pizza Junior',
+    description: 'Pizza Junior (au choix*) + Boisson 33cl + Yaourt',
+    price: 8.9,
+    exclusions: '* Sauf Nordic & 1000 & 1 Nuits'
+  },
+  {
+    id: 'formule-salade',
+    name: 'Formule Salade',
+    description: 'Salade au choix + Pain maison + Boisson 33cl + Yaourt',
     price: 8.9,
   },
   {
     id: 'formule-pates',
-    name: 'Menu Pâtes',
-    description: 'Penne au choix + Boisson 33cl',
+    name: 'Formule Pâtes',
+    description: 'Pâtes au choix* + Boisson 33cl',
     price: 8.9,
+    exclusions: '* Sauf Saumon'
   },
   {
-    id: 'formule-salade',
-    name: 'Menu Salade',
-    description: 'Salade au choix + Pain maison + Boisson 33cl',
-    price: 8.9,
-  },
-  {
-    id: 'le-switch',
-    name: 'Le Switch',
-    description: 'Notre pizza-sandwich exclusive du midi avec 3 ingrédients au choix',
-    price: 7.5,
+    id: 'pizza-sandwich',
+    name: 'Pizza Sandwich',
+    description: '3 Ingrédients au choix + Fromage + Sauce (Uniquement le midi)',
+    price: 6.5,
   },
 ];
 
+// TARIFS OFFRES
 export const pricingInfo = {
   emporter: {
     senior: 22.0,
     mega: 27.0,
+    description: '2 Pizzas Sénior/Méga achetées = La 3ème OFFERTE'
   },
   livraison: {
     senior: 28.0,
     mega: 36.0,
+    description: '2 Pizzas Sénior/Méga achetées = La 3ème OFFERTE',
+    frais: 6.0
   },
 };
