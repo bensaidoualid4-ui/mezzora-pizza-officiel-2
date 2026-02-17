@@ -105,10 +105,9 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
         </span>
         <button
           onClick={() => handleAddItemToCart(item, category)}
-          className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-semibold"
+          className="bg-black hover:bg-gray-800 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center"
         >
-          <ShoppingCart className="w-4 h-4" />
-          Ajouter
+          <ShoppingCart className="w-5 h-5" />
         </button>
       </div>
     </div>
