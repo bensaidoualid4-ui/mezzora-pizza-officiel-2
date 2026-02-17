@@ -16,11 +16,11 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
 
         {/* Large Visual Cards - Style Burger King */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
-          {/* Mezzora Table */}
+          {/* Mezzora MENU */}
           <button
-            onClick={() => onRubricSelect('table')}
+            onClick={() => onRubricSelect('menu')}
             className={`relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group ${
-              activeRubric === 'table' ? 'ring-4 ring-green-500' : ''
+              activeRubric === 'menu' ? 'ring-4 ring-green-500' : ''
             }`}
             style={{ height: '450px' }}
           >
@@ -39,10 +39,10 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
                   <span className="text-4xl">🍕</span>
                 </div>
                 <h3 className="text-4xl font-black mb-2 text-center" style={{ fontFamily: 'Impact, sans-serif' }}>
-                  Mezzora<br />TABLE
+                  Mezzora<br />MENU
                 </h3>
                 <p className="text-sm text-center opacity-90 mb-4">
-                  Profitez de nos pizzas sur place
+                  Toutes nos pizzas, pâtes, salades et plus
                 </p>
                 <div className="flex justify-center">
                   <span className="bg-green-600 text-white px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2">
@@ -53,55 +53,55 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
             </div>
           </button>
 
-          {/* Mezzora Delivery */}
+          {/* Mezzora OFFRES MIDI */}
           <button
-            onClick={() => onRubricSelect('livraison')}
+            onClick={() => onRubricSelect('offres-midi')}
             className={`relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group ${
-              activeRubric === 'livraison' ? 'ring-4 ring-blue-500' : ''
+              activeRubric === 'offres-midi' ? 'ring-4 ring-yellow-500' : ''
             }`}
             style={{ height: '450px' }}
           >
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1526367790999-0150786686a2)',
+                backgroundImage: 'url(https://images.unsplash.com/photo-1504674900247-0877df9cc836)',
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
             </div>
             
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
-              <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold">
-                OFFRE SPÉCIALE
+              <div className="absolute top-4 right-4 bg-yellow-500 text-black px-4 py-2 rounded-full text-xs font-bold">
+                8,90€
               </div>
               
               <div className="transform transition-transform duration-300 group-hover:translate-y-[-10px]">
                 <div className="bg-white/20 backdrop-blur-md rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
-                  <span className="text-4xl">🚗</span>
+                  <span className="text-4xl">⏰</span>
                 </div>
                 <h3 className="text-4xl font-black mb-2 text-center" style={{ fontFamily: 'Impact, sans-serif' }}>
-                  Mezzora<br />DELIVERY
+                  Mezzora<br />OFFRES MIDI
                 </h3>
                 <p className="text-sm text-center opacity-90 mb-2">
-                  Livraison à domicile rapide
+                  Formules complètes du midi
                 </p>
                 <p className="text-xs text-center text-yellow-300 font-bold mb-4">
-                  2 pizzas = 3ème OFFERTE !
+                  11h00 - 14h30 • Lundi au Vendredi
                 </p>
                 <div className="flex justify-center">
-                  <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2">
-                    Commander <ArrowRight className="w-4 h-4" />
+                  <span className="bg-yellow-500 text-black px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2">
+                    Découvrir <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
             </div>
           </button>
 
-          {/* Mezzora Emporter (Click & Collect) */}
+          {/* Click & COLLECT - Offres Emporter & Livraison */}
           <button
-            onClick={() => onRubricSelect('emporter')}
+            onClick={() => onRubricSelect('click-collect')}
             className={`relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group ${
-              activeRubric === 'emporter' ? 'ring-4 ring-red-500' : ''
+              activeRubric === 'click-collect' ? 'ring-4 ring-red-500' : ''
             }`}
             style={{ height: '450px' }}
           >
@@ -116,7 +116,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
             
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
               <div className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold">
-                OFFRE SPÉCIALE
+                OFFRE 2+1
               </div>
               
               <div className="transform transition-transform duration-300 group-hover:translate-y-[-10px]">
@@ -129,7 +129,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
                   Click &<br />COLLECT
                 </h3>
                 <p className="text-sm text-center opacity-90 mb-2">
-                  Commandez et retirez rapidement
+                  À emporter ou en livraison
                 </p>
                 <p className="text-xs text-center text-yellow-300 font-bold mb-4">
                   2 pizzas = 3ème OFFERTE !
