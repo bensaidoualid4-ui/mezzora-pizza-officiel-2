@@ -143,16 +143,16 @@ const MenuSection = ({ activeRubric = 'table' }) => {
           {/* Rubric Description */}
           <div className="max-w-3xl mx-auto mb-8">
             {activeRubric === 'table' && (
-              <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="bg-green-50 p-6 rounded-xl shadow-md border-2 border-green-200">
                 <p className="text-gray-700 font-semibold text-lg">
-                  Toutes nos pizzas, pâtes, salades et plus à déguster sur place
+                  🍕 Toutes nos pizzas, pâtes, salades et plus à déguster sur place
                 </p>
               </div>
             )}
             {activeRubric === 'emporter' && (
               <div className="bg-red-50 p-6 rounded-xl shadow-md border-2 border-red-200">
                 <p className="text-gray-700 font-semibold text-lg mb-2">
-                  🎁 OFFRE SPÉCIALE À EMPORTER
+                  🎁 OFFRE SPÉCIALE CLICK & COLLECT
                 </p>
                 <p className="text-red-600 font-bold text-2xl">
                   2 Pizzas Achetées = La 3ème OFFERTE !
