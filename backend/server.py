@@ -66,7 +66,11 @@ async def get_status_checks():
     
     return status_checks
 
-# Include the router in the main app
+# Import and include orders router
+from routes.orders import router as orders_router
+app.include_router(orders_router)
+
+# Include the main API router
 app.include_router(api_router)
 
 app.add_middleware(
