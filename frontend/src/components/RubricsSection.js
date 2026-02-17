@@ -42,7 +42,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
                   Mezzora<br />MENU
                 </h3>
                 <p className="text-sm text-center opacity-90 mb-4">
-                  Toutes nos pizzas, pâtes, salades et plus
+                  Toutes nos spécialités italiennes
                 </p>
                 <div className="flex justify-center">
                   <span className="bg-green-600 text-white px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2">
