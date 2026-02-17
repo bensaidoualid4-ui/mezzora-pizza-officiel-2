@@ -9,13 +9,17 @@ import Footer from '../components/Footer';
 import CartSidebar from '../components/CartSidebar';
 
 const HomePage = () => {
-  const [activeRubric, setActiveRubric] = useState('table');
+  const [activeRubric, setActiveRubric] = useState('menu');
 
   const handleRubricSelect = (rubric) => {
     setActiveRubric(rubric);
-    // Smooth scroll to menu
+    // Smooth scroll to appropriate section
     setTimeout(() => {
-      document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+      if (rubric === 'offres-midi') {
+        document.getElementById('formules')?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+      }
     }, 100);
   };
 
@@ -29,9 +33,11 @@ const HomePage = () => {
           onRubricSelect={handleRubricSelect}
           activeRubric={activeRubric}
         />
-        <FormulesMidi />
-        <MenuSection activeRubric={activeRubric} />
-        <Tarifs />
+        {activeRubric === 'offres-midi' ? (
+          <FormulesMidi />
+        ) : (
+          <MenuSection activeRubric={activeRubric} />
+        )}
       </main>
       <Footer />
     </div>
