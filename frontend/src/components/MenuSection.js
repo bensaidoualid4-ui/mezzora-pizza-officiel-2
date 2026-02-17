@@ -347,14 +347,22 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
           </TabsContent>
 
           <TabsContent value="desserts">
-            <div className="mb-4">
-              <h3 className="text-2xl font-bold text-black mb-2">Desserts</h3>
-              <p className="text-gray-600">Nos douceurs pour terminer en beauté</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {desserts.map((item) => (
-                <SimpleItemCard key={item.id} item={item} category="desserts" />
-              ))}
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-black mb-2">Pâtisseries & Douceurs</h3>
+              <p className="text-gray-600 mb-4">Nos desserts maison et spécialités sucrées</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {dessertsPatisseries.map((item) => (
+                  <SimpleItemCard key={item.id} item={item} category="desserts" />
+                ))}
+              </div>
+
+              <h3 className="text-2xl font-bold text-black mb-2 mt-8">Glaces Ben & Jerry's</h3>
+              <p className="text-gray-600 mb-4">Nos pots de glace premium 465ml</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {dessertsGlaces.map((item) => (
+                  <SimpleItemCard key={item.id} item={item} category="desserts" />
+                ))}
+              </div>
             </div>
           </TabsContent>
 
