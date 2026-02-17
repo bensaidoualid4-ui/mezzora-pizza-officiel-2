@@ -39,17 +39,6 @@ const Hero = () => {
             La qualité artisanale avec une pâte fraîche préparée chaque jour, des légumes et de la viande frais
           </p>
 
-          <div className="offer-card bg-gradient-to-br from-green-600 to-green-700 text-white p-8 rounded-2xl shadow-2xl mb-8 max-w-2xl mx-auto border-4 border-yellow-400">
-            <p className="text-sm font-semibold mb-2 tracking-wide">OFFRE À EMPORTER</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-2">
-              2 PIZZAS ACHETÉES
-            </h2>
-            <h3 className="text-5xl md:text-6xl font-black text-yellow-300 mb-3">
-              LA 3ème OFFERTE !
-            </h3>
-            <p className="text-sm opacity-90">Sur tailles Sénior et Méga</p>
-          </div>
-
           <button
             onClick={scrollToMenu}
             className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 mb-6"
