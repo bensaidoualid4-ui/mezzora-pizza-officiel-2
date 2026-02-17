@@ -116,47 +116,29 @@ const MenuSection = ({ activeRubric = 'table' }) => {
   );
 
   return (
-    <section className="py-16 bg-primary-bg" id="menu">
+    <section className="py-16 bg-white" id="menu">
       <div className="container mx-auto px-4">
-        {/* Header with Rubrics */}
+        {/* Active Rubric Indicator */}
         <div className="text-center mb-8">
-          <h2 className="section-title text-black mb-6">Notre Menu</h2>
-          
-          {/* Rubrics Style Burger King */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <button
-              onClick={() => setActiveRubric('table')}
-              className={`px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 ${
-                activeRubric === 'table'
-                  ? 'bg-gradient-to-r from-green-600 to-green-700 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-              }`}
-            >
-              <Flame className="w-5 h-5 inline-block mr-2" />
-              Mezzora Table
-            </button>
-            <button
-              onClick={() => setActiveRubric('emporter')}
-              className={`px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 ${
-                activeRubric === 'emporter'
-                  ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-              }`}
-            >
-              <ShoppingCart className="w-5 h-5 inline-block mr-2" />
-              Mezzora Emporter
-            </button>
-            <button
-              onClick={() => setActiveRubric('livraison')}
-              className={`px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 ${
-                activeRubric === 'livraison'
-                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-              }`}
-            >
-              🚗 Mezzora Livraison
-            </button>
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-100 to-gray-50 px-8 py-4 rounded-full shadow-md">
+            <span className="text-gray-600 font-semibold">Mode sélectionné :</span>
+            {activeRubric === 'table' && (
+              <span className="bg-green-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                🍕 Mezzora Table
+              </span>
+            )}
+            {activeRubric === 'emporter' && (
+              <span className="bg-red-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                <ShoppingCart className="w-4 h-4" /> Click & Collect
+              </span>
+            )}
+            {activeRubric === 'livraison' && (
+              <span className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                🚗 Mezzora Delivery
+              </span>
+            )}
           </div>
+        </div>
 
           {/* Rubric Description */}
           <div className="max-w-3xl mx-auto mb-8">
