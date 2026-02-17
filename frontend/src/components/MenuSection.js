@@ -140,42 +140,41 @@ const MenuSection = ({ activeRubric = 'table' }) => {
           </div>
         </div>
 
-          {/* Rubric Description */}
-          <div className="max-w-3xl mx-auto mb-8">
-            {activeRubric === 'table' && (
-              <div className="bg-green-50 p-6 rounded-xl shadow-md border-2 border-green-200">
-                <p className="text-gray-700 font-semibold text-lg">
-                  🍕 Toutes nos pizzas, pâtes, salades et plus à déguster sur place
-                </p>
-              </div>
-            )}
-            {activeRubric === 'emporter' && (
-              <div className="bg-red-50 p-6 rounded-xl shadow-md border-2 border-red-200">
-                <p className="text-gray-700 font-semibold text-lg mb-2">
-                  🎁 OFFRE SPÉCIALE CLICK & COLLECT
-                </p>
-                <p className="text-red-600 font-bold text-2xl">
-                  2 Pizzas Achetées = La 3ème OFFERTE !
-                </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Sur pizzas Sénior et Méga uniquement (sauf Nordic & 1000 & 1 Nuits)
-                </p>
-              </div>
-            )}
-            {activeRubric === 'livraison' && (
-              <div className="bg-blue-50 p-6 rounded-xl shadow-md border-2 border-blue-200">
-                <p className="text-gray-700 font-semibold text-lg mb-2">
-                  🚗 LIVRAISON À DOMICILE
-                </p>
-                <p className="text-blue-600 font-bold text-2xl">
-                  2 Pizzas Achetées = La 3ème OFFERTE !
-                </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Sur pizzas Sénior et Méga uniquement + Frais de livraison 6€
-                </p>
-              </div>
-            )}
-          </div>
+        {/* Rubric Description */}
+        <div className="max-w-3xl mx-auto mb-8">
+          {activeRubric === 'table' && (
+            <div className="bg-green-50 p-6 rounded-xl shadow-md border-2 border-green-200">
+              <p className="text-gray-700 font-semibold text-lg">
+                🍕 Toutes nos pizzas, pâtes, salades et plus à déguster sur place
+              </p>
+            </div>
+          )}
+          {activeRubric === 'emporter' && (
+            <div className="bg-red-50 p-6 rounded-xl shadow-md border-2 border-red-200">
+              <p className="text-gray-700 font-semibold text-lg mb-2">
+                🎁 OFFRE SPÉCIALE CLICK & COLLECT
+              </p>
+              <p className="text-red-600 font-bold text-2xl">
+                2 Pizzas Achetées = La 3ème OFFERTE !
+              </p>
+              <p className="text-sm text-gray-600 mt-2">
+                Sur pizzas Sénior et Méga uniquement (sauf Nordic & 1000 & 1 Nuits)
+              </p>
+            </div>
+          )}
+          {activeRubric === 'livraison' && (
+            <div className="bg-blue-50 p-6 rounded-xl shadow-md border-2 border-blue-200">
+              <p className="text-gray-700 font-semibold text-lg mb-2">
+                🚗 LIVRAISON À DOMICILE
+              </p>
+              <p className="text-blue-600 font-bold text-2xl">
+                2 Pizzas Achetées = La 3ème OFFERTE !
+              </p>
+              <p className="text-sm text-gray-600 mt-2">
+                Sur pizzas Sénior et Méga uniquement + Frais de livraison 6€
+              </p>
+            </div>
+          )}
         </div>
 
         <Tabs defaultValue="pizzas-tomate" className="w-full">
