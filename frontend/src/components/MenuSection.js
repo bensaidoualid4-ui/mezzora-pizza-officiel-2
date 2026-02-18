@@ -115,27 +115,8 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
   );
 
   return (
-    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full bg-white" id="menu">
-      {/* Onglets de catégories - STICKY sous la barre principale */}
-      <div className="sticky top-[52px] z-30 bg-white shadow-md py-2 px-2 border-b">
-        <div className="overflow-x-auto scrollbar-hide">
-          <TabsList className="inline-flex gap-2 bg-transparent p-0 min-w-max">
-            <TabsTrigger value="pizzas-tomate" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-red-600 data-[state=active]:text-white transition-all text-xs">🍅 Tomate</TabsTrigger>
-            <TabsTrigger value="pizzas-creme" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-yellow-500 data-[state=active]:text-black transition-all text-xs">🧈 Crème</TabsTrigger>
-            <TabsTrigger value="pizzas-bbq" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-orange-600 data-[state=active]:text-white transition-all text-xs">🔥 BBQ</TabsTrigger>
-            <TabsTrigger value="calzones" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all text-xs">🥟 Calzones</TabsTrigger>
-            <TabsTrigger value="pates" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all text-xs">🍝 Pâtes</TabsTrigger>
-            <TabsTrigger value="paninis" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-amber-600 data-[state=active]:text-white transition-all text-xs">🥖 Paninis</TabsTrigger>
-            <TabsTrigger value="texmex" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-red-700 data-[state=active]:text-white transition-all text-xs">🌶️ Tex-Mex</TabsTrigger>
-            <TabsTrigger value="salades" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-green-500 data-[state=active]:text-white transition-all text-xs">🥗 Salades</TabsTrigger>
-            <TabsTrigger value="desserts" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-pink-500 data-[state=active]:text-white transition-all text-xs">🍰 Desserts</TabsTrigger>
-            <TabsTrigger value="boissons" className="px-3 py-1.5 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-blue-500 data-[state=active]:text-white transition-all text-xs">🥤 Boissons</TabsTrigger>
-          </TabsList>
-        </div>
-      </div>
-
-      {/* Contenu du menu */}
-      <div className="container mx-auto px-4 py-6 max-w-7xl">
+    <div className="bg-white py-6" id="menu">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Click & Collect description */}
         {activeRubric === 'click-collect' && (
           <div className="max-w-4xl mx-auto mb-6">
@@ -168,7 +149,9 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
           </div>
         )}
 
-          <TabsContent value="pizzas-tomate">
+        {/* Contenu selon la catégorie active */}
+        {activeCategory === 'pizzas-tomate' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Pizzas Base Tomate</h3>
               <p className="text-gray-600">Nos pizzas traditionnelles sur base de sauce tomate</p>
@@ -178,9 +161,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <PizzaCard key={pizza.id} pizza={pizza} />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="pizzas-creme">
+        {activeCategory === 'pizzas-creme' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Pizzas Base Crème</h3>
               <p className="text-gray-600">Nos pizzas onctueuses sur base de crème fraîche</p>
@@ -190,9 +175,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <PizzaCard key={pizza.id} pizza={pizza} />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="pizzas-bbq">
+        {activeCategory === 'pizzas-bbq' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Pizzas Base BBQ</h3>
               <p className="text-gray-600">Nos pizzas gourmandes sur base de sauce BBQ</p>
@@ -202,9 +189,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <PizzaCard key={pizza.id} pizza={pizza} />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="calzones">
+        {activeCategory === 'calzones' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Calzones</h3>
               <p className="text-gray-600">Nos pizzas pliées et garnies généreusement</p>
@@ -214,9 +203,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <PizzaCard key={pizza.id} pizza={pizza} />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="pates">
+        {activeCategory === 'pates' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Pâtes</h3>
               <p className="text-gray-600">Nos penne fraîches avec sauce au choix</p>
@@ -226,9 +217,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <SimpleItemCard key={item.id} item={item} category="pates" />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="paninis">
+        {activeCategory === 'paninis' && (
+          <div>
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-black mb-2">Paninis Classiques</h3>
               <p className="text-gray-600 mb-4">Nos paninis traditionnels</p>
@@ -246,9 +239,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 ))}
               </div>
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="texmex">
+        {activeCategory === 'texmex' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Tex-Mex</h3>
               <p className="text-gray-600">Nos spécialités croustillantes et savoureuses</p>
@@ -258,9 +253,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <SimpleItemCard key={item.id} item={item} category="texmex" />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="salades">
+        {activeCategory === 'salades' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Salades</h3>
               <p className="text-gray-600">Nos grandes salades fraîches et complètes</p>
@@ -270,9 +267,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <SimpleItemCard key={item.id} item={item} category="salades" />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="desserts">
+        {activeCategory === 'desserts' && (
+          <div>
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-black mb-2">Pâtisseries & Douceurs</h3>
               <p className="text-gray-600 mb-4">Nos desserts maison et spécialités sucrées</p>
@@ -290,9 +289,11 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 ))}
               </div>
             </div>
-          </TabsContent>
+          </div>
+        )}
 
-          <TabsContent value="boissons">
+        {activeCategory === 'boissons' && (
+          <div>
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-black mb-2">Boissons</h3>
               <p className="text-gray-600">Nos boissons pour accompagner votre repas</p>
@@ -302,9 +303,10 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
                 <SimpleItemCard key={item.id} item={item} category="boissons" />
               ))}
             </div>
-          </TabsContent>
+          </div>
+        )}
       </div>
-    </Tabs>
+    </div>
   );
 };
 
