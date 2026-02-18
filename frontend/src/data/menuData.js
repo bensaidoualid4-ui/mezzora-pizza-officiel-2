@@ -70,6 +70,12 @@ export const texMex = [
   { id: 'oignons-rings', name: 'Onion Rings', description: 'Rondelles d\'oignons croustillantes', price: 5.0 },
   { id: 'jalapenos', name: 'Jalapeños', description: 'Piments jalapeños panés', price: 5.0 },
   { id: 'potatoes', name: 'Potatoes', description: 'Pommes de terre épicées', price: 2.5 },
+  { id: 'potaetos', name: 'Potaetos', description: 'Potatoes maison croustillantes', price: 3.5, image: '/images/menu/Potaetos.jpeg' },
+];
+
+// SANDWICHS
+export const sandwichs = [
+  { id: 'switch', name: 'Switch', description: 'Pain burger, poulet croustillant, oignons, sauce', price: 6.5, image: '/images/menu/switch.jpeg' },
 ];
 
 // SALADES
