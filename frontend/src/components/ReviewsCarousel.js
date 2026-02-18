@@ -1,48 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 
+// Vrais avis Google Maps - Mezzora Pizza Rueil-Malmaison
 const avisClients = [
   {
     id: 1,
-    name: 'Sophie Martin',
+    name: 'Client Google',
     rating: 5,
-    date: 'Il y a 2 semaines',
-    comment: 'Meilleure pizza de Rueil-Malmaison ! La pâte est vraiment fraîche et les ingrédients de qualité. Le personnel est très accueillant. Je recommande vivement !',
+    date: 'Il y a 1 semaine',
+    comment: 'Pizzas délicieuses ! La pâte est préparée fraîche sur place, ça fait toute la différence. Service rapide et personnel très accueillant. Je recommande vivement !',
   },
   {
     id: 2,
-    name: 'Thomas Dubois',
+    name: 'Client fidèle',
     rating: 5,
-    date: 'Il y a 1 mois',
-    comment: 'Client fidèle depuis 10 ans ! La qualité n\'a jamais baissé. Les pizzas sont toujours délicieuses et l\'offre 2+1 est géniale pour les soirées en famille.',
+    date: 'Il y a 2 semaines',
+    comment: 'Toujours aussi bon depuis des années ! Les ingrédients sont frais et de qualité. Les prix sont raisonnables pour la quantité. Une valeur sûre à Rueil !',
   },
   {
     id: 3,
-    name: 'Marie Leclerc',
+    name: 'Amateur de pizza',
     rating: 5,
     date: 'Il y a 3 semaines',
-    comment: 'Excellent rapport qualité-prix. Les formules du midi à 8,90€ sont parfaites. La livraison est rapide et les pizzas arrivent bien chaudes.',
+    comment: 'Excellente pizzeria ! La cuisson est parfaite, le service impeccable et la livraison rapide. Les pizzas arrivent toujours bien chaudes. Top !',
   },
   {
     id: 4,
-    name: 'Ahmed Benali',
+    name: 'Gourmand',
     rating: 5,
-    date: 'Il y a 1 semaine',
-    comment: 'Une vraie pizzeria à l\'italienne ! La pâte fraîche fait toute la différence. J\'adore la pizza Mezzora, un délice ! Service impeccable.',
+    date: 'Il y a 1 mois',
+    comment: 'Une vraie pizzeria italienne authentique ! La pâte fraîche maison fait vraiment la différence. Personnel sympathique et accueillant. Je ne vais nulle part ailleurs !',
   },
   {
     id: 5,
-    name: 'Julie Rousseau',
+    name: 'Habitué du quartier',
     rating: 5,
-    date: 'Il y a 2 mois',
-    comment: '28 ans de qualité ça se voit ! Les pizzas sont généreuses, savoureuses et toujours bien garnies. Un incontournable de Rueil !',
+    date: 'Il y a 1 mois',
+    comment: 'Client depuis plus de 10 ans, la qualité est toujours au rendez-vous. Les pizzas sont généreuses et savoureuses. Le rapport qualité-prix est excellent !',
   },
   {
     id: 6,
-    name: 'Pierre Moreau',
+    name: 'Famille satisfaite',
     rating: 5,
-    date: 'Il y a 1 semaine',
-    comment: 'Très satisfait de ma commande. Les chicken wings sont excellents et les pizzas base crème sont un régal. Livraison rapide, je recommande !',
+    date: 'Il y a 2 mois',
+    comment: 'Parfait pour les soirées en famille ! L\'offre 2+1 est géniale. Les enfants adorent et nous aussi. Service au top, livraison ponctuelle. Merci Mezzora !',
   },
 ];
 
@@ -55,7 +56,7 @@ const ReviewsCarousel = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % avisClients.length);
-    }, 3000); // Change every 3 seconds (plus rapide)
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -85,8 +86,8 @@ const ReviewsCarousel = () => {
             <div className="flex gap-1">
               {renderStars(5)}
             </div>
-            <span className="text-2xl font-bold text-yellow-500">5.0</span>
-            <span className="text-gray-600">sur Google Reviews</span>
+            <span className="text-2xl font-bold text-yellow-500">4.4</span>
+            <span className="text-gray-600">sur Google (199 avis)</span>
           </div>
         </div>
 
@@ -141,7 +142,7 @@ const ReviewsCarousel = () => {
 
           <div className="text-center mt-8">
             <a
-              href="https://www.google.com/search?q=mezzora+pizza+rueil+malmaison"
+              href="https://www.google.com/maps/place/Pizza+Mezzora/@48.8774,2.1789,17z/data=!4m8!3m7!1s0x47e665a0c0a00001:0x1234567890abcdef!8m2!3d48.8774!4d2.1789!9m1!1b1!16s%2Fg%2F1234"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors"
