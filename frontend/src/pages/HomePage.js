@@ -4,6 +4,8 @@ import Hero from '../components/Hero';
 import RubricsSection from '../components/RubricsSection';
 import FormulesMidi from '../components/FormulesMidi';
 import MenuSection from '../components/MenuSection';
+import ContactForm from '../components/ContactForm';
+import ReviewsCarousel from '../components/ReviewsCarousel';
 import Footer from '../components/Footer';
 import CartSidebar from '../components/CartSidebar';
 
@@ -36,6 +38,8 @@ const HomePage = () => {
         {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
           <MenuSection activeRubric={activeRubric} />
         )}
+        <ReviewsCarousel />
+        <ContactForm />
       </main>
       <Footer />
     </div>
