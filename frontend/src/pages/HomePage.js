@@ -7,7 +7,6 @@ import MenuSection from '../components/MenuSection';
 import ContactForm from '../components/ContactForm';
 import ReviewsCarousel from '../components/ReviewsCarousel';
 import Footer from '../components/Footer';
-import CartSidebar from '../components/CartSidebar';
 
 const HomePage = () => {
   const [activeRubric, setActiveRubric] = useState(null);
@@ -19,7 +18,6 @@ const HomePage = () => {
     } else {
       setActiveRubric(rubric);
     }
-    // Plus de scroll automatique - le menu s'affiche directement dans la section
   };
 
   const handleCloseMenu = () => {
@@ -29,7 +27,6 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <CartSidebar />
       <main className="pt-20">
         <Hero />
         <RubricsSection 
