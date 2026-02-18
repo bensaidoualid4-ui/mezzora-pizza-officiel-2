@@ -55,7 +55,7 @@ const ReviewsCarousel = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % avisClients.length);
-    }, 5000); // Change every 5 seconds
+    }, 3000); // Change every 3 seconds (plus rapide)
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
