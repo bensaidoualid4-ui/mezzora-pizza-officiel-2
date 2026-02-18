@@ -114,7 +114,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
   );
 
   return (
-    <div className="bg-white py-6" id="menu-content">
+    <div className="bg-white py-6 scroll-mt-32" id="menu-content">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Click & Collect description */}
         {activeRubric === 'click-collect' && (
