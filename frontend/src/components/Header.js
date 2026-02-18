@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Menu, X, MapPin } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
@@ -9,10 +9,18 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleNavClick = (rubric) => {
+    if (onNavigate) {
+      onNavigate(rubric);
+    }
+    setMobileMenuOpen(false);
+  };
+
   const navLinks = [
-    { label: 'Accueil', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
-    { label: 'Formules', action: () => scrollToSection('rubrics') },
-    { label: 'Menu', action: () => scrollToSection('rubrics') },
+    { label: 'Accueil', action: () => { window.scrollTo({ top: 0, behavior: 'smooth' }); if(onNavigate) onNavigate(null); } },
+    { label: 'Formules', action: () => handleNavClick('offres-midi') },
+    { label: 'Menu', action: () => handleNavClick('menu') },
+    { label: 'Offres', action: () => handleNavClick('offres') },
     { label: 'Contact', action: () => scrollToSection('contact') },
     { label: 'Itinéraire', href: 'https://maps.google.com/?q=Mezzora+Pizza', external: true },
   ];
@@ -24,7 +32,7 @@ const Header = () => {
           {/* Logo */}
           <div 
             className="cursor-pointer flex items-center"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); if(onNavigate) onNavigate(null); }}
           >
             <img 
               src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" 
