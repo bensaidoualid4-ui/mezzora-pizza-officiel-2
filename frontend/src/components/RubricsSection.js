@@ -7,9 +7,9 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
   // Si une rubrique est active, on affiche son contenu directement
   if (activeRubric) {
     return (
-      <section className="bg-primary-bg" id="rubrics">
+      <section className="bg-primary-bg min-h-screen" id="rubrics">
         {/* Navigation STICKY qui suit le scroll */}
-        <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-md shadow-lg py-3 px-4">
+        <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-md shadow-lg py-3 px-4">
           <div className="container mx-auto flex flex-wrap items-center justify-between gap-3">
             {/* Bouton retour */}
             <button
@@ -57,13 +57,17 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
         </div>
 
         {/* Contenu de la rubrique sélectionnée */}
-        <div className="container mx-auto px-4 py-6">
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-            {activeRubric === 'offres-midi' && <FormulesMidi />}
-            {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
-              <MenuSection activeRubric={activeRubric} />
-            )}
-          </div>
+        <div className="pb-6">
+          {activeRubric === 'offres-midi' && (
+            <div className="container mx-auto px-4 pt-6">
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <FormulesMidi />
+              </div>
+            </div>
+          )}
+          {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
+            <MenuSection activeRubric={activeRubric} />
+          )}
         </div>
       </section>
     );
