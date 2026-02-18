@@ -13,15 +13,17 @@ const HomePage = () => {
   const [activeRubric, setActiveRubric] = useState(null);
 
   const handleRubricSelect = (rubric) => {
-    setActiveRubric(rubric);
-    // Smooth scroll to appropriate section
-    setTimeout(() => {
-      if (rubric === 'offres-midi') {
-        document.getElementById('formules')?.scrollIntoView({ behavior: 'smooth' });
-      } else if (rubric === 'menu' || rubric === 'click-collect') {
-        document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    // Si on clique sur la même rubrique, on la ferme
+    if (activeRubric === rubric) {
+      setActiveRubric(null);
+    } else {
+      setActiveRubric(rubric);
+    }
+    // Plus de scroll automatique - le menu s'affiche directement dans la section
+  };
+
+  const handleCloseMenu = () => {
+    setActiveRubric(null);
   };
 
   return (
@@ -33,11 +35,8 @@ const HomePage = () => {
         <RubricsSection 
           onRubricSelect={handleRubricSelect}
           activeRubric={activeRubric}
+          onCloseMenu={handleCloseMenu}
         />
-        {activeRubric === 'offres-midi' && <FormulesMidi />}
-        {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
-          <MenuSection activeRubric={activeRubric} />
-        )}
         <ReviewsCarousel />
         <ContactForm />
       </main>
