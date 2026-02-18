@@ -114,10 +114,16 @@ export const dessertsPatisseries = [
 ];
 
 export const dessertsGlaces = [
-  { id: 'bj-465-pb', name: 'Ben & Jerry\'s Peanut Butter Brownie', description: 'Pot 465ml', price: 6.9 },
-  { id: 'bj-465-caramel', name: 'Ben & Jerry\'s Caramel Cookie Dough', description: 'Pot 465ml', price: 6.9 },
-  { id: 'bj-465-vanilla', name: 'Ben & Jerry\'s Vanilla Pecan Fudge', description: 'Pot 465ml', price: 6.9 },
-  { id: 'bj-465-choco', name: 'Ben & Jerry\'s Chocolate Fudge Brownie', description: 'Pot 465ml', price: 6.9 },
+  // Petits pots 100ml
+  { id: 'bj-100-pb', name: 'Ben & Jerry\'s Peanut Butter', description: 'Petit pot 100ml', price: 3.5 },
+  { id: 'bj-100-caramel', name: 'Ben & Jerry\'s Caramel', description: 'Petit pot 100ml', price: 3.5 },
+  { id: 'bj-100-vanilla', name: 'Ben & Jerry\'s Vanilla', description: 'Petit pot 100ml', price: 3.5 },
+  { id: 'bj-100-choco', name: 'Ben & Jerry\'s Chocolate', description: 'Petit pot 100ml', price: 3.5 },
+  // Grands pots 465ml
+  { id: 'bj-465-pb', name: 'Ben & Jerry\'s Peanut Butter Brownie', description: 'Grand pot 465ml', price: 6.9 },
+  { id: 'bj-465-caramel', name: 'Ben & Jerry\'s Caramel Cookie Dough', description: 'Grand pot 465ml', price: 6.9 },
+  { id: 'bj-465-vanilla', name: 'Ben & Jerry\'s Vanilla Pecan Fudge', description: 'Grand pot 465ml', price: 6.9 },
+  { id: 'bj-465-choco', name: 'Ben & Jerry\'s Chocolate Fudge Brownie', description: 'Grand pot 465ml', price: 6.9 },
 ];
 
 export const desserts = [...dessertsPatisseries, ...dessertsGlaces];
