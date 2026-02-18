@@ -19,30 +19,42 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
 
   const PizzaCard = ({ pizza }) => {
     return (
-      <div className="menu-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500 relative">
-        {pizza.premium && (
-          <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-            <Award className="w-3 h-3" />
-            PREMIUM
+      <div className="menu-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500 relative overflow-hidden">
+        {pizza.image && (
+          <div className="h-48 overflow-hidden">
+            <img 
+              src={pizza.image} 
+              alt={pizza.name} 
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+              onError={(e) => e.target.style.display = 'none'}
+            />
           </div>
         )}
-        <h3 className="text-xl font-bold text-black mb-2">{pizza.name}</h3>
-        <p className="text-gray-600 text-sm mb-4 leading-relaxed">{pizza.ingredients}</p>
+        <div className="p-5">
+          {pizza.premium && (
+            <div className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 z-10">
+              <Award className="w-3 h-3" />
+              PREMIUM
+            </div>
+          )}
+          <h3 className="text-xl font-bold text-black mb-2">{pizza.name}</h3>
+          <p className="text-gray-600 text-sm mb-4 leading-relaxed">{pizza.ingredients}</p>
 
-        <div className="border-t pt-4">
-          <p className="text-xs text-gray-500 mb-2 font-semibold">Nos tailles :</p>
-          <div className="flex gap-3 justify-between">
-            <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
-              <p className="text-xs text-gray-500">Junior</p>
-              <p className="font-bold text-green-600">{pizza.junior.toFixed(2)}€</p>
-            </div>
-            <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
-              <p className="text-xs text-gray-500">Senior</p>
-              <p className="font-bold text-green-600">{pizza.senior.toFixed(2)}€</p>
-            </div>
-            <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
-              <p className="text-xs text-gray-500">Méga</p>
-              <p className="font-bold text-green-600">{pizza.mega.toFixed(2)}€</p>
+          <div className="border-t pt-4">
+            <p className="text-xs text-gray-500 mb-2 font-semibold">Nos tailles :</p>
+            <div className="flex gap-2 justify-between">
+              <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
+                <p className="text-xs text-gray-500">Junior</p>
+                <p className="font-bold text-green-600 text-sm">{pizza.junior.toFixed(2)}€</p>
+              </div>
+              <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
+                <p className="text-xs text-gray-500">Senior</p>
+                <p className="font-bold text-green-600 text-sm">{pizza.senior.toFixed(2)}€</p>
+              </div>
+              <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
+                <p className="text-xs text-gray-500">Méga</p>
+                <p className="font-bold text-green-600 text-sm">{pizza.mega.toFixed(2)}€</p>
+              </div>
             </div>
           </div>
         </div>
@@ -51,13 +63,30 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
   };
 
   const SimpleItemCard = ({ item }) => (
-    <div className="menu-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500">
-      <h3 className="text-xl font-bold text-black mb-2">{item.name}</h3>
-      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-        {item.description || item.ingredients}
-      </p>
-      <div className="flex items-center justify-end">
-        <span className="text-2xl font-bold text-green-600">
+    <div className="menu-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500 overflow-hidden">
+      {item.image && (
+        <div className="h-40 overflow-hidden">
+          <img 
+            src={item.image} 
+            alt={item.name} 
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            onError={(e) => e.target.style.display = 'none'}
+          />
+        </div>
+      )}
+      <div className="p-5">
+        <h3 className="text-xl font-bold text-black mb-2">{item.name}</h3>
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+          {item.description || item.ingredients}
+        </p>
+        <div className="flex items-center justify-end">
+          <span className="text-2xl font-bold text-green-600">
+            {item.price.toFixed(2)} €
+          </span>
+        </div>
+      </div>
+    </div>
+  );
           {item.price.toFixed(2)} €
         </span>
       </div>
