@@ -182,15 +182,15 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
                   <div className="space-y-3">
                     <div className="bg-blue-50 p-4 rounded-lg">
                       <p className="font-bold text-blue-700 text-lg mb-2">
-                        2 Pizzas Achetées = La 3ème OFFERTE !
+                        Tarifs Livraison
                       </p>
-                      <p className="text-xs text-gray-500 italic">
-                        * Sauf Nordic & 1000 & 1 Nuits
+                      <p className="text-xs text-gray-600">
+                        Commandez en ligne et recevez vos pizzas chaudes à domicile
                       </p>
                     </div>
                     <div className="bg-green-50 p-3 rounded-lg">
                       <p className="text-sm font-semibold text-green-700 mb-1">
-                        💰 Offres spéciales :
+                        💰 Nos tarifs :
                       </p>
                       <p className="text-sm text-gray-700">• 2 Pizzas Senior → 28,00 €</p>
                       <p className="text-sm text-gray-700">• 2 Pizzas Méga → 36,00 €</p>
