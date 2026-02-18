@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { ShoppingCart, ArrowRight, X } from 'lucide-react';
+import { Gift, ArrowRight, X } from 'lucide-react';
 import MenuSection from './MenuSection';
 import FormulesMidi from './FormulesMidi';
-import { Tabs, TabsList, TabsTrigger } from './ui/tabs';
 
 const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
   const [activeCategory, setActiveCategory] = useState('pizzas-tomate');
 
   // Si une rubrique est active, on affiche son contenu directement
   if (activeRubric) {
-    const showCategoryTabs = activeRubric === 'menu' || activeRubric === 'click-collect';
+    const showCategoryTabs = activeRubric === 'menu' || activeRubric === 'offres';
     
     return (
       <section className="bg-primary-bg min-h-screen" id="rubrics">
@@ -45,17 +44,17 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                       : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
                   }`}
                 >
-                  ⏰ Midi
+                  ⏰ Formules
                 </button>
                 <button
-                  onClick={() => onRubricSelect('click-collect')}
+                  onClick={() => onRubricSelect('offres')}
                   className={`px-3 py-1.5 rounded-full font-bold transition-all text-xs ${
-                    activeRubric === 'click-collect' 
+                    activeRubric === 'offres' 
                       ? 'bg-red-600 text-white shadow-lg' 
                       : 'bg-gray-100 text-gray-700 hover:bg-red-100'
                   }`}
                 >
-                  🛒 Collect
+                  🎁 Offres
                 </button>
               </div>
             </div>
