@@ -71,6 +71,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                   { id: 'calzones', label: '🥟 Calzones', color: 'bg-purple-600' },
                   { id: 'pates', label: '🍝 Pâtes', color: 'bg-green-600' },
                   { id: 'paninis', label: '🥖 Paninis', color: 'bg-amber-600' },
+                  { id: 'sandwichs', label: '🍔 Sandwichs', color: 'bg-orange-500' },
                   { id: 'texmex', label: '🌶️ Tex-Mex', color: 'bg-red-700' },
                   { id: 'salades', label: '🥗 Salades', color: 'bg-green-500' },
                   { id: 'desserts', label: '🍰 Desserts', color: 'bg-pink-500' },
