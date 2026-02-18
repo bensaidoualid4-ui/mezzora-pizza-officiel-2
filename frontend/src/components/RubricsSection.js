@@ -1,7 +1,72 @@
-import React, { useState } from 'react';
-import { ShoppingCart, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { ShoppingCart, ArrowRight, X } from 'lucide-react';
+import MenuSection from './MenuSection';
+import FormulesMidi from './FormulesMidi';
 
-const RubricsSection = ({ onRubricSelect, activeRubric }) => {
+const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
+  // Si une rubrique est active, on affiche son contenu directement
+  if (activeRubric) {
+    return (
+      <section className="py-8 bg-primary-bg" id="rubrics">
+        <div className="container mx-auto px-4">
+          {/* Bouton retour */}
+          <div className="mb-6">
+            <button
+              onClick={onCloseMenu}
+              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-all shadow-lg"
+            >
+              <X className="w-5 h-5" />
+              Retour aux rubriques
+            </button>
+          </div>
+
+          {/* Mini navigation entre rubriques */}
+          <div className="flex flex-wrap gap-3 mb-8 justify-center">
+            <button
+              onClick={() => onRubricSelect('menu')}
+              className={`px-6 py-3 rounded-full font-bold transition-all ${
+                activeRubric === 'menu' 
+                  ? 'bg-green-600 text-white shadow-lg scale-105' 
+                  : 'bg-white text-gray-700 hover:bg-green-100 border-2 border-gray-200'
+              }`}
+            >
+              🍕 Mezzora Menu
+            </button>
+            <button
+              onClick={() => onRubricSelect('offres-midi')}
+              className={`px-6 py-3 rounded-full font-bold transition-all ${
+                activeRubric === 'offres-midi' 
+                  ? 'bg-yellow-500 text-black shadow-lg scale-105' 
+                  : 'bg-white text-gray-700 hover:bg-yellow-100 border-2 border-gray-200'
+              }`}
+            >
+              ⏰ Offres Midi
+            </button>
+            <button
+              onClick={() => onRubricSelect('click-collect')}
+              className={`px-6 py-3 rounded-full font-bold transition-all ${
+                activeRubric === 'click-collect' 
+                  ? 'bg-red-600 text-white shadow-lg scale-105' 
+                  : 'bg-white text-gray-700 hover:bg-red-100 border-2 border-gray-200'
+              }`}
+            >
+              🛒 Click & Collect
+            </button>
+          </div>
+
+          {/* Contenu de la rubrique sélectionnée - DIRECTEMENT ICI */}
+          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            {activeRubric === 'offres-midi' && <FormulesMidi />}
+            {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
+              <MenuSection activeRubric={activeRubric} />
+            )}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Affichage par défaut - Les grandes cartes visuelles
   return (
     <section className="py-20 bg-primary-bg" id="rubrics">
       <div className="container mx-auto px-4">
@@ -15,13 +80,11 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
         </div>
 
         {/* Large Visual Cards - Style Burger King */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {/* Mezzora MENU */}
           <button
             onClick={() => onRubricSelect('menu')}
-            className={`relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group ${
-              activeRubric === 'menu' ? 'ring-4 ring-green-500' : ''
-            }`}
+            className="relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group"
             style={{ height: '450px' }}
           >
             <div
@@ -56,9 +119,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
           {/* Mezzora OFFRES MIDI */}
           <button
             onClick={() => onRubricSelect('offres-midi')}
-            className={`relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group ${
-              activeRubric === 'offres-midi' ? 'ring-4 ring-yellow-500' : ''
-            }`}
+            className="relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group"
             style={{ height: '450px' }}
           >
             <div
@@ -93,12 +154,10 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
             </div>
           </button>
 
-          {/* Click & COLLECT - Offres Emporter & Livraison */}
+          {/* Click & COLLECT */}
           <button
             onClick={() => onRubricSelect('click-collect')}
-            className={`relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group ${
-              activeRubric === 'click-collect' ? 'ring-4 ring-red-500' : ''
-            }`}
+            className="relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group"
             style={{ height: '450px' }}
           >
             <div
@@ -135,21 +194,6 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
               </div>
             </div>
           </button>
-        </div>
-
-        {/* Découvrez nos classiques - Call to action */}
-        <div className="text-center">
-          <a
-            href="#menu"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="inline-flex items-center gap-2 text-2xl font-bold text-black hover:text-green-600 transition-colors"
-          >
-            Découvrez nos classiques
-            <ArrowRight className="w-6 h-6" />
-          </a>
         </div>
       </div>
     </section>
