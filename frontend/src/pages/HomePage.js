@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import RubricsSection from '../components/RubricsSection';
-import FormulesMidi from '../components/FormulesMidi';
-import MenuSection from '../components/MenuSection';
 import ContactForm from '../components/ContactForm';
 import ReviewsCarousel from '../components/ReviewsCarousel';
 import Footer from '../components/Footer';
@@ -18,6 +16,12 @@ const HomePage = () => {
     } else {
       setActiveRubric(rubric);
     }
+    // Scroll vers la section rubriques
+    if (rubric) {
+      setTimeout(() => {
+        document.getElementById('rubrics')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const handleCloseMenu = () => {
@@ -26,7 +30,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header onNavigate={handleRubricSelect} />
       <main className="pt-20">
         <Hero />
         <RubricsSection 
