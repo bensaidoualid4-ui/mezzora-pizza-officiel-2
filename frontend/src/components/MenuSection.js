@@ -68,7 +68,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
     <div className="bg-white py-6 scroll-mt-32" id="menu-content">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Click & Collect description */}
-        {activeRubric === 'click-collect' && (
+        {activeRubric === 'offres' && (
           <div className="max-w-4xl mx-auto mb-6">
             <div className="bg-gradient-to-r from-red-50 to-blue-50 p-6 rounded-xl shadow-lg border-2 border-red-200">
               <h3 className="text-xl font-bold text-center text-black mb-4">
