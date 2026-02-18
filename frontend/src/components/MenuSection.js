@@ -87,11 +87,6 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
       </div>
     </div>
   );
-          {item.price.toFixed(2)} €
-        </span>
-      </div>
-    </div>
-  );
 
   return (
     <div className="bg-white py-6 scroll-mt-32" id="menu-content">
