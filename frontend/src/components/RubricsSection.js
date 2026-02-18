@@ -7,54 +7,57 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
   // Si une rubrique est active, on affiche son contenu directement
   if (activeRubric) {
     return (
-      <section className="py-8 bg-primary-bg" id="rubrics">
-        <div className="container mx-auto px-4">
-          {/* Bouton retour */}
-          <div className="mb-6">
+      <section className="bg-primary-bg" id="rubrics">
+        {/* Navigation STICKY qui suit le scroll */}
+        <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-md shadow-lg py-3 px-4">
+          <div className="container mx-auto flex flex-wrap items-center justify-between gap-3">
+            {/* Bouton retour */}
             <button
               onClick={onCloseMenu}
-              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full font-bold hover:bg-gray-800 transition-all text-sm"
             >
-              <X className="w-5 h-5" />
-              Retour aux rubriques
+              <X className="w-4 h-4" />
+              <span className="hidden sm:inline">Retour</span>
             </button>
-          </div>
 
-          {/* Mini navigation entre rubriques */}
-          <div className="flex flex-wrap gap-3 mb-8 justify-center">
-            <button
-              onClick={() => onRubricSelect('menu')}
-              className={`px-6 py-3 rounded-full font-bold transition-all ${
-                activeRubric === 'menu' 
-                  ? 'bg-green-600 text-white shadow-lg scale-105' 
-                  : 'bg-white text-gray-700 hover:bg-green-100 border-2 border-gray-200'
-              }`}
-            >
-              🍕 Mezzora Menu
-            </button>
-            <button
-              onClick={() => onRubricSelect('offres-midi')}
-              className={`px-6 py-3 rounded-full font-bold transition-all ${
-                activeRubric === 'offres-midi' 
-                  ? 'bg-yellow-500 text-black shadow-lg scale-105' 
-                  : 'bg-white text-gray-700 hover:bg-yellow-100 border-2 border-gray-200'
-              }`}
-            >
-              ⏰ Offres Midi
-            </button>
-            <button
-              onClick={() => onRubricSelect('click-collect')}
-              className={`px-6 py-3 rounded-full font-bold transition-all ${
-                activeRubric === 'click-collect' 
-                  ? 'bg-red-600 text-white shadow-lg scale-105' 
-                  : 'bg-white text-gray-700 hover:bg-red-100 border-2 border-gray-200'
-              }`}
-            >
-              🛒 Click & Collect
-            </button>
+            {/* Mini navigation entre rubriques - STICKY */}
+            <div className="flex flex-wrap gap-2 justify-center flex-1">
+              <button
+                onClick={() => onRubricSelect('menu')}
+                className={`px-4 py-2 rounded-full font-bold transition-all text-sm ${
+                  activeRubric === 'menu' 
+                    ? 'bg-green-600 text-white shadow-lg' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-green-100'
+                }`}
+              >
+                🍕 Menu
+              </button>
+              <button
+                onClick={() => onRubricSelect('offres-midi')}
+                className={`px-4 py-2 rounded-full font-bold transition-all text-sm ${
+                  activeRubric === 'offres-midi' 
+                    ? 'bg-yellow-500 text-black shadow-lg' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
+                }`}
+              >
+                ⏰ Midi
+              </button>
+              <button
+                onClick={() => onRubricSelect('click-collect')}
+                className={`px-4 py-2 rounded-full font-bold transition-all text-sm ${
+                  activeRubric === 'click-collect' 
+                    ? 'bg-red-600 text-white shadow-lg' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-red-100'
+                }`}
+              >
+                🛒 Collect
+              </button>
+            </div>
           </div>
+        </div>
 
-          {/* Contenu de la rubrique sélectionnée - DIRECTEMENT ICI */}
+        {/* Contenu de la rubrique sélectionnée */}
+        <div className="container mx-auto px-4 py-6">
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
             {activeRubric === 'offres-midi' && <FormulesMidi />}
             {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
