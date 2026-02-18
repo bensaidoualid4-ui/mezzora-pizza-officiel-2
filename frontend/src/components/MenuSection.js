@@ -115,8 +115,8 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
   );
 
   return (
-    <section className="py-16 bg-white" id="menu">
-      <div className="container mx-auto px-4">
+    <section className="py-8 bg-white" id="menu">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Active Rubric Indicator */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-100 to-gray-50 px-8 py-4 rounded-full shadow-md">
