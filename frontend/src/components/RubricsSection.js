@@ -64,17 +64,13 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1504674900247-0877df9cc836)',
+                backgroundImage: 'url(https://images.unsplash.com/photo-1604382355076-af4b0eb60143)',
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
             </div>
             
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
-              <div className="absolute top-4 right-4 bg-yellow-500 text-black px-4 py-2 rounded-full text-xs font-bold">
-                8,90€
-              </div>
-              
               <div className="transform transition-transform duration-300 group-hover:translate-y-[-10px]">
                 <div className="bg-white/20 backdrop-blur-md rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
                   <span className="text-4xl">⏰</span>
