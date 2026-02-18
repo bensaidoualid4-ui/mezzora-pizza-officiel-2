@@ -130,16 +130,32 @@ export const desserts = [...dessertsPatisseries, ...dessertsGlaces];
 
 // BOISSONS
 export const boissons = [
-  { id: 'coca-33', name: 'Coca-Cola 33cl', price: 1.6 },
-  { id: 'coca-50', name: 'Coca-Cola 50cl', price: 1.8 },
-  { id: 'coca-15l', name: 'Coca-Cola 1.5L', price: 3.0 },
-  { id: 'coca-2l', name: 'Coca-Cola 2L', price: 3.5 },
-  { id: 'fanta-33', name: 'Fanta 33cl', price: 1.6 },
-  { id: 'sprite-33', name: 'Sprite 33cl', price: 1.6 },
-  { id: 'ice-tea-33', name: 'Ice Tea 33cl', price: 1.6 },
-  { id: 'eau-50', name: 'Eau 50cl', price: 1.0 },
-  { id: 'eau-gaz-50', name: 'Eau Gazeuse 50cl', price: 1.6 },
-  { id: 'perrier-33', name: 'Perrier 33cl', price: 1.6 },
+  // Canettes / Bouteilles 33cl - 1.60€
+  { id: 'dada-cola', name: 'Dada Cola', price: 1.6 },
+  { id: 'dada-cerise', name: 'Dada Cerise', price: 1.6 },
+  { id: 'dada-mangue', name: 'Dada Mangue', price: 1.6 },
+  { id: 'dada-melon', name: 'Dada Melon', price: 1.6 },
+  { id: 'dada-fraise', name: 'Dada Fraise', price: 1.6 },
+  { id: 'dada-peche', name: 'Dada Pêche', price: 1.6 },
+  { id: 'ice-tea-peche', name: 'Ice Tea Pêche', price: 1.6 },
+  { id: 'ice-tea-mangue', name: 'Ice Tea Mangue Passion', price: 1.6 },
+  { id: 'oasis-pomme', name: 'Oasis Pomme Poire', price: 1.6 },
+  { id: 'oasis-cassis', name: 'Oasis Cassis Framboise', price: 1.6 },
+  { id: 'orangina', name: 'Orangina', price: 1.6 },
+  { id: 'schweppes-agrumes', name: 'Schweppes Agrumes', price: 1.6 },
+  { id: 'schweppes-citron', name: 'Schweppes Citron', price: 1.6 },
+  { id: 'cristaline-fraise', name: 'Cristaline Fraise', price: 1.6 },
+  { id: 'cristaline-peche', name: 'Cristaline Pêche', price: 1.6 },
+  { id: 'cristaline-citron', name: 'Cristaline Citron', price: 1.6 },
+  { id: 'capri-sun', name: 'Capri Sun', price: 1.6 },
+  { id: 'eau-gazeuse', name: 'Eau Gazeuse', price: 1.6 },
+  // Eau - 1.00€
+  { id: 'eau', name: 'Eau', price: 1.0 },
+  // Grandes bouteilles
+  { id: 'oasis-tropicale-2l', name: 'Oasis Tropicale 2L', price: 3.5 },
+  { id: 'breizh-cola-1.5l', name: 'Breizh Cola 1.5L', price: 3.0 },
+  { id: 'orangina-1.5l', name: 'Orangina 1.5L', price: 3.0 },
+  { id: 'schweppes-agrumes-1.5l', name: 'Schweppes Agrumes 1.5L', price: 3.0 },
 ];
 
 // FORMULES MIDI
