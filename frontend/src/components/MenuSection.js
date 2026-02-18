@@ -115,103 +115,41 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
   );
 
   return (
-    <section className="py-8 bg-white" id="menu">
+    <section className="py-4 bg-white" id="menu">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Active Rubric Indicator */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-100 to-gray-50 px-8 py-4 rounded-full shadow-md">
-            <span className="text-gray-600 font-semibold">Mode sélectionné :</span>
-            {activeRubric === 'menu' && (
-              <span className="bg-green-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
-                🍕 Mezzora Menu
-              </span>
-            )}
-            {activeRubric === 'click-collect' && (
-              <span className="bg-red-600 text-white px-6 py-2 rounded-full font-bold flex items-center gap-2">
-                <ShoppingCart className="w-4 h-4" /> Click & Collect
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Rubric Description */}
-        <div className="max-w-4xl mx-auto mb-8">
-          {activeRubric === 'menu' && (
-            <div className="bg-green-50 p-6 rounded-xl shadow-md border-2 border-green-200">
-              <p className="text-gray-700 font-semibold text-lg text-center">
-                🍕 Découvrez toutes nos pizzas, pâtes, salades, tex-mex et plus encore
-              </p>
-            </div>
-          )}
-          {activeRubric === 'click-collect' && (
-            <div className="bg-gradient-to-r from-red-50 to-blue-50 p-8 rounded-xl shadow-lg border-2 border-red-200">
-              <h3 className="text-2xl font-bold text-center text-black mb-6">
+        {/* Rubric Description - uniquement pour Click & Collect */}
+        {activeRubric === 'click-collect' && (
+          <div className="max-w-4xl mx-auto mb-6">
+            <div className="bg-gradient-to-r from-red-50 to-blue-50 p-6 rounded-xl shadow-lg border-2 border-red-200">
+              <h3 className="text-xl font-bold text-center text-black mb-4">
                 🎁 OFFRES SPÉCIALES CLICK & COLLECT
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {/* À Emporter */}
-                <div className="bg-white p-6 rounded-xl shadow-md border-2 border-red-400">
-                  <h4 className="text-xl font-bold text-red-600 mb-3 flex items-center gap-2">
-                    🛍️ À EMPORTER
-                  </h4>
-                  <div className="space-y-3">
-                    <div className="bg-red-50 p-4 rounded-lg">
-                      <p className="font-bold text-red-700 text-lg mb-2">
-                        2 Pizzas Achetées = La 3ème OFFERTE !
-                      </p>
-                      <p className="text-xs text-gray-500 italic">
-                        * Sauf Nordic & 1000 & 1 Nuits
-                      </p>
-                    </div>
-                    <div className="bg-green-50 p-3 rounded-lg">
-                      <p className="text-sm font-semibold text-green-700 mb-1">
-                        💰 Offres spéciales :
-                      </p>
-                      <p className="text-sm text-gray-700">• 2 Pizzas Senior → 22,00 €</p>
-                      <p className="text-sm text-gray-700">• 2 Pizzas Méga → 27,00 €</p>
-                    </div>
+                <div className="bg-white p-4 rounded-xl shadow-md border-2 border-red-400">
+                  <h4 className="text-lg font-bold text-red-600 mb-2">🛍️ À EMPORTER</h4>
+                  <div className="bg-red-50 p-3 rounded-lg mb-2">
+                    <p className="font-bold text-red-700 text-sm">2 Pizzas Achetées = La 3ème OFFERTE !</p>
+                    <p className="text-xs text-gray-500 italic">* Sauf Nordic & 1000 & 1 Nuits</p>
                   </div>
+                  <p className="text-sm text-gray-700">• 2 Pizzas Senior → 22,00 €</p>
+                  <p className="text-sm text-gray-700">• 2 Pizzas Méga → 27,00 €</p>
                 </div>
 
                 {/* Livraison */}
-                <div className="bg-white p-6 rounded-xl shadow-md border-2 border-blue-400">
-                  <h4 className="text-xl font-bold text-blue-600 mb-3 flex items-center gap-2">
-                    🚗 LIVRAISON
-                  </h4>
-                  <div className="space-y-3">
-                    <div className="bg-blue-50 p-4 rounded-lg">
-                      <p className="font-bold text-blue-700 text-lg mb-2">
-                        Tarifs Livraison
-                      </p>
-                      <p className="text-xs text-gray-600">
-                        Commandez en ligne et recevez vos pizzas chaudes à domicile
-                      </p>
-                    </div>
-                    <div className="bg-green-50 p-3 rounded-lg">
-                      <p className="text-sm font-semibold text-green-700 mb-1">
-                        💰 Nos tarifs :
-                      </p>
-                      <p className="text-sm text-gray-700">• 2 Pizzas Senior → 28,00 €</p>
-                      <p className="text-sm text-gray-700">• 2 Pizzas Méga → 36,00 €</p>
-                    </div>
-                    <div className="bg-yellow-100 p-3 rounded-lg">
-                      <p className="text-sm text-yellow-800 font-semibold">
-                        🎁 Frais de livraison GRATUITS le soir à partir de 12€
-                      </p>
-                    </div>
+                <div className="bg-white p-4 rounded-xl shadow-md border-2 border-blue-400">
+                  <h4 className="text-lg font-bold text-blue-600 mb-2">🚗 LIVRAISON</h4>
+                  <p className="text-sm text-gray-700">• 2 Pizzas Senior → 28,00 €</p>
+                  <p className="text-sm text-gray-700">• 2 Pizzas Méga → 36,00 €</p>
+                  <div className="bg-yellow-100 p-2 rounded-lg mt-2">
+                    <p className="text-xs text-yellow-800 font-semibold">🎁 Livraison GRATUITE dès 12€ le soir</p>
                   </div>
                 </div>
               </div>
-
-              <div className="bg-yellow-50 p-4 rounded-lg text-center border border-yellow-300">
-                <p className="text-sm text-gray-700">
-                  <strong>🌟 Conseil :</strong> Profitez de notre offre 2+1 pour les pizzas Sénior et Méga !
-                </p>
-              </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         <Tabs defaultValue="pizzas-tomate" className="w-full" onValueChange={() => {
           // Scroll to top of menu section when tab changes
