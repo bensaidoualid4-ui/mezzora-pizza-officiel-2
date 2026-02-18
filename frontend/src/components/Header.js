@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Phone, Menu, X, MapPin } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { Phone, Menu, X, MapPin } from 'lucide-react';
 
 const Header = () => {
-  const { cartItems, toggleCart } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -24,21 +20,17 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-3">
+        <div className="flex items-center justify-between py-2">
           {/* Logo */}
           <div 
-            className="cursor-pointer flex items-center gap-3"
+            className="cursor-pointer flex items-center"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-white text-2xl">🍕</span>
-            </div>
-            <div>
-              <h1 className="text-xl md:text-2xl font-black text-black leading-tight">
-                Mezzora Pizza
-              </h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Pâte fraîche depuis 1997</p>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" 
+              alt="Mezzora Pizza" 
+              className="h-14 md:h-16 w-auto"
+            />
           </div>
 
           {/* Navigation Desktop */}
@@ -65,32 +57,23 @@ const Header = () => {
                 </button>
               )
             ))}
-            <button
-              onClick={toggleCart}
+            <a
+              href="tel:0147494904"
               className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-bold transition-all flex items-center gap-2"
             >
-              Commander
-              {totalItems > 0 && (
-                <span className="bg-white text-green-600 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </button>
+              <Phone className="w-4 h-4" />
+              Appeler
+            </a>
           </nav>
 
-          {/* Mobile: Cart + Menu burger */}
+          {/* Mobile: Menu burger */}
           <div className="flex items-center gap-3 lg:hidden">
-            <button
-              onClick={toggleCart}
-              className="relative bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition-all"
+            <a
+              href="tel:0147494904"
+              className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition-all"
             >
-              <ShoppingCart className="w-5 h-5" />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </button>
+              <Phone className="w-5 h-5" />
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-gray-700"
