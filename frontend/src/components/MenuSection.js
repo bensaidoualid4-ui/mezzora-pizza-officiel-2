@@ -304,9 +304,8 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
               ))}
             </div>
           </TabsContent>
-        </Tabs>
       </div>
-    </section>
+    </Tabs>
   );
 };
 
