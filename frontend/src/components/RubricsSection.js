@@ -228,18 +228,18 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
               <div className="transform transition-transform duration-300 group-hover:translate-y-[-10px]">
                 <div className="bg-white/20 backdrop-blur-md rounded-full w-16 h-16 flex items-center justify-center mb-4 mx-auto">
                   <span className="text-4xl">
-                    <ShoppingCart className="w-8 h-8" />
+                    <Gift className="w-8 h-8" />
                   </span>
                 </div>
                 <h3 className="text-4xl font-black mb-2 text-center" style={{ fontFamily: 'Impact, sans-serif' }}>
-                  Click &<br />COLLECT
+                  Nos<br />OFFRES
                 </h3>
                 <p className="text-sm text-center opacity-90 mb-4">
                   À emporter ou en livraison - Offres spéciales
                 </p>
                 <div className="flex justify-center">
                   <span className="bg-red-600 text-white px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2">
-                    Commander <ArrowRight className="w-4 h-4" />
+                    Découvrir <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
