@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   pizzasBaseTomate, 
   pizzasBaseCreme, 
@@ -13,43 +13,11 @@ import {
   dessertsGlaces,
   boissons 
 } from '../data/menuData';
-import { useCart } from '../context/CartContext';
-import { ShoppingCart, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }) => {
-  const { addToCart } = useCart();
-  const [selectedSizes, setSelectedSizes] = useState({});
-
-  const handleSizeSelect = (itemId, size) => {
-    setSelectedSizes(prev => ({ ...prev, [itemId]: size }));
-  };
-
-  const handleAddPizzaToCart = (pizza) => {
-    const size = selectedSizes[pizza.id] || 'junior';
-    addToCart({
-      id: pizza.id,
-      name: pizza.name,
-      price: pizza[size],
-      size: size,
-      category: 'pizza',
-      ingredients: pizza.ingredients,
-    });
-  };
-
-  const handleAddItemToCart = (item, category) => {
-    addToCart({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      category: category,
-      size: 'standard',
-      description: item.description || item.ingredients,
-    });
-  };
 
   const PizzaCard = ({ pizza }) => {
-    const selectedSize = selectedSizes[pizza.id] || 'junior';
-
     return (
       <div className="menu-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500 relative">
         {pizza.premium && (
@@ -61,54 +29,37 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
         <h3 className="text-xl font-bold text-black mb-2">{pizza.name}</h3>
         <p className="text-gray-600 text-sm mb-4 leading-relaxed">{pizza.ingredients}</p>
 
-        <div className="mb-4">
-          <p className="text-xs text-gray-500 mb-2 font-semibold">Choisir la taille :</p>
-          <div className="flex gap-2">
-            {['junior', 'senior', 'mega'].map((size) => (
-              <button
-                key={size}
-                onClick={() => handleSizeSelect(pizza.id, size)}
-                className={`flex-1 py-2 px-3 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                  selectedSize === size
-                    ? 'bg-black text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {size.charAt(0).toUpperCase() + size.slice(1)}
-                <br />
-                <span className="text-xs">{pizza[size].toFixed(2)}€</span>
-              </button>
-            ))}
+        <div className="border-t pt-4">
+          <p className="text-xs text-gray-500 mb-2 font-semibold">Nos tailles :</p>
+          <div className="flex gap-3 justify-between">
+            <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
+              <p className="text-xs text-gray-500">Junior</p>
+              <p className="font-bold text-green-600">{pizza.junior.toFixed(2)}€</p>
+            </div>
+            <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
+              <p className="text-xs text-gray-500">Senior</p>
+              <p className="font-bold text-green-600">{pizza.senior.toFixed(2)}€</p>
+            </div>
+            <div className="text-center flex-1 bg-gray-50 rounded-lg py-2">
+              <p className="text-xs text-gray-500">Méga</p>
+              <p className="font-bold text-green-600">{pizza.mega.toFixed(2)}€</p>
+            </div>
           </div>
         </div>
-
-        <button
-          onClick={() => handleAddPizzaToCart(pizza)}
-          className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 font-semibold"
-        >
-          <ShoppingCart className="w-5 h-5" />
-        </button>
       </div>
     );
   };
 
-  const SimpleItemCard = ({ item, category }) => (
+  const SimpleItemCard = ({ item }) => (
     <div className="menu-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500">
       <h3 className="text-xl font-bold text-black mb-2">{item.name}</h3>
       <p className="text-gray-600 text-sm mb-4 leading-relaxed">
         {item.description || item.ingredients}
       </p>
-
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-end">
         <span className="text-2xl font-bold text-green-600">
           {item.price.toFixed(2)} €
         </span>
-        <button
-          onClick={() => handleAddItemToCart(item, category)}
-          className="bg-black hover:bg-gray-800 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center"
-        >
-          <ShoppingCart className="w-5 h-5" />
-        </button>
       </div>
     </div>
   );
