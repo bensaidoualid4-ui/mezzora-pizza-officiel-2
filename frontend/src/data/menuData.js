@@ -41,8 +41,6 @@ export const pizzasBaseBBQ = [
   { id: 'supreme', name: 'Suprême', ingredients: 'Mozzarella, poulet, viande hachée, oignons', junior: 9.0, senior: 16.0, mega: 22.0, image: '/images/menu/Suprême.jpeg' },
   { id: 'country', name: 'Country', ingredients: 'Mozzarella, poulet, pommes de terre', junior: 9.0, senior: 16.0, mega: 22.0, image: '/images/menu/Country.jpeg' },
   { id: 'samourai', name: 'Samouraï', ingredients: 'Mozzarella, poulet, sauce samouraï', junior: 9.0, senior: 16.0, mega: 22.0, image: '/images/menu/Samourai.jpeg' },
-  { id: 'switch', name: 'Switch', ingredients: 'Mozzarella, poulet, oignons croustillants', junior: 9.0, senior: 16.0, mega: 22.0, image: '/images/menu/switch.jpeg' },
-  { id: 'potaetos', name: 'Potaetos', ingredients: 'Mozzarella, poulet, pommes de terre, sauce BBQ', junior: 9.0, senior: 16.0, mega: 22.0, image: '/images/menu/Potaetos.jpeg' },
 ];
 
 // CALZONES (Pizzas pliées)
