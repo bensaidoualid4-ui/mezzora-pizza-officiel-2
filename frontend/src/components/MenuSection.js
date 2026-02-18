@@ -116,24 +116,22 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
   );
 
   return (
-    <section className="bg-white" id="menu">
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full bg-white" id="menu">
       {/* Onglets de catégories - STICKY sous la barre principale */}
       <div className="sticky top-[108px] z-30 bg-white shadow-md py-3 px-4 border-b">
         <div className="overflow-x-auto scrollbar-hide">
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="inline-flex gap-2 bg-transparent p-0 min-w-max">
-              <TabsTrigger value="pizzas-tomate" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-red-600 data-[state=active]:text-white transition-all text-sm">🍅 Tomate</TabsTrigger>
-              <TabsTrigger value="pizzas-creme" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-yellow-500 data-[state=active]:text-black transition-all text-sm">🧈 Crème</TabsTrigger>
-              <TabsTrigger value="pizzas-bbq" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-orange-600 data-[state=active]:text-white transition-all text-sm">🔥 BBQ</TabsTrigger>
-              <TabsTrigger value="calzones" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all text-sm">🥟 Calzones</TabsTrigger>
-              <TabsTrigger value="pates" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all text-sm">🍝 Pâtes</TabsTrigger>
-              <TabsTrigger value="paninis" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-amber-600 data-[state=active]:text-white transition-all text-sm">🥖 Paninis</TabsTrigger>
-              <TabsTrigger value="texmex" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-red-700 data-[state=active]:text-white transition-all text-sm">🌶️ Tex-Mex</TabsTrigger>
-              <TabsTrigger value="salades" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-green-500 data-[state=active]:text-white transition-all text-sm">🥗 Salades</TabsTrigger>
-              <TabsTrigger value="desserts" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-pink-500 data-[state=active]:text-white transition-all text-sm">🍰 Desserts</TabsTrigger>
-              <TabsTrigger value="boissons" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-blue-500 data-[state=active]:text-white transition-all text-sm">🥤 Boissons</TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <TabsList className="inline-flex gap-2 bg-transparent p-0 min-w-max">
+            <TabsTrigger value="pizzas-tomate" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-red-600 data-[state=active]:text-white transition-all text-sm">🍅 Tomate</TabsTrigger>
+            <TabsTrigger value="pizzas-creme" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-yellow-500 data-[state=active]:text-black transition-all text-sm">🧈 Crème</TabsTrigger>
+            <TabsTrigger value="pizzas-bbq" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-orange-600 data-[state=active]:text-white transition-all text-sm">🔥 BBQ</TabsTrigger>
+            <TabsTrigger value="calzones" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-purple-600 data-[state=active]:text-white transition-all text-sm">🥟 Calzones</TabsTrigger>
+            <TabsTrigger value="pates" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-green-600 data-[state=active]:text-white transition-all text-sm">🍝 Pâtes</TabsTrigger>
+            <TabsTrigger value="paninis" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-amber-600 data-[state=active]:text-white transition-all text-sm">🥖 Paninis</TabsTrigger>
+            <TabsTrigger value="texmex" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-red-700 data-[state=active]:text-white transition-all text-sm">🌶️ Tex-Mex</TabsTrigger>
+            <TabsTrigger value="salades" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-green-500 data-[state=active]:text-white transition-all text-sm">🥗 Salades</TabsTrigger>
+            <TabsTrigger value="desserts" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-pink-500 data-[state=active]:text-white transition-all text-sm">🍰 Desserts</TabsTrigger>
+            <TabsTrigger value="boissons" className="px-4 py-2 font-semibold text-gray-700 rounded-full whitespace-nowrap bg-gray-100 data-[state=active]:bg-blue-500 data-[state=active]:text-white transition-all text-sm">🥤 Boissons</TabsTrigger>
+          </TabsList>
         </div>
       </div>
 
@@ -170,9 +168,6 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
             </div>
           </div>
         )}
-
-        {/* Contenu des onglets */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
 
           <TabsContent value="pizzas-tomate">
             <div className="mb-4">
