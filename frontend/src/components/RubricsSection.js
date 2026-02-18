@@ -60,7 +60,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
             </div>
           </div>
 
-          {/* Ligne 2: Onglets catégories (uniquement pour menu et click-collect) */}
+          {/* Ligne 2: Onglets catégories (uniquement pour menu et offres) */}
           {showCategoryTabs && (
             <div className="py-2 px-2 overflow-x-auto scrollbar-hide">
               <div className="inline-flex gap-2 min-w-max">
@@ -109,7 +109,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
               </div>
             </div>
           )}
-          {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
+          {(activeRubric === 'menu' || activeRubric === 'offres') && (
             <MenuSection activeRubric={activeRubric} activeCategory={activeCategory} />
           )}
         </div>
@@ -207,7 +207,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
 
           {/* Click & COLLECT */}
           <button
-            onClick={() => onRubricSelect('click-collect')}
+            onClick={() => onRubricSelect('offres')}
             className="relative overflow-hidden rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-105 group"
             style={{ height: '450px' }}
           >
