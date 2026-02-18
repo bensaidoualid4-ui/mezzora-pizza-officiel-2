@@ -17,10 +17,9 @@ import {
 import { useCart } from '../context/CartContext';
 import { ShoppingCart, Award } from 'lucide-react';
 
-const MenuSection = ({ activeRubric = 'menu' }) => {
+const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }) => {
   const { addToCart } = useCart();
   const [selectedSizes, setSelectedSizes] = useState({});
-  const [activeTab, setActiveTab] = useState('pizzas-tomate');
 
   const handleSizeSelect = (itemId, size) => {
     setSelectedSizes(prev => ({ ...prev, [itemId]: size }));
