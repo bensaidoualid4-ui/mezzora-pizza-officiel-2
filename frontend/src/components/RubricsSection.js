@@ -1,59 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingCart, ArrowRight, X } from 'lucide-react';
 import MenuSection from './MenuSection';
 import FormulesMidi from './FormulesMidi';
+import { Tabs, TabsList, TabsTrigger } from './ui/tabs';
 
 const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
+  const [activeCategory, setActiveCategory] = useState('pizzas-tomate');
+
   // Si une rubrique est active, on affiche son contenu directement
   if (activeRubric) {
+    const showCategoryTabs = activeRubric === 'menu' || activeRubric === 'click-collect';
+    
     return (
       <section className="bg-primary-bg min-h-screen" id="rubrics">
-        {/* Navigation STICKY qui suit le scroll */}
-        <div className="sticky top-16 z-40 bg-white/95 backdrop-blur-md shadow-lg py-3 px-4">
-          <div className="container mx-auto flex flex-wrap items-center justify-between gap-3">
-            {/* Bouton retour */}
-            <button
-              onClick={onCloseMenu}
-              className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full font-bold hover:bg-gray-800 transition-all text-sm"
-            >
-              <X className="w-4 h-4" />
-              <span className="hidden sm:inline">Retour</span>
-            </button>
+        {/* BARRE STICKY UNIQUE avec navigation + catégories */}
+        <div className="sticky top-16 z-40 bg-white shadow-lg">
+          {/* Ligne 1: Navigation principale */}
+          <div className="py-2 px-4 border-b">
+            <div className="container mx-auto flex flex-wrap items-center justify-between gap-2">
+              <button
+                onClick={onCloseMenu}
+                className="inline-flex items-center gap-1 bg-black text-white px-3 py-1.5 rounded-full font-bold hover:bg-gray-800 transition-all text-xs"
+              >
+                <X className="w-3 h-3" />
+                <span className="hidden sm:inline">Retour</span>
+              </button>
 
-            {/* Mini navigation entre rubriques - STICKY */}
-            <div className="flex flex-wrap gap-2 justify-center flex-1">
-              <button
-                onClick={() => onRubricSelect('menu')}
-                className={`px-4 py-2 rounded-full font-bold transition-all text-sm ${
-                  activeRubric === 'menu' 
-                    ? 'bg-green-600 text-white shadow-lg' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-green-100'
-                }`}
-              >
-                🍕 Menu
-              </button>
-              <button
-                onClick={() => onRubricSelect('offres-midi')}
-                className={`px-4 py-2 rounded-full font-bold transition-all text-sm ${
-                  activeRubric === 'offres-midi' 
-                    ? 'bg-yellow-500 text-black shadow-lg' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
-                }`}
-              >
-                ⏰ Midi
-              </button>
-              <button
-                onClick={() => onRubricSelect('click-collect')}
-                className={`px-4 py-2 rounded-full font-bold transition-all text-sm ${
-                  activeRubric === 'click-collect' 
-                    ? 'bg-red-600 text-white shadow-lg' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-red-100'
-                }`}
-              >
-                🛒 Collect
-              </button>
+              <div className="flex flex-wrap gap-2 justify-center flex-1">
+                <button
+                  onClick={() => onRubricSelect('menu')}
+                  className={`px-3 py-1.5 rounded-full font-bold transition-all text-xs ${
+                    activeRubric === 'menu' 
+                      ? 'bg-green-600 text-white shadow-lg' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-green-100'
+                  }`}
+                >
+                  🍕 Menu
+                </button>
+                <button
+                  onClick={() => onRubricSelect('offres-midi')}
+                  className={`px-3 py-1.5 rounded-full font-bold transition-all text-xs ${
+                    activeRubric === 'offres-midi' 
+                      ? 'bg-yellow-500 text-black shadow-lg' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'
+                  }`}
+                >
+                  ⏰ Midi
+                </button>
+                <button
+                  onClick={() => onRubricSelect('click-collect')}
+                  className={`px-3 py-1.5 rounded-full font-bold transition-all text-xs ${
+                    activeRubric === 'click-collect' 
+                      ? 'bg-red-600 text-white shadow-lg' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-red-100'
+                  }`}
+                >
+                  🛒 Collect
+                </button>
+              </div>
             </div>
           </div>
+
+          {/* Ligne 2: Onglets catégories (uniquement pour menu et click-collect) */}
+          {showCategoryTabs && (
+            <div className="py-2 px-2 overflow-x-auto scrollbar-hide">
+              <div className="inline-flex gap-2 min-w-max">
+                {[
+                  { id: 'pizzas-tomate', label: '🍅 Tomate', color: 'bg-red-600' },
+                  { id: 'pizzas-creme', label: '🧈 Crème', color: 'bg-yellow-500 text-black' },
+                  { id: 'pizzas-bbq', label: '🔥 BBQ', color: 'bg-orange-600' },
+                  { id: 'calzones', label: '🥟 Calzones', color: 'bg-purple-600' },
+                  { id: 'pates', label: '🍝 Pâtes', color: 'bg-green-600' },
+                  { id: 'paninis', label: '🥖 Paninis', color: 'bg-amber-600' },
+                  { id: 'texmex', label: '🌶️ Tex-Mex', color: 'bg-red-700' },
+                  { id: 'salades', label: '🥗 Salades', color: 'bg-green-500' },
+                  { id: 'desserts', label: '🍰 Desserts', color: 'bg-pink-500' },
+                  { id: 'boissons', label: '🥤 Boissons', color: 'bg-blue-500' },
+                ].map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`px-3 py-1.5 rounded-full font-semibold whitespace-nowrap transition-all text-xs ${
+                      activeCategory === cat.id 
+                        ? `${cat.color} text-white shadow-md` 
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Contenu de la rubrique sélectionnée */}
@@ -66,7 +104,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
             </div>
           )}
           {(activeRubric === 'menu' || activeRubric === 'click-collect') && (
-            <MenuSection activeRubric={activeRubric} />
+            <MenuSection activeRubric={activeRubric} activeCategory={activeCategory} />
           )}
         </div>
       </section>
