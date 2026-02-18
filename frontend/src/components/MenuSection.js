@@ -164,7 +164,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {pates.map((item) => (
-                <SimpleItemCard key={item.id} item={item} category="pates" />
+                <SimpleItemCard key={item.id} item={item} />
               ))}
             </div>
           </div>
