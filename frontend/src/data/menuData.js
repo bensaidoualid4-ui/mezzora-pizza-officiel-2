@@ -76,12 +76,12 @@ export const texMex = [
 
 // SALADES
 export const salades = [
-  { id: 'chef', name: 'Salade Chef', description: 'Salade verte, tomates, thon, maïs, artichauts, œuf', price: 6.5 },
+  { id: 'chef', name: 'Salade Chef', description: 'Salade verte, tomates, thon, maïs, artichauts, œuf', price: 6.5, image: '/images/menu/salade du chef.jpeg' },
   { id: 'nicoise', name: 'Salade Niçoise', description: 'Salade verte, tomates, thon, œuf, pommes de terre', price: 6.5 },
   { id: 'norvegienne', name: 'Salade Norvégienne', description: 'Salade verte, tomates, saumon, crème fraîche', price: 6.5 },
   { id: 'fromagere', name: 'Salade Fromagère', description: 'Salade verte, tomates, chèvre, brie, mozzarella', price: 6.5 },
   { id: 'italienne', name: 'Salade Italienne', description: 'Salade verte, tomates, poivrons, mozzarella', price: 6.5 },
-  { id: 'chevre', name: 'Salade Chèvre', description: 'Salade verte, tomates, chèvre chaud sur toast', price: 6.5 },
+  { id: 'chevre', name: 'Salade Chèvre', description: 'Salade verte, tomates, chèvre chaud sur toast', price: 6.5, image: '/images/menu/salade chêvre.jpeg' },
 ];
 
 // PANINIS
