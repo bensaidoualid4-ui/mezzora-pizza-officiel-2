@@ -219,18 +219,18 @@ const MenuSection = ({ activeRubric = 'menu' }) => {
             document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 100);
         }}>
-          <div className="sticky top-20 z-20 bg-white shadow-md py-4 mb-8">
-            <TabsList className="flex flex-wrap justify-center gap-2 bg-transparent">
-              <TabsTrigger value="pizzas-tomate" className="px-6 py-3 data-[state=active]:bg-red-600 data-[state=active]:text-white">🍅 Base Tomate</TabsTrigger>
-              <TabsTrigger value="pizzas-creme" className="px-6 py-3 data-[state=active]:bg-yellow-500 data-[state=active]:text-black">🧈 Base Crème</TabsTrigger>
-              <TabsTrigger value="pizzas-bbq" className="px-6 py-3 data-[state=active]:bg-orange-600 data-[state=active]:text-white">🔥 Base BBQ</TabsTrigger>
-              <TabsTrigger value="calzones" className="px-6 py-3 data-[state=active]:bg-purple-600 data-[state=active]:text-white">🥟 Calzones</TabsTrigger>
-              <TabsTrigger value="pates" className="px-6 py-3 data-[state=active]:bg-green-600 data-[state=active]:text-white">🍝 Pâtes</TabsTrigger>
-              <TabsTrigger value="paninis" className="px-6 py-3 data-[state=active]:bg-amber-600 data-[state=active]:text-white">🥖 Paninis</TabsTrigger>
-              <TabsTrigger value="texmex" className="px-6 py-3 data-[state=active]:bg-red-700 data-[state=active]:text-white">🌶️ Tex-Mex</TabsTrigger>
-              <TabsTrigger value="salades" className="px-6 py-3 data-[state=active]:bg-green-500 data-[state=active]:text-white">🥗 Salades</TabsTrigger>
-              <TabsTrigger value="desserts" className="px-6 py-3 data-[state=active]:bg-pink-500 data-[state=active]:text-white">🍰 Desserts</TabsTrigger>
-              <TabsTrigger value="boissons" className="px-6 py-3 data-[state=active]:bg-blue-500 data-[state=active]:text-white">🥤 Boissons</TabsTrigger>
+          <div className="sticky top-20 z-20 bg-white shadow-lg py-6 mb-8 border-b-4 border-primary-bg">
+            <TabsList className="flex flex-wrap justify-center gap-3 bg-white px-4">
+              <TabsTrigger value="pizzas-tomate" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:border-red-600 rounded-lg transition-all">🍅 Base Tomate</TabsTrigger>
+              <TabsTrigger value="pizzas-creme" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-yellow-500 data-[state=active]:text-black data-[state=active]:border-yellow-500 rounded-lg transition-all">🧈 Base Crème</TabsTrigger>
+              <TabsTrigger value="pizzas-bbq" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-orange-600 data-[state=active]:text-white data-[state=active]:border-orange-600 rounded-lg transition-all">🔥 Base BBQ</TabsTrigger>
+              <TabsTrigger value="calzones" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-purple-600 data-[state=active]:text-white data-[state=active]:border-purple-600 rounded-lg transition-all">🥟 Calzones</TabsTrigger>
+              <TabsTrigger value="pates" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-green-600 data-[state=active]:text-white data-[state=active]:border-green-600 rounded-lg transition-all">🍝 Pâtes</TabsTrigger>
+              <TabsTrigger value="paninis" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-amber-600 data-[state=active]:text-white data-[state=active]:border-amber-600 rounded-lg transition-all">🥖 Paninis</TabsTrigger>
+              <TabsTrigger value="texmex" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-red-700 data-[state=active]:text-white data-[state=active]:border-red-700 rounded-lg transition-all">🌶️ Tex-Mex</TabsTrigger>
+              <TabsTrigger value="salades" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-green-500 data-[state=active]:text-white data-[state=active]:border-green-500 rounded-lg transition-all">🥗 Salades</TabsTrigger>
+              <TabsTrigger value="desserts" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-pink-500 data-[state=active]:text-white data-[state=active]:border-pink-500 rounded-lg transition-all">🍰 Desserts</TabsTrigger>
+              <TabsTrigger value="boissons" className="px-6 py-3 font-bold bg-white border-2 border-gray-300 data-[state=active]:bg-blue-500 data-[state=active]:text-white data-[state=active]:border-blue-500 rounded-lg transition-all">🥤 Boissons</TabsTrigger>
             </TabsList>
           </div>
 
