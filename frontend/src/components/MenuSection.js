@@ -177,7 +177,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
               <p className="text-gray-600 mb-4">Nos paninis traditionnels</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {paninisClassiques.map((item) => (
-                  <SimpleItemCard key={item.id} item={item} category="paninis" />
+                  <SimpleItemCard key={item.id} item={item} />
                 ))}
               </div>
 
@@ -185,7 +185,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
               <p className="text-gray-600 mb-4">Nos paninis spéciaux avec garnitures premium</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paninisGourmands.map((item) => (
-                  <SimpleItemCard key={item.id} item={item} category="paninis" />
+                  <SimpleItemCard key={item.id} item={item} />
                 ))}
               </div>
             </div>
@@ -200,7 +200,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {texMex.map((item) => (
-                <SimpleItemCard key={item.id} item={item} category="texmex" />
+                <SimpleItemCard key={item.id} item={item} />
               ))}
             </div>
           </div>
@@ -214,7 +214,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {salades.map((item) => (
-                <SimpleItemCard key={item.id} item={item} category="salades" />
+                <SimpleItemCard key={item.id} item={item} />
               ))}
             </div>
           </div>
@@ -227,7 +227,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
               <p className="text-gray-600 mb-4">Nos desserts maison et spécialités sucrées</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {dessertsPatisseries.map((item) => (
-                  <SimpleItemCard key={item.id} item={item} category="desserts" />
+                  <SimpleItemCard key={item.id} item={item} />
                 ))}
               </div>
 
@@ -235,7 +235,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
               <p className="text-gray-600 mb-4">Nos pots de glace premium 465ml</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {dessertsGlaces.map((item) => (
-                  <SimpleItemCard key={item.id} item={item} category="desserts" />
+                  <SimpleItemCard key={item.id} item={item} />
                 ))}
               </div>
             </div>
@@ -250,7 +250,7 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {boissons.map((item) => (
-                <SimpleItemCard key={item.id} item={item} category="boissons" />
+                <SimpleItemCard key={item.id} item={item} />
               ))}
             </div>
           </div>
