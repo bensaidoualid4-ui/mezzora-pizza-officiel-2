@@ -79,7 +79,14 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                 ].map((cat) => (
                   <button
                     key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setActiveCategory(cat.id);
+                      // Scroll vers le haut du contenu menu
+                      document.getElementById('menu-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
                     className={`px-3 py-1.5 rounded-full font-semibold whitespace-nowrap transition-all text-xs ${
                       activeCategory === cat.id 
                         ? `${cat.color} text-white shadow-md` 
