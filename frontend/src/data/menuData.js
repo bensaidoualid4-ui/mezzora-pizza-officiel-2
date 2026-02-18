@@ -45,7 +45,7 @@ export const pizzasBaseBBQ = [
 // CALZONES (Pizzas pliées)
 export const calzones = [
   { id: 'soufflee', name: 'Soufflée', ingredients: 'Tomate, mozzarella, jambon, œuf', junior: 9.0, senior: 15.0, mega: 20.0 },
-  { id: 'spanna', name: 'Spanna', ingredients: 'Tomate, mozzarella, œuf, jambon, chorizo, poivrons', junior: 9.0, senior: 16.0, mega: 22.0 },
+  { id: 'spania', name: 'Spania', ingredients: 'Tomate, mozzarella, œuf, jambon, chorizo, poivrons', junior: 9.0, senior: 16.0, mega: 22.0 },
   { id: '3-fromages', name: '3 Fromages', ingredients: 'Crème fraîche, mozzarella, roquefort, chèvre, champignons', junior: 9.0, senior: 16.0, mega: 22.0 },
 ];
 
