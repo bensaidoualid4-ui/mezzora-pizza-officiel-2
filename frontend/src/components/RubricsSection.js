@@ -64,7 +64,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric }) => {
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1604382355076-af4b0eb60143)',
+                backgroundImage: 'url(https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f)',
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
