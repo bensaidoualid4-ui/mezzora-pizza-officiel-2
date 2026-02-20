@@ -87,9 +87,9 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                       // Scroll vers le haut du contenu menu
                       document.getElementById('menu-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
-                    className={`px-3 py-1.5 rounded-full font-semibold whitespace-nowrap transition-all text-xs ${
+                    className={`px-4 py-2 rounded-full font-semibold whitespace-nowrap transition-all text-sm ${
                       activeCategory === cat.id 
-                        ? `${cat.color} text-white shadow-md` 
+                        ? `${cat.color} text-white shadow-lg scale-105` 
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
