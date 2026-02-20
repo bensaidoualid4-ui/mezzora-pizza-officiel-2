@@ -1,62 +1,30 @@
 import React from 'react';
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToMenu = () => {
-    document.getElementById('rubrics')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="hero-section relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="hero-section relative min-h-[85vh] md:min-h-screen flex items-end justify-center overflow-hidden pb-16 md:pb-24">
       <div 
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: 'url(https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/af439o7l_Gemini_Generated_Image_sgnnrtsgnnrtsgnn.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        {/* Overlay plus léger pour éclaircir l'image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 relative">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-white text-black font-bold text-sm tracking-wider rounded-md mb-4">
-              PÂTE FRAÎCHE
-            </span>
-          </div>
-
-          <h1 className="hero-title text-white mb-6">
-            Mezzora Pizza
-          </h1>
-          
-          <p className="hero-subtitle text-white/90 mb-4 text-xl md:text-2xl">
-            28 ans de passion à Rueil-Malmaison
-          </p>
-
-          <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            La qualité artisanale avec une pâte fraîche préparée chaque jour, des légumes et de la viande frais
-          </p>
-
+        <div className="text-center">
           <a
             href="tel:0147494904"
-            className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 mb-6"
+            className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 shadow-xl"
           >
             <Phone className="w-5 h-5" />
             COMMANDER MAINTENANT
           </a>
-
-          <div className="flex flex-wrap gap-4 md:gap-6 justify-center text-white/90 text-sm">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span className="text-xs md:text-sm">4-6 Av. Président Georges Pompidou</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>Ouvert 7j/7</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
