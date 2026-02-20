@@ -7,16 +7,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="hero-section relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1754799565084-b381bd0b4db7)',
+          backgroundImage: 'url(https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/af439o7l_Gemini_Generated_Image_sgnnrtsgnnrtsgnn.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
       </div>
 
       <div className="container mx-auto px-4 z-10 relative">
@@ -39,18 +39,18 @@ const Hero = () => {
             La qualité artisanale avec une pâte fraîche préparée chaque jour, des légumes et de la viande frais
           </p>
 
-          <button
-            onClick={scrollToMenu}
+          <a
+            href="tel:0147494904"
             className="cta-button bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl inline-flex items-center gap-2 mb-6"
           >
             <Phone className="w-5 h-5" />
             COMMANDER MAINTENANT
-          </button>
+          </a>
 
-          <div className="flex flex-wrap gap-6 justify-center text-white/90 text-sm">
+          <div className="flex flex-wrap gap-4 md:gap-6 justify-center text-white/90 text-sm">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span>4-6 Avenue du Président Georges Pompidou</span>
+              <span className="text-xs md:text-sm">4-6 Av. Président Georges Pompidou</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
