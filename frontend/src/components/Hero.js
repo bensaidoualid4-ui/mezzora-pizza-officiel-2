@@ -5,35 +5,31 @@ const Hero = () => {
   return (
     <section className="hero-section relative overflow-hidden">
       {/* Image Mobile */}
-      <div className="block md:hidden w-full">
+      <div className="block md:hidden w-full relative">
         <img 
           src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/5j1wmrz2_hero-mezzora-mobile.png"
           alt="Mezzora Pizza"
           className="w-full h-auto"
         />
+        {/* Bouton Commander Mobile - en bas de l'image */}
+        <div className="absolute bottom-4 left-0 right-0 z-10 text-center">
+          <a
+            href="tel:0147494904"
+            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-base font-bold inline-flex items-center gap-2 shadow-xl"
+          >
+            <Phone className="w-5 h-5" />
+            COMMANDER
+          </a>
+        </div>
       </div>
 
       {/* Image Desktop */}
-      <div className="hidden md:block w-full">
+      <div className="hidden md:block w-full relative">
         <img 
           src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/o2carodn_Firefly_GeminiFlash_extend%20the%20background%20wood%20texture%20naturally%20on%20the%20sides%20279047.png"
           alt="Mezzora Pizza"
           className="w-full h-auto"
         />
-      </div>
-
-      {/* Bouton Commander - sous l'image avec fond */}
-      <div className="w-full bg-gradient-to-b from-[#d4e5e5] to-white py-6 md:py-8">
-        <div className="text-center">
-          <a
-            href="tel:0147494904"
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 md:px-10 md:py-5 rounded-full text-lg md:text-xl font-bold inline-flex items-center gap-3 shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
-          >
-            <Phone className="w-6 h-6" />
-            COMMANDER MAINTENANT
-          </a>
-          <p className="text-gray-600 mt-3 text-sm">📞 01.47.49.49.04</p>
-        </div>
       </div>
     </section>
   );
