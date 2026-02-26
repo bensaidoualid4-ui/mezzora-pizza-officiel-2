@@ -23,12 +23,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Image Desktop */}
-      <div className="hidden md:block w-full relative">
+      {/* Image Desktop - rogner le bas blanc */}
+      <div className="hidden md:block w-full overflow-hidden" style={{ height: 'calc(100vh - 80px)', maxHeight: '800px' }}>
         <img 
           src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/o2carodn_Firefly_GeminiFlash_extend%20the%20background%20wood%20texture%20naturally%20on%20the%20sides%20279047.png"
           alt="Mezzora Pizza"
-          className="w-full h-auto"
+          className="w-full h-full object-cover object-top"
         />
       </div>
     </section>
