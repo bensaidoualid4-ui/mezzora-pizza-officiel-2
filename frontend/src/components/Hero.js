@@ -5,14 +5,16 @@ const Hero = () => {
   return (
     <section className="hero-section relative overflow-hidden">
       {/* Image Mobile - visible uniquement sur mobile */}
-      <div className="block md:hidden w-full relative" style={{ minHeight: '75vh' }}>
-        <img 
-          src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/5j1wmrz2_hero-mezzora-mobile.png"
-          alt="Mezzora Pizza"
-          className="w-full h-full object-cover absolute inset-0"
-        />
+      <div className="block md:hidden w-full relative bg-[#b8d4d4]" style={{ minHeight: '70vh' }}>
+        <div className="flex justify-center items-center h-full py-4">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/5j1wmrz2_hero-mezzora-mobile.png"
+            alt="Mezzora Pizza"
+            className="w-[92%] h-auto object-contain"
+          />
+        </div>
         {/* Bouton Commander Mobile */}
-        <div className="absolute bottom-8 left-0 right-0 z-10">
+        <div className="absolute bottom-6 left-0 right-0 z-10">
           <div className="container mx-auto px-4 text-center">
             <a
               href="tel:0147494904"
@@ -26,14 +28,14 @@ const Hero = () => {
       </div>
 
       {/* Image Desktop - visible uniquement sur PC */}
-      <div className="hidden md:block w-full relative" style={{ height: '85vh' }}>
+      <div className="hidden md:block w-full relative bg-[#b8d4d4]" style={{ height: '90vh' }}>
         <img 
           src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/bt4or0cs_hero-mezzora.png"
           alt="Mezzora Pizza"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain object-top"
         />
         {/* Bouton Commander Desktop */}
-        <div className="absolute bottom-12 left-0 right-0 z-10">
+        <div className="absolute bottom-16 left-0 right-0 z-10">
           <div className="container mx-auto px-4 text-center">
             <a
               href="tel:0147494904"
