@@ -8,7 +8,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
 
   // Si une rubrique est active, on affiche son contenu directement
   if (activeRubric) {
-    const showCategoryTabs = activeRubric === 'menu' || activeRubric === 'offres';
+    const showCategoryTabs = activeRubric === 'menu';
     
     return (
       <section className="bg-primary-bg min-h-screen" id="rubrics">
@@ -110,7 +110,10 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
               </div>
             </div>
           )}
-          {(activeRubric === 'menu' || activeRubric === 'offres') && (
+          {activeRubric === 'offres' && (
+            <OffresSection />
+          )}
+          {activeRubric === 'menu' && (
             <MenuSection activeRubric={activeRubric} activeCategory={activeCategory} />
           )}
         </div>
