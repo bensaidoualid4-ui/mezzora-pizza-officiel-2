@@ -25,15 +25,15 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Image Desktop */}
+      {/* Image Desktop - nouvelle image horizontale */}
       <div className="hidden md:block w-full relative">
         <img 
-          src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/bt4or0cs_hero-mezzora.png"
+          src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/o2carodn_Firefly_GeminiFlash_extend%20the%20background%20wood%20texture%20naturally%20on%20the%20sides%20279047.png"
           alt="Mezzora Pizza"
           className="w-full h-auto"
         />
         {/* Bouton Commander Desktop */}
-        <div className="absolute bottom-12 left-0 right-0 z-10">
+        <div className="absolute bottom-8 left-0 right-0 z-10">
           <div className="text-center">
             <a
               href="tel:0147494904"
