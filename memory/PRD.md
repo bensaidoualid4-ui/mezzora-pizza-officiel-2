@@ -248,9 +248,9 @@ Créer un site web de commande en ligne pour Mezzora Pizza permettant aux client
 ## 9. Notes Techniques
 
 ### URLs
-- **Frontend:** https://pizza-mezzora.preview.emergentagent.com
-- **Backend:** https://pizza-mezzora.preview.emergentagent.com/api
-- **Admin Dashboard:** https://pizza-mezzora.preview.emergentagent.com/admin
+- **Frontend:** https://mezzora-pizza.preview.emergentagent.com
+- **Backend:** https://mezzora-pizza.preview.emergentagent.com/api
+- **Admin Dashboard:** https://mezzora-pizza.preview.emergentagent.com/admin
 
 ### Environnement Variables
 ```
