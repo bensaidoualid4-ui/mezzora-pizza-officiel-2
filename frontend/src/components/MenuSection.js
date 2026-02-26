@@ -92,38 +92,6 @@ const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }
   return (
     <div className="bg-white py-6 scroll-mt-32" id="menu-content">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Click & Collect description */}
-        {activeRubric === 'offres' && (
-          <div className="max-w-4xl mx-auto mb-6">
-            <div className="bg-gradient-to-r from-red-50 to-blue-50 p-6 rounded-xl shadow-lg border-2 border-red-200">
-              <h3 className="text-xl font-bold text-center text-black mb-4">
-                🎁 OFFRES SPÉCIALES CLICK & COLLECT
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="bg-white p-4 rounded-xl shadow-md border-2 border-red-400">
-                  <h4 className="text-lg font-bold text-red-600 mb-2">🛍️ À EMPORTER</h4>
-                  <div className="bg-red-50 p-3 rounded-lg mb-2">
-                    <p className="font-bold text-red-700 text-sm">2 Pizzas Achetées = La 3ème OFFERTE !</p>
-                    <p className="text-xs text-gray-500 italic">* Sauf Nordic & 1000 & 1 Nuits</p>
-                  </div>
-                  <p className="text-sm text-gray-700">• 2 Pizzas Senior → 22,00 €</p>
-                  <p className="text-sm text-gray-700">• 2 Pizzas Méga → 27,00 €</p>
-                </div>
-
-                <div className="bg-white p-4 rounded-xl shadow-md border-2 border-blue-400">
-                  <h4 className="text-lg font-bold text-blue-600 mb-2">🚗 LIVRAISON</h4>
-                  <p className="text-sm text-gray-700">• 2 Pizzas Senior → 28,00 €</p>
-                  <p className="text-sm text-gray-700">• 2 Pizzas Méga → 36,00 €</p>
-                  <div className="bg-yellow-100 p-2 rounded-lg mt-2">
-                    <p className="text-xs text-yellow-800 font-semibold">🎁 Livraison GRATUITE dès 12€ le soir</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Contenu selon la catégorie active */}
         {activeCategory === 'pizzas-tomate' && (
           <div>
