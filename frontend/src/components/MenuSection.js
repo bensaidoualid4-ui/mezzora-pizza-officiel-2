@@ -16,7 +16,7 @@ import {
 } from '../data/menuData';
 import { Award } from 'lucide-react';
 
-const MenuSection = ({ activeRubric = 'menu', activeCategory = 'pizzas-tomate' }) => {
+const MenuSection = ({ activeCategory = 'pizzas-tomate' }) => {
 
   const PizzaCard = ({ pizza }) => {
     return (

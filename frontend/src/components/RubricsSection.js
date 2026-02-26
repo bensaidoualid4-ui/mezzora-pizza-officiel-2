@@ -115,7 +115,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
             <OffresSection />
           )}
           {activeRubric === 'menu' && (
-            <MenuSection activeRubric={activeRubric} activeCategory={activeCategory} />
+            <MenuSection activeCategory={activeCategory} />
           )}
         </div>
       </section>
