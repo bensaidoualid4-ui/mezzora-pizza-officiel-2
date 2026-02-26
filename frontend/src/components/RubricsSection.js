@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Gift, ArrowRight, X } from 'lucide-react';
 import MenuSection from './MenuSection';
 import FormulesMidi from './FormulesMidi';
+import OffresSection from './OffresSection';
 
 const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
   const [activeCategory, setActiveCategory] = useState('pizzas-tomate');

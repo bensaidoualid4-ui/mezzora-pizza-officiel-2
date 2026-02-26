@@ -1,23 +1,10 @@
 import React from 'react';
 import { formulesMidi } from '../data/menuData';
-import { useCart } from '../context/CartContext';
-import { ShoppingCart, Clock, Award } from 'lucide-react';
+import { Clock, Award } from 'lucide-react';
 
 const FormulesMidi = () => {
-  const { addToCart } = useCart();
-
-  const handleAddToCart = (formule) => {
-    addToCart({
-      id: formule.id,
-      name: formule.name,
-      price: formule.price,
-      category: 'formule',
-      size: 'standard',
-    });
-  };
-
   return (
-    <section className="py-16 bg-white" id="formules">
+    <section className="py-16 bg-white" id="formules" data-testid="formules-midi-section">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-yellow-100 px-4 py-2 rounded-full mb-4">
@@ -36,7 +23,8 @@ const FormulesMidi = () => {
           {formulesMidi.map((formule) => (
             <div
               key={formule.id}
-              className="menu-card bg-card-bg p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-green-500 relative"
+              data-testid={`formule-card-${formule.id}`}
+              className="menu-card bg-card-bg p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-yellow-400 relative"
             >
               {formule.id === 'pizza-sandwich' && (
                 <div className="absolute -top-3 -right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
@@ -59,17 +47,10 @@ const FormulesMidi = () => {
                 )}
               </div>
 
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-end">
                 <span className="text-2xl font-bold text-green-600">
                   {formule.price.toFixed(2)} €
                 </span>
-                <button
-                  onClick={() => handleAddToCart(formule)}
-                  className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 text-sm font-semibold"
-                >
-                  <ShoppingCart className="w-4 h-4" />
-                  Ajouter
-                </button>
               </div>
             </div>
           ))}
