@@ -26,7 +26,7 @@ const Header = ({ onNavigate }) => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="cursor-pointer" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); nav(null); }} data-testid="header-logo">
-            <img src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" alt="Mezzora" className="h-10 md:h-11 w-auto brightness-0 invert" />
+            <img src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" alt="Mezzora" className="h-10 md:h-11 w-auto rounded" />
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -38,7 +38,7 @@ const Header = ({ onNavigate }) => {
             ))}
             <a href="tel:0147494904" data-testid="header-phone-btn"
               className="text-[13px] tracking-[0.15em] uppercase font-light text-[var(--gold)] hover:text-[var(--cream)] transition-colors flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5" /> Réserver
+              <Phone className="w-3.5 h-3.5" /> Commander
             </a>
           </nav>
 
@@ -58,7 +58,7 @@ const Header = ({ onNavigate }) => {
               ))}
               <a href="tel:0147494904"
                 className="text-[var(--gold)] hover:text-[var(--cream)] text-sm tracking-[0.15em] uppercase font-light flex items-center gap-2 mt-2">
-                <Phone className="w-4 h-4" /> 01 47 49 49 04
+                <Phone className="w-4 h-4" /> Commander
               </a>
             </nav>
           </div>
