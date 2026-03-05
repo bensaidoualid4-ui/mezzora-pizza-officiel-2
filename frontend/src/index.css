@@ -5,18 +5,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Mezzora warm palette */
-  --mz-cream: #FEF7ED;
-  --mz-cream-dark: #FDF0DC;
+  /* Mezzora palette — tirée du hero et du logo */
+  --mz-green: #2A5E4A;
+  --mz-green-dark: #1B3F32;
+  --mz-green-deep: #142E24;
+  --mz-teal: #6B9E8A;
+  --mz-teal-light: #E8F0EC;
   --mz-red: #C41E3A;
   --mz-red-dark: #9E1830;
-  --mz-green: #2D6A4F;
-  --mz-green-light: #40916C;
   --mz-gold: #D4A843;
+  --mz-gold-light: #F5E6C4;
+  --mz-cream: #FFFDF8;
   --mz-brown: #3D2C1E;
-  --mz-brown-light: #5C4033;
-  --mz-text: #2B1810;
-  --mz-text-muted: #6B5B50;
+  --mz-text: #1A2E24;
+  --mz-text-muted: #5A7268;
 }
 
 body {
@@ -25,28 +27,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--mz-text);
+  background: var(--mz-cream);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-/* Typography */
-.font-display {
-  font-family: 'Playfair Display', Georgia, serif;
-}
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
 
-/* Warm section backgrounds */
+/* Couleurs utilitaires */
 .bg-warm { background-color: var(--mz-cream); }
-.bg-warm-dark { background-color: var(--mz-cream-dark); }
-.text-mz-red { color: var(--mz-red); }
-.text-mz-green { color: var(--mz-green); }
-.text-mz-brown { color: var(--mz-brown); }
-.text-mz-gold { color: var(--mz-gold); }
-.text-mz-muted { color: var(--mz-text-muted); }
+.bg-warm-dark { background-color: var(--mz-teal-light); }
 .bg-mz-red { background-color: var(--mz-red); }
 .bg-mz-green { background-color: var(--mz-green); }
+.bg-mz-green-deep { background-color: var(--mz-green-deep); }
 .bg-mz-brown { background-color: var(--mz-brown); }
+.text-mz-red { color: var(--mz-red); }
+.text-mz-green { color: var(--mz-green); }
+.text-mz-teal { color: var(--mz-teal); }
+.text-mz-gold { color: var(--mz-gold); }
+.text-mz-brown { color: var(--mz-brown); }
+.text-mz-muted { color: var(--mz-text-muted); }
 
 @layer base {
   :root {
@@ -69,108 +71,49 @@ code {
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
 }
 
 @layer base {
-  [data-debug-wrapper="true"] {
-    display: contents !important;
-  }
-  [data-debug-wrapper="true"] > * {
-    margin-left: inherit;
-    margin-right: inherit;
-    margin-top: inherit;
-    margin-bottom: inherit;
-    padding-left: inherit;
-    padding-right: inherit;
-    padding-top: inherit;
-    padding-bottom: inherit;
-    column-gap: inherit;
-    row-gap: inherit;
-    gap: inherit;
-    border-left-width: inherit;
-    border-right-width: inherit;
-    border-top-width: inherit;
-    border-bottom-width: inherit;
-    border-left-style: inherit;
-    border-right-style: inherit;
-    border-top-style: inherit;
-    border-bottom-style: inherit;
-    border-left-color: inherit;
-    border-right-color: inherit;
-    border-top-color: inherit;
-    border-bottom-color: inherit;
-  }
+  [data-debug-wrapper="true"] { display: contents !important; }
 }
 
-/* Hide scrollbar for horizontal scroll on mobile */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
 
-/* Warm card style */
+/* Cards */
 .warm-card {
   background: white;
-  border: 1px solid #F0E6D8;
-  box-shadow: 0 2px 12px rgba(61, 44, 30, 0.06);
+  border: 1px solid #E8F0EC;
+  box-shadow: 0 2px 12px rgba(42, 94, 74, 0.06);
   transition: all 0.3s ease;
 }
 .warm-card:hover {
-  box-shadow: 0 8px 30px rgba(61, 44, 30, 0.12);
-  border-color: var(--mz-gold);
+  box-shadow: 0 8px 30px rgba(42, 94, 74, 0.12);
+  border-color: var(--mz-teal);
 }
 
-/* Phone CTA pulse */
+/* Green card variant */
+.green-card {
+  background: var(--mz-teal-light);
+  border: 1px solid rgba(42, 94, 74, 0.15);
+  transition: all 0.3s ease;
+}
+.green-card:hover {
+  box-shadow: 0 8px 24px rgba(42, 94, 74, 0.15);
+  border-color: var(--mz-teal);
+}
+
+/* Phone pulse */
 @keyframes pulse-ring {
   0% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.4); }
   70% { box-shadow: 0 0 0 12px rgba(196, 30, 58, 0); }
   100% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0); }
 }
-.phone-pulse {
-  animation: pulse-ring 2s infinite;
-}
+.phone-pulse { animation: pulse-ring 2s infinite; }

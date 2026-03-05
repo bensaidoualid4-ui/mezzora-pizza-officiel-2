@@ -37,21 +37,21 @@ const MenuSection = ({ activeCategory = 'pizzas-tomate' }) => {
             PREMIUM
           </div>
         )}
-        <h3 className="text-lg font-bold text-mz-brown mb-1">{pizza.name}</h3>
+        <h3 className="text-lg font-bold text-mz-text mb-1">{pizza.name}</h3>
         <p className="text-mz-muted text-sm mb-4 leading-relaxed">{pizza.ingredients}</p>
         <div className="border-t border-gray-100 pt-3">
           <div className="flex gap-2 justify-between">
-            <div className="text-center flex-1 bg-warm rounded-lg py-2">
+            <div className="text-center flex-1 bg-mz-teal-light rounded-lg py-2">
               <p className="text-xs text-mz-muted">Junior</p>
-              <p className="font-bold text-mz-red text-sm">{pizza.junior.toFixed(2)}€</p>
+              <p className="font-bold text-mz-green text-sm">{pizza.junior.toFixed(2)}€</p>
             </div>
-            <div className="text-center flex-1 bg-warm rounded-lg py-2">
+            <div className="text-center flex-1 bg-mz-teal-light rounded-lg py-2">
               <p className="text-xs text-mz-muted">Senior</p>
-              <p className="font-bold text-mz-red text-sm">{pizza.senior.toFixed(2)}€</p>
+              <p className="font-bold text-mz-green text-sm">{pizza.senior.toFixed(2)}€</p>
             </div>
-            <div className="text-center flex-1 bg-warm rounded-lg py-2">
+            <div className="text-center flex-1 bg-mz-teal-light rounded-lg py-2">
               <p className="text-xs text-mz-muted">Méga</p>
-              <p className="font-bold text-mz-red text-sm">{pizza.mega.toFixed(2)}€</p>
+              <p className="font-bold text-mz-green text-sm">{pizza.mega.toFixed(2)}€</p>
             </div>
           </div>
         </div>
@@ -72,12 +72,12 @@ const MenuSection = ({ activeCategory = 'pizzas-tomate' }) => {
         </div>
       )}
       <div className="p-5">
-        <h3 className="text-lg font-bold text-mz-brown mb-1">{item.name}</h3>
+        <h3 className="text-lg font-bold text-mz-text mb-1">{item.name}</h3>
         <p className="text-mz-muted text-sm mb-4 leading-relaxed">
           {item.description || item.ingredients}
         </p>
         <div className="flex items-center justify-end">
-          <span className="text-xl font-bold text-mz-red">{item.price.toFixed(2)} €</span>
+          <span className="text-xl font-bold text-mz-green">{item.price.toFixed(2)} €</span>
         </div>
       </div>
     </div>
@@ -85,13 +85,13 @@ const MenuSection = ({ activeCategory = 'pizzas-tomate' }) => {
 
   const SectionHeader = ({ title, subtitle }) => (
     <div className="mb-5">
-      <h3 className="text-xl font-bold text-mz-brown mb-1">{title}</h3>
+      <h3 className="text-xl font-bold text-mz-text mb-1">{title}</h3>
       <p className="text-mz-muted text-sm">{subtitle}</p>
     </div>
   );
 
   return (
-    <div className="bg-warm py-6 scroll-mt-32" id="menu-content" data-testid="menu-content">
+    <div className="bg-white py-6 scroll-mt-32" id="menu-content" data-testid="menu-content">
       <div className="container mx-auto px-4 max-w-7xl">
         {activeCategory === 'pizzas-tomate' && (
           <div>

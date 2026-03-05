@@ -19,11 +19,11 @@ const OffresSection = () => {
         </div>
 
         {/* Main 2+1 banner */}
-        <div className="relative bg-mz-red rounded-2xl p-6 md:p-8 mb-6 text-white overflow-hidden" data-testid="offre-2plus1">
+        <div className="relative bg-mz-green rounded-2xl p-6 md:p-8 mb-6 text-white overflow-hidden" data-testid="offre-2plus1">
           <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
           <div className="relative z-10 text-center">
-            <div className="inline-block bg-yellow-400 text-red-800 px-4 py-1 rounded-full text-xs font-black mb-3 uppercase tracking-wide">
+            <div className="inline-block bg-mz-gold text-green-900 px-4 py-1 rounded-full text-xs font-black mb-3 uppercase tracking-wide">
               Offre vedette
             </div>
             <h3 className="text-2xl md:text-3xl font-black mb-1">2 Pizzas Achetées</h3>

@@ -33,11 +33,11 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
       <section className="py-14 md:py-20 bg-warm-dark" id="rubrics" data-testid="rubrics-section">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <p className="text-mz-red font-semibold text-sm uppercase tracking-widest mb-2">Découvrir</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-mz-brown mb-4">
+            <p className="text-mz-green font-semibold text-sm uppercase tracking-widest mb-2">Découvrir</p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-mz-text mb-4">
               Notre Carte
             </h2>
-            <div className="w-16 h-1 bg-mz-red mx-auto rounded-full mb-4"></div>
+            <div className="w-16 h-1 bg-mz-green mx-auto rounded-full mb-4"></div>
             <p className="text-mz-muted text-base">
               Pizzas artisanales, formules midi et offres spéciales
             </p>
@@ -59,12 +59,12 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                     'bg-green-50 group-hover:bg-green-100'
                   }`}>
                     <Icon className={`w-6 h-6 ${
-                      tab.color === 'red' ? 'text-mz-red' :
+                      tab.color === 'red' ? 'text-mz-green' :
                       tab.color === 'amber' ? 'text-amber-600' :
                       'text-mz-green'
                     }`} />
                   </div>
-                  <h3 className="font-bold text-mz-brown text-lg mb-1">{tab.label}</h3>
+                  <h3 className="font-bold text-mz-text text-lg mb-1">{tab.label}</h3>
                   <p className="text-mz-muted text-xs">
                     {tab.id === 'menu' && 'Pizzas, pâtes, salades et plus'}
                     {tab.id === 'offres-midi' && 'Dès 8,90€ du lundi au vendredi'}
@@ -81,7 +81,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
 
   // Active rubric view with sticky nav
   return (
-    <section className="bg-warm min-h-screen" id="rubrics" data-testid="rubrics-active-section">
+    <section className="bg-white min-h-screen" id="rubrics" data-testid="rubrics-active-section">
       {/* Sticky nav bar */}
       <div className="sticky top-[68px] z-40 bg-white/95 backdrop-blur-md shadow-sm">
         {/* Rubric tabs */}
@@ -104,8 +104,8 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                   data-testid={`tab-${tab.id}`}
                   className={`px-4 py-1.5 rounded-full font-semibold transition-all text-xs whitespace-nowrap ${
                     activeRubric === tab.id
-                      ? 'bg-mz-red text-white shadow-md'
-                      : 'bg-gray-100 text-mz-brown hover:bg-red-50 hover:text-mz-red'
+                      ? 'bg-mz-green text-white shadow-md'
+                      : 'bg-gray-100 text-mz-text hover:bg-green-50 hover:text-mz-green'
                   }`}
                 >
                   {tab.label}
@@ -132,8 +132,8 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                   data-testid={`cat-${cat.id}`}
                   className={`px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition-all text-xs ${
                     activeCategory === cat.id
-                      ? 'bg-mz-brown text-white shadow-md'
-                      : 'bg-gray-100 text-mz-muted hover:bg-gray-200 hover:text-mz-brown'
+                      ? 'bg-mz-green text-white shadow-md'
+                      : 'bg-gray-100 text-mz-muted hover:bg-green-50 hover:text-mz-green'
                   }`}
                 >
                   {cat.label}

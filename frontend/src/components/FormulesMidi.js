@@ -38,7 +38,7 @@ const FormulesMidi = () => {
               <p className="text-xs text-mz-red italic mb-3">{formule.exclusions}</p>
             )}
             <div className="flex items-center justify-end pt-2 border-t border-gray-100">
-              <span className="text-xl font-bold text-mz-red">{formule.price.toFixed(2)} €</span>
+              <span className="text-xl font-bold text-mz-green">{formule.price.toFixed(2)} €</span>
             </div>
           </div>
         ))}
