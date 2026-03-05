@@ -12,7 +12,7 @@ const Hero = () => {
       <img
         src="/images/menu/Mezzora.jpeg"
         alt="Pizza Mezzora artisanale"
-        className="w-full h-full object-cover object-center scale-110"
+        className="w-full h-full object-cover object-center md:scale-110"
         data-testid="hero-img"
       />
 
@@ -23,10 +23,10 @@ const Hero = () => {
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
         <div className="w-12 h-[1px] bg-[var(--gold)] mb-6 opacity-60" />
-        <p className="text-[var(--gold)] text-xs tracking-[0.35em] uppercase font-light mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" data-testid="hero-subtitle">
-          Pizzeria Artisanale &mdash; Rueil-Malmaison
+        <p className="text-[var(--gold)] text-xs sm:text-sm tracking-[0.35em] uppercase font-light mb-4" data-testid="hero-subtitle">
+          <span className="bg-black/50 px-4 py-1.5 backdrop-blur-sm">Pizzeria Artisanale &mdash; Rueil-Malmaison</span>
         </p>
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light italic text-white leading-[0.95] mb-8 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]" data-testid="hero-title">
+        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium italic text-white leading-[0.95] mb-8 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]" data-testid="hero-title">
           Mezzora
         </h1>
         <a

@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="border-t border-white/5 py-12" data-testid="footer">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <img src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" alt="Mezzora" className="h-10 w-auto brightness-0 invert opacity-50" />
+          <img src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" alt="Mezzora" className="h-10 w-auto rounded" />
 
           <div className="flex flex-col md:flex-row items-center gap-6 text-[var(--cream-muted)] text-xs tracking-wider">
             <span className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Rueil-Malmaison</span>
