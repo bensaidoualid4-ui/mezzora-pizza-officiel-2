@@ -22,11 +22,11 @@ const OffresSection = () => (
           <h3 className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-6">À Emporter</h3>
           <div className="space-y-4">
             <div className="flex justify-between border-b border-white/5 pb-4">
-              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Senior</p><p className="text-[var(--cream-muted)] text-xs">+ 1 gratuite</p></div>
+              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Senior</p><p className="text-[var(--gold)] text-sm font-medium">+ 1 gratuite</p></div>
               <span className="text-[var(--gold)] font-serif text-lg">22,00€</span>
             </div>
             <div className="flex justify-between border-b border-white/5 pb-4">
-              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Méga</p><p className="text-[var(--cream-muted)] text-xs">+ 1 gratuite</p></div>
+              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Méga</p><p className="text-[var(--gold)] text-sm font-medium">+ 1 gratuite</p></div>
               <span className="text-[var(--gold)] font-serif text-lg">27,00€</span>
             </div>
           </div>
@@ -36,11 +36,11 @@ const OffresSection = () => (
           <h3 className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-6">Livraison</h3>
           <div className="space-y-4">
             <div className="flex justify-between border-b border-white/5 pb-4">
-              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Senior</p><p className="text-[var(--cream-muted)] text-xs">+ 1 gratuite</p></div>
+              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Senior</p><p className="text-[var(--gold)] text-sm font-medium">+ 1 gratuite</p></div>
               <span className="text-[var(--gold)] font-serif text-lg">28,00€</span>
             </div>
             <div className="flex justify-between border-b border-white/5 pb-4">
-              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Méga</p><p className="text-[var(--cream-muted)] text-xs">+ 1 gratuite</p></div>
+              <div><p className="text-[var(--cream)] text-sm">2 Pizzas Méga</p><p className="text-[var(--gold)] text-sm font-medium">+ 1 gratuite</p></div>
               <span className="text-[var(--gold)] font-serif text-lg">36,00€</span>
             </div>
           </div>

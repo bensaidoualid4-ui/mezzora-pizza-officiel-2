@@ -32,10 +32,10 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
       <section className="py-24 md:py-32 border-t border-white/5" id="rubrics" data-testid="rubrics-section">
         <div className="container mx-auto px-6 max-w-3xl text-center">
           <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Découvrir</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-8">
             Notre Carte
           </h2>
-          <div className="sep mb-12"></div>
+          <div className="sep mb-10"></div>
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             {tabs.map((t) => (

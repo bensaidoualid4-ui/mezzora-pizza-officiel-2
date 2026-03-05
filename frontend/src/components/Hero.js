@@ -7,7 +7,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden" data-testid="hero-section">
+    <section className="relative h-[75vh] md:h-screen overflow-hidden bg-[#0B0B0B]" data-testid="hero-section">
       {/* Full-bleed pizza image */}
       <img
         src="/images/menu/Mezzora.jpeg"
@@ -16,22 +16,22 @@ const Hero = () => {
         data-testid="hero-img"
       />
 
-      {/* Light overlay + gradients */}
-      <div className="absolute inset-0 bg-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-[#0B0B0B]/30" />
+      {/* Overlay — very light on mobile */}
+      <div className="absolute inset-0 bg-black/5 md:bg-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/20 to-transparent md:from-[#0B0B0B] md:via-transparent md:to-[#0B0B0B]/30" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
-        <div className="w-12 h-[1px] bg-[var(--gold)] mb-6 opacity-60" />
-        <p className="text-[var(--gold)] text-xs sm:text-sm tracking-[0.35em] uppercase font-light mb-4" data-testid="hero-subtitle">
-          <span className="bg-black/50 px-4 py-1.5 backdrop-blur-sm">Pizzeria Artisanale &mdash; Rueil-Malmaison</span>
+      <div className="absolute inset-0 flex flex-col items-center justify-end md:justify-center pb-36 md:pb-0 text-center px-6 z-10">
+        <p className="text-[var(--gold)] text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.35em] uppercase font-light mb-3 md:mb-4" data-testid="hero-subtitle">
+          <span className="bg-black/60 px-3 py-1.5 backdrop-blur-sm inline-block">Pizzeria Artisanale</span>
+          <span className="bg-black/60 px-3 py-1.5 backdrop-blur-sm inline-block mt-1 sm:mt-0 sm:ml-1">Rueil-Malmaison</span>
         </p>
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium italic text-white leading-[0.95] mb-8 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]" data-testid="hero-title">
+        <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold italic text-white leading-[0.95] mb-6 md:mb-8 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]" data-testid="hero-title">
           Mezzora
         </h1>
         <a
           href="tel:0147494904"
-          className="bg-[var(--gold)] text-[#0B0B0B] text-sm sm:text-base font-semibold tracking-[0.15em] uppercase px-10 py-4 hover:bg-[#d4b87a] transition-all duration-300 shadow-lg shadow-black/30"
+          className="bg-[var(--gold)] text-[#0B0B0B] text-sm sm:text-base font-bold tracking-[0.15em] uppercase px-10 sm:px-12 py-4 hover:bg-[#d4b87a] transition-all duration-300 shadow-lg shadow-black/40"
           data-testid="hero-cta"
         >
           Commander
