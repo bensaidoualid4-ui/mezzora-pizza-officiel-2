@@ -1,54 +1,38 @@
 import React from 'react';
-import { Flame, Award, Clock } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section className="py-16 md:py-20 bg-white" id="about" data-testid="about-section">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-10">
-          <p className="text-mz-green font-semibold text-sm uppercase tracking-widest mb-2">Depuis 1997</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-mz-text mb-4">
-            Notre Histoire
-          </h2>
-          <div className="w-16 h-1 bg-mz-green mx-auto rounded-full"></div>
-        </div>
+    <section className="py-24 md:py-32 border-t border-white/5" id="about" data-testid="about-section">
+      <div className="container mx-auto px-6 max-w-3xl text-center">
+        <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Depuis 1997</p>
+        <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-6">
+          Notre Histoire
+        </h2>
+        <div className="sep mb-10"></div>
 
-        <p className="text-center text-mz-muted text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-          Depuis plus de <strong className="text-mz-text">28 ans</strong>, Mezzora Pizza régale les habitants de Rueil-Malmaison 
-          avec des pizzas artisanales préparées avec passion. Notre secret ? Une pâte fraîche 
-          pétrie chaque jour, des ingrédients soigneusement sélectionnés et un savoir-faire 
-          transmis de génération en génération.
+        <p className="text-[var(--cream-muted)] text-base md:text-lg leading-[1.8] mb-8">
+          Depuis plus de <em className="text-[var(--cream)] not-italic font-medium">28 ans</em>, Mezzora Pizza régale les habitants 
+          de Rueil-Malmaison avec des pizzas artisanales préparées avec passion. 
+        </p>
+        <p className="text-[var(--cream-muted)] text-base md:text-lg leading-[1.8] mb-12">
+          Notre secret ? Une <em className="text-[var(--cream)] not-italic font-medium">pâte fraîche</em> pétrie chaque jour, 
+          des ingrédients soigneusement sélectionnés et un savoir-faire 
+          transmis de génération en génération. Le goût de l'authentique, tout simplement.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <div className="green-card rounded-2xl p-6 text-center" data-testid="about-card-pate">
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-              <Flame className="w-7 h-7 text-mz-red" />
-            </div>
-            <h3 className="font-bold text-lg text-mz-text mb-2">Pâte Fraîche Maison</h3>
-            <p className="text-mz-muted text-sm leading-relaxed">
-              100% préparée sur place chaque jour. Jamais surgelée, jamais industrielle.
-            </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-12 text-center">
+          <div>
+            <p className="font-serif text-4xl text-[var(--gold)]">28</p>
+            <p className="text-[var(--cream-muted)] text-xs tracking-[0.2em] uppercase mt-1">Ans d'expérience</p>
           </div>
-
-          <div className="green-card rounded-2xl p-6 text-center" data-testid="about-card-ingredients">
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-              <Award className="w-7 h-7 text-mz-green" />
-            </div>
-            <h3 className="font-bold text-lg text-mz-text mb-2">Ingrédients Frais</h3>
-            <p className="text-mz-muted text-sm leading-relaxed">
-              Légumes frais du marché, viandes de qualité, fromages sélectionnés avec soin.
-            </p>
+          <div>
+            <p className="font-serif text-4xl text-[var(--gold)]">100%</p>
+            <p className="text-[var(--cream-muted)] text-xs tracking-[0.2em] uppercase mt-1">Pâte fraîche</p>
           </div>
-
-          <div className="green-card rounded-2xl p-6 text-center" data-testid="about-card-experience">
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-              <Clock className="w-7 h-7 text-mz-gold" />
-            </div>
-            <h3 className="font-bold text-lg text-mz-text mb-2">28 Ans d'Expérience</h3>
-            <p className="text-mz-muted text-sm leading-relaxed">
-              Une institution à Rueil-Malmaison, appréciée par des milliers de clients fidèles.
-            </p>
+          <div>
+            <p className="font-serif text-4xl text-[var(--gold)]">1997</p>
+            <p className="text-[var(--cream-muted)] text-xs tracking-[0.2em] uppercase mt-1">Depuis</p>
           </div>
         </div>
       </div>

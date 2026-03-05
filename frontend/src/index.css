@@ -2,75 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Mezzora palette — tirée du hero et du logo */
-  --mz-green: #2A5E4A;
-  --mz-green-dark: #1B3F32;
-  --mz-green-deep: #142E24;
-  --mz-teal: #6B9E8A;
-  --mz-teal-light: #E8F0EC;
-  --mz-red: #C41E3A;
-  --mz-red-dark: #9E1830;
-  --mz-gold: #D4A843;
-  --mz-gold-light: #F5E6C4;
-  --mz-cream: #FFFDF8;
-  --mz-brown: #3D2C1E;
-  --mz-text: #1A2E24;
-  --mz-text-muted: #5A7268;
+  --bg: #0B0B0B;
+  --bg-card: #141414;
+  --bg-subtle: #1A1A1A;
+  --cream: #F5F0E8;
+  --cream-muted: #A89F91;
+  --gold: #C8A96E;
+  --red: #C41E3A;
+  --green: #4A7C5C;
 }
 
 body {
   margin: 0;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Inter', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--mz-text);
-  background: var(--mz-cream);
+  background: var(--bg);
+  color: var(--cream);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-.font-display { font-family: 'Playfair Display', Georgia, serif; }
-
-/* Couleurs utilitaires */
-.bg-warm { background-color: var(--mz-cream); }
-.bg-warm-dark { background-color: var(--mz-teal-light); }
-.bg-mz-red { background-color: var(--mz-red); }
-.bg-mz-green { background-color: var(--mz-green); }
-.bg-mz-green-deep { background-color: var(--mz-green-deep); }
-.bg-mz-brown { background-color: var(--mz-brown); }
-.text-mz-red { color: var(--mz-red); }
-.text-mz-green { color: var(--mz-green); }
-.text-mz-teal { color: var(--mz-teal); }
-.text-mz-gold { color: var(--mz-gold); }
-.text-mz-brown { color: var(--mz-brown); }
-.text-mz-muted { color: var(--mz-text-muted); }
+.font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --background: 0 0% 4%;
+    --foreground: 40 30% 93%;
+    --card: 0 0% 8%;
+    --card-foreground: 40 30% 93%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 30% 93%;
+    --primary: 0 0% 93%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 40 30% 93%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 40 30% 93%;
+    --destructive: 350 70% 50%;
+    --destructive-foreground: 40 30% 93%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 37 35% 61%;
     --radius: 0.5rem;
   }
 }
@@ -78,42 +53,18 @@ code {
 @layer base {
   * { @apply border-border; }
   body { @apply bg-background text-foreground; }
-}
-
-@layer base {
   [data-debug-wrapper="true"] { display: contents !important; }
 }
 
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
-/* Cards */
-.warm-card {
-  background: white;
-  border: 1px solid #E8F0EC;
-  box-shadow: 0 2px 12px rgba(42, 94, 74, 0.06);
-  transition: all 0.3s ease;
-}
-.warm-card:hover {
-  box-shadow: 0 8px 30px rgba(42, 94, 74, 0.12);
-  border-color: var(--mz-teal);
-}
-
-/* Green card variant */
-.green-card {
-  background: var(--mz-teal-light);
-  border: 1px solid rgba(42, 94, 74, 0.15);
-  transition: all 0.3s ease;
-}
-.green-card:hover {
-  box-shadow: 0 8px 24px rgba(42, 94, 74, 0.15);
-  border-color: var(--mz-teal);
-}
-
-/* Phone pulse */
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(196, 30, 58, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.3); }
+  70% { box-shadow: 0 0 0 10px rgba(196, 30, 58, 0); }
   100% { box-shadow: 0 0 0 0 rgba(196, 30, 58, 0); }
 }
-.phone-pulse { animation: pulse-ring 2s infinite; }
+.phone-pulse { animation: pulse-ring 2.5s infinite; }
+
+/* Elegant separator */
+.sep { width: 60px; height: 1px; background: var(--gold); margin: 0 auto; }

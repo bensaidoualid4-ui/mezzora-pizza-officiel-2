@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, UtensilsCrossed, Clock, Gift } from 'lucide-react';
+import { X } from 'lucide-react';
 import MenuSection from './MenuSection';
 import FormulesMidi from './FormulesMidi';
 import OffresSection from './OffresSection';
@@ -7,13 +7,13 @@ import OffresSection from './OffresSection';
 const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
   const [activeCategory, setActiveCategory] = useState('pizzas-tomate');
 
-  const rubricTabs = [
-    { id: 'menu', label: 'Notre Carte', icon: UtensilsCrossed, color: 'red' },
-    { id: 'offres-midi', label: 'Formules Midi', icon: Clock, color: 'amber' },
-    { id: 'offres', label: 'Offres Spéciales', icon: Gift, color: 'green' },
+  const tabs = [
+    { id: 'menu', label: 'La Carte' },
+    { id: 'offres-midi', label: 'Formules Midi' },
+    { id: 'offres', label: 'Offres' },
   ];
 
-  const categoryTabs = [
+  const categories = [
     { id: 'pizzas-tomate', label: 'Base Tomate' },
     { id: 'pizzas-creme', label: 'Base Crème' },
     { id: 'pizzas-bbq', label: 'Base BBQ' },
@@ -27,136 +27,72 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
     { id: 'boissons', label: 'Boissons' },
   ];
 
-  // Default view: show rubric selection tabs directly (no cards)
   if (!activeRubric) {
     return (
-      <section className="py-14 md:py-20 bg-warm-dark" id="rubrics" data-testid="rubrics-section">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-10">
-            <p className="text-mz-green font-semibold text-sm uppercase tracking-widest mb-2">Découvrir</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-mz-text mb-4">
-              Notre Carte
-            </h2>
-            <div className="w-16 h-1 bg-mz-green mx-auto rounded-full mb-4"></div>
-            <p className="text-mz-muted text-base">
-              Pizzas artisanales, formules midi et offres spéciales
-            </p>
-          </div>
+      <section className="py-24 md:py-32 border-t border-white/5" id="rubrics" data-testid="rubrics-section">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Découvrir</p>
+          <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-6">
+            Notre Carte
+          </h2>
+          <div className="sep mb-12"></div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {rubricTabs.map((tab) => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => onRubricSelect(tab.id)}
-                  data-testid={`rubric-btn-${tab.id}`}
-                  className="warm-card rounded-2xl p-6 text-center group cursor-pointer"
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 transition-colors ${
-                    tab.color === 'red' ? 'bg-red-50 group-hover:bg-red-100' :
-                    tab.color === 'amber' ? 'bg-amber-50 group-hover:bg-amber-100' :
-                    'bg-green-50 group-hover:bg-green-100'
-                  }`}>
-                    <Icon className={`w-6 h-6 ${
-                      tab.color === 'red' ? 'text-mz-green' :
-                      tab.color === 'amber' ? 'text-amber-600' :
-                      'text-mz-green'
-                    }`} />
-                  </div>
-                  <h3 className="font-bold text-mz-text text-lg mb-1">{tab.label}</h3>
-                  <p className="text-mz-muted text-xs">
-                    {tab.id === 'menu' && 'Pizzas, pâtes, salades et plus'}
-                    {tab.id === 'offres-midi' && 'Dès 8,90€ du lundi au vendredi'}
-                    {tab.id === 'offres' && '2 achetées = la 3ème offerte'}
-                  </p>
-                </button>
-              );
-            })}
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            {tabs.map((t) => (
+              <button key={t.id} onClick={() => onRubricSelect(t.id)} data-testid={`rubric-btn-${t.id}`}
+                className="text-[var(--cream-muted)] hover:text-[var(--cream)] text-sm tracking-[0.15em] uppercase font-light transition-colors border-b border-white/10 hover:border-[var(--gold)] pb-2">
+                {t.label}
+              </button>
+            ))}
           </div>
         </div>
       </section>
     );
   }
 
-  // Active rubric view with sticky nav
   return (
-    <section className="bg-white min-h-screen" id="rubrics" data-testid="rubrics-active-section">
-      {/* Sticky nav bar */}
-      <div className="sticky top-[68px] z-40 bg-white/95 backdrop-blur-md shadow-sm">
-        {/* Rubric tabs */}
-        <div className="py-2 px-4 border-b border-gray-100">
-          <div className="container mx-auto flex items-center gap-2">
-            <button
-              onClick={onCloseMenu}
-              data-testid="close-menu-btn"
-              className="flex-shrink-0 inline-flex items-center gap-1 bg-gray-100 hover:bg-gray-200 text-mz-brown px-3 py-1.5 rounded-full font-semibold text-xs transition-colors"
-            >
-              <X className="w-3 h-3" />
-              <span className="hidden sm:inline">Fermer</span>
+    <section className="min-h-screen" id="rubrics" data-testid="rubrics-active-section">
+      {/* Sticky nav */}
+      <div className="sticky top-16 md:top-20 z-40 bg-[#0B0B0B]/95 backdrop-blur-md border-b border-white/5">
+        <div className="container mx-auto px-6 py-3">
+          <div className="flex items-center gap-4">
+            <button onClick={onCloseMenu} data-testid="close-menu-btn"
+              className="text-[var(--cream-muted)] hover:text-[var(--cream)] transition-colors">
+              <X className="w-4 h-4" />
             </button>
 
-            <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">
-              {rubricTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => onRubricSelect(tab.id)}
-                  data-testid={`tab-${tab.id}`}
-                  className={`px-4 py-1.5 rounded-full font-semibold transition-all text-xs whitespace-nowrap ${
-                    activeRubric === tab.id
-                      ? 'bg-mz-green text-white shadow-md'
-                      : 'bg-gray-100 text-mz-text hover:bg-green-50 hover:text-mz-green'
-                  }`}
-                >
-                  {tab.label}
+            <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+              {tabs.map((t) => (
+                <button key={t.id} onClick={() => onRubricSelect(t.id)} data-testid={`tab-${t.id}`}
+                  className={`text-xs tracking-[0.15em] uppercase font-light whitespace-nowrap transition-colors pb-0.5 ${
+                    activeRubric === t.id ? 'text-[var(--gold)] border-b border-[var(--gold)]' : 'text-[var(--cream-muted)] hover:text-[var(--cream)]'
+                  }`}>
+                  {t.label}
                 </button>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Category tabs (menu only) */}
-        {activeRubric === 'menu' && (
-          <div className="py-2 px-2 overflow-x-auto scrollbar-hide border-b border-gray-50">
-            <div className="inline-flex gap-1.5 min-w-max px-2">
-              {categoryTabs.map((cat) => (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setActiveCategory(cat.id);
-                    document.getElementById('menu-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }}
-                  data-testid={`cat-${cat.id}`}
-                  className={`px-3.5 py-1.5 rounded-full font-medium whitespace-nowrap transition-all text-xs ${
-                    activeCategory === cat.id
-                      ? 'bg-mz-green text-white shadow-md'
-                      : 'bg-gray-100 text-mz-muted hover:bg-green-50 hover:text-mz-green'
-                  }`}
-                >
-                  {cat.label}
+          {activeRubric === 'menu' && (
+            <div className="mt-3 flex gap-3 overflow-x-auto scrollbar-hide pb-1">
+              {categories.map((c) => (
+                <button key={c.id} onClick={() => { setActiveCategory(c.id); document.getElementById('menu-content')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  data-testid={`cat-${c.id}`}
+                  className={`text-[11px] tracking-wider uppercase whitespace-nowrap transition-colors ${
+                    activeCategory === c.id ? 'text-[var(--cream)]' : 'text-[var(--cream-muted)] hover:text-[var(--cream)]'
+                  }`}>
+                  {c.label}
                 </button>
               ))}
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="pb-8">
-        {activeRubric === 'offres-midi' && (
-          <div className="container mx-auto px-4 pt-6">
-            <FormulesMidi />
-          </div>
-        )}
-        {activeRubric === 'offres' && (
-          <OffresSection />
-        )}
-        {activeRubric === 'menu' && (
-          <MenuSection activeCategory={activeCategory} />
-        )}
+      <div className="pb-16">
+        {activeRubric === 'offres-midi' && <div className="container mx-auto px-6 pt-10"><FormulesMidi /></div>}
+        {activeRubric === 'offres' && <OffresSection />}
+        {activeRubric === 'menu' && <MenuSection activeCategory={activeCategory} />}
       </div>
     </section>
   );
