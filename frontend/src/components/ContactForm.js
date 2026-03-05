@@ -96,7 +96,7 @@ const ContactForm = () => {
             </div>
 
             <div className="rounded-lg overflow-hidden mt-4" data-testid="google-maps-embed">
-              <iframe title="Mezzora Pizza" src="https://www.google.com/maps?q=4-6+Avenue+du+Pr%C3%A9sident+Georges+Pompidou+92500+Rueil-Malmaison&output=embed"
+              <iframe title="Mezzora Pizza" src="https://www.google.com/maps?q=Mezzora+Pizza+Rueil-Malmaison&output=embed"
                 width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" className="w-full opacity-80"></iframe>
             </div>
           </div>
