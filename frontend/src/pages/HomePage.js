@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import AboutSection from '../components/AboutSection';
 import RubricsSection from '../components/RubricsSection';
 import ContactForm from '../components/ContactForm';
 import ReviewsCarousel from '../components/ReviewsCarousel';
@@ -10,13 +11,11 @@ const HomePage = () => {
   const [activeRubric, setActiveRubric] = useState(null);
 
   const handleRubricSelect = (rubric) => {
-    // Si on clique sur la même rubrique, on la ferme
     if (activeRubric === rubric) {
       setActiveRubric(null);
     } else {
       setActiveRubric(rubric);
     }
-    // Scroll vers la section rubriques
     if (rubric) {
       setTimeout(() => {
         document.getElementById('rubrics')?.scrollIntoView({ behavior: 'smooth' });
@@ -29,10 +28,11 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" data-testid="home-page">
       <Header onNavigate={handleRubricSelect} />
-      <main className="pt-20">
+      <main className="pt-[68px]">
         <Hero />
+        <AboutSection />
         <RubricsSection 
           onRubricSelect={handleRubricSelect}
           activeRubric={activeRubric}

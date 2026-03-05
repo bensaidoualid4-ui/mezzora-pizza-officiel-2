@@ -3,98 +3,97 @@ import { Phone, MapPin, Clock, Mail, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-mz-brown text-white" data-testid="footer">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+          {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Mezzora Pizza</h3>
-            <p className="text-gray-400 mb-4">
-              28 ans de passion pour la pizza artisanale à Rueil-Malmaison
+            <img 
+              src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" 
+              alt="Mezzora Pizza" 
+              className="h-14 w-auto mb-4 brightness-0 invert"
+            />
+            <p className="text-white/60 text-sm leading-relaxed mb-5">
+              Depuis 1997, Mezzora Pizza régale Rueil-Malmaison avec des pizzas artisanales 
+              préparées avec passion et des ingrédients frais.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a 
                 href="#" 
-                className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-xl transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4" />
               </a>
               <a 
                 href="#" 
-                className="bg-gray-800 hover:bg-gray-700 p-2 rounded-full transition-colors"
+                className="bg-white/10 hover:bg-white/20 p-2.5 rounded-xl transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
+          {/* Horaires */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Horaires d'ouverture</h4>
-            <div className="space-y-2 text-gray-400">
-              <div className="flex items-start gap-2">
-                <Clock className="w-5 h-5 mt-1 flex-shrink-0" />
+            <h4 className="font-bold text-base mb-5">Horaires d'ouverture</h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <Clock className="w-4 h-4 mt-1 flex-shrink-0 text-white/40" />
                 <div>
-                  <p className="font-semibold text-white">Lundi - Samedi</p>
-                  <p>11h00 - 14h30</p>
-                  <p>18h00 - 22h30</p>
+                  <p className="font-semibold text-sm">Lundi - Samedi</p>
+                  <p className="text-white/60 text-sm">11h00 - 14h30</p>
+                  <p className="text-white/60 text-sm">18h00 - 22h30</p>
                 </div>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock className="w-5 h-5 mt-1 flex-shrink-0" />
+              <div className="flex items-start gap-3">
+                <Clock className="w-4 h-4 mt-1 flex-shrink-0 text-white/40" />
                 <div>
-                  <p className="font-semibold text-white">Dimanche</p>
-                  <p>18h00 - 22h30</p>
-                  <p className="text-xs italic">(fermé le midi)</p>
+                  <p className="font-semibold text-sm">Dimanche</p>
+                  <p className="text-white/60 text-sm">18h00 - 22h30</p>
+                  <p className="text-white/40 text-xs italic">(fermé le midi)</p>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Contact</h4>
-            <div className="space-y-3 text-gray-400">
+            <h4 className="font-bold text-base mb-5">Contact</h4>
+            <div className="space-y-3">
               <a 
                 href="tel:0147494904" 
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-3 hover:text-yellow-200 transition-colors group"
               >
-                <Phone className="w-5 h-5" />
-                <span>01.47.49.49.04</span>
+                <Phone className="w-4 h-4 text-white/40 group-hover:text-yellow-200" />
+                <span className="font-bold text-sm">01 47 49 49 04</span>
               </a>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <p>
-                  4-6 Avenue du Président Georges Pompidou<br />
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-white/40" />
+                <p className="text-white/60 text-sm">
+                  4-6 Av. du Président Georges Pompidou<br />
                   92500 Rueil-Malmaison
                 </p>
               </div>
               <a 
                 href="mailto:contact@mezzorapizza.fr" 
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-3 hover:text-yellow-200 transition-colors group"
               >
-                <Mail className="w-5 h-5" />
-                <span>contact@mezzorapizza.fr</span>
+                <Mail className="w-4 h-4 text-white/40 group-hover:text-yellow-200" />
+                <span className="text-white/60 text-sm group-hover:text-yellow-200">contact@mezzorapizza.fr</span>
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">
             <p>&copy; 2025 Mezzora Pizza. Tous droits réservés.</p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Mentions légales
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                CGV
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Politique de confidentialité
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Cookies
-              </a>
+            <div className="flex flex-wrap justify-center gap-5">
+              <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
+              <a href="#" className="hover:text-white transition-colors">CGV</a>
+              <a href="#" className="hover:text-white transition-colors">Confidentialité</a>
             </div>
           </div>
         </div>
