@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X, MapPin } from 'lucide-react';
 
 const Header = ({ onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -23,7 +30,14 @@ const Header = ({ onNavigate }) => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-sm z-50" data-testid="header">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled || mobileMenuOpen
+          ? 'bg-[#1a1410]/95 backdrop-blur-md shadow-lg'
+          : 'bg-transparent'
+      }`}
+      data-testid="header"
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-[68px]">
           {/* Logo */}
@@ -35,7 +49,7 @@ const Header = ({ onNavigate }) => {
             <img 
               src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png" 
               alt="Mezzora Pizza" 
-              className="h-12 md:h-14 w-auto"
+              className="h-11 md:h-12 w-auto"
             />
           </div>
 
@@ -46,7 +60,7 @@ const Header = ({ onNavigate }) => {
                 key={link.label}
                 onClick={link.action}
                 data-testid={`nav-${link.label.toLowerCase().replace(/\s/g, '-')}`}
-                className="text-mz-brown hover:text-mz-red font-medium transition-colors px-3 py-2 rounded-lg hover:bg-red-50 text-sm"
+                className="text-white/80 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10 text-sm"
               >
                 {link.label}
               </button>
@@ -56,7 +70,7 @@ const Header = ({ onNavigate }) => {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="nav-itineraire"
-              className="text-mz-brown hover:text-mz-red font-medium transition-colors px-3 py-2 rounded-lg hover:bg-red-50 text-sm inline-flex items-center gap-1"
+              className="text-white/80 hover:text-white font-medium transition-colors px-3 py-2 rounded-lg hover:bg-white/10 text-sm inline-flex items-center gap-1"
             >
               <MapPin className="w-3.5 h-3.5" />
               Itinéraire
@@ -64,7 +78,7 @@ const Header = ({ onNavigate }) => {
             <a
               href="tel:0147494904"
               data-testid="header-phone-btn"
-              className="ml-2 bg-mz-red hover:bg-red-800 text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 text-sm"
+              className="ml-2 bg-mz-red hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 text-sm"
             >
               <Phone className="w-4 h-4" />
               01 47 49 49 04
@@ -83,7 +97,7 @@ const Header = ({ onNavigate }) => {
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-mz-brown"
+              className="p-2 text-white"
               data-testid="mobile-menu-toggle"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -93,13 +107,13 @@ const Header = ({ onNavigate }) => {
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-100" data-testid="mobile-menu">
+          <div className="lg:hidden py-4 border-t border-white/10" data-testid="mobile-menu">
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={link.action}
-                  className="text-mz-brown hover:text-mz-red hover:bg-red-50 font-medium py-3 px-3 text-left rounded-lg transition-colors"
+                  className="text-white/80 hover:text-white hover:bg-white/10 font-medium py-3 px-3 text-left rounded-lg transition-colors"
                 >
                   {link.label}
                 </button>
@@ -108,13 +122,13 @@ const Header = ({ onNavigate }) => {
                 href="https://maps.google.com/?q=Mezzora+Pizza+Rueil-Malmaison"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-mz-brown hover:text-mz-red hover:bg-red-50 font-medium py-3 px-3 text-left rounded-lg transition-colors flex items-center gap-2"
+                className="text-white/80 hover:text-white hover:bg-white/10 font-medium py-3 px-3 text-left rounded-lg transition-colors flex items-center gap-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <MapPin className="w-4 h-4" />
                 Itinéraire
               </a>
-              <div className="mt-2 pt-3 border-t border-gray-100">
+              <div className="mt-2 pt-3 border-t border-white/10">
                 <a 
                   href="tel:0147494904"
                   className="flex items-center justify-center gap-2 bg-mz-red text-white font-bold py-3 rounded-xl"

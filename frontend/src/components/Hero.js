@@ -1,45 +1,68 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
+import { Phone, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
+  const scrollToNext = () => {
+    document.getElementById('bestsellers')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="hero-section relative overflow-hidden" data-testid="hero-section">
-      {/* Image Mobile */}
-      <div className="block md:hidden w-full relative">
-        <img 
-          src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/5j1wmrz2_hero-mezzora-mobile.png"
-          alt="Mezzora Pizza"
-          className="w-full h-auto"
+    <section className="relative h-[100svh] min-h-[600px] max-h-[900px] overflow-hidden" data-testid="hero-section">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1669717879542-65eb286d1b23?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHxwaXp6YSUyMGRhcmslMjBiYWNrZ3JvdW5kJTIwbW9vZHklMjBmb29kJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzcyNjcwNjQzfDA&ixlib=rb-4.1.0&q=85&w=1920"
+          alt="Pizza artisanale Mezzora"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2 z-10">
-          <a
-            href="tel:0147494904"
-            data-testid="hero-cta-mobile"
-            className="bg-mz-red hover:bg-red-800 text-white px-6 py-3 rounded-full text-base font-bold inline-flex items-center gap-2 shadow-2xl phone-pulse"
-          >
-            <Phone className="w-5 h-5" />
-            01 47 49 49 04
-          </a>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       </div>
 
-      {/* Image Desktop */}
-      <div className="hidden md:block w-full overflow-hidden relative" style={{ height: 'calc(100vh - 72px)', maxHeight: '800px' }}>
-        <img 
-          src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/o2carodn_Firefly_GeminiFlash_extend%20the%20background%20wood%20texture%20naturally%20on%20the%20sides%20279047.png"
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center text-white">
+        {/* Logo */}
+        <img
+          src="https://customer-assets.emergentagent.com/job_pizza-mezzora/artifacts/f5pdgnlq_logo%20mezzora.png"
           alt="Mezzora Pizza"
-          className="w-full h-full object-cover object-top"
+          className="h-24 md:h-32 w-auto mb-6 drop-shadow-2xl"
+          data-testid="hero-logo"
         />
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-10">
-          <a
-            href="tel:0147494904"
-            data-testid="hero-cta-desktop"
-            className="bg-mz-red hover:bg-red-800 text-white px-8 py-4 rounded-full text-lg font-bold inline-flex items-center gap-3 shadow-2xl hover:scale-105 transition-all phone-pulse"
-          >
-            <Phone className="w-5 h-5" />
-            Appelez-nous : 01 47 49 49 04
-          </a>
-        </div>
+
+        {/* Tagline */}
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black mb-4 leading-tight drop-shadow-lg max-w-3xl" data-testid="hero-title">
+          Pizzas Artisanales
+          <span className="block text-mz-gold">depuis 1997</span>
+        </h1>
+
+        <p className="text-white/80 text-base md:text-lg mb-8 max-w-md leading-relaxed" data-testid="hero-subtitle">
+          Pâte fraîche pétrie chaque jour, ingrédients sélectionnés avec soin.
+          <br className="hidden md:block" />
+          Le goût de l'authentique à Rueil-Malmaison.
+        </p>
+
+        {/* CTA */}
+        <a
+          href="tel:0147494904"
+          data-testid="hero-cta"
+          className="bg-mz-red hover:bg-red-700 text-white px-8 py-4 rounded-full text-lg font-bold inline-flex items-center gap-3 shadow-2xl hover:scale-105 transition-all phone-pulse mb-6"
+        >
+          <Phone className="w-5 h-5" />
+          Commander : 01 47 49 49 04
+        </a>
+
+        <p className="text-white/50 text-xs">
+          Livraison &middot; À emporter &middot; Sur place
+        </p>
+
+        {/* Scroll indicator */}
+        <button
+          onClick={scrollToNext}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-white/70 transition-colors animate-bounce"
+          data-testid="hero-scroll-btn"
+          aria-label="Découvrir le menu"
+        >
+          <ChevronDown className="w-8 h-8" />
+        </button>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import BestSellers from '../components/BestSellers';
 import AboutSection from '../components/AboutSection';
 import RubricsSection from '../components/RubricsSection';
 import ContactForm from '../components/ContactForm';
@@ -27,11 +28,19 @@ const HomePage = () => {
     setActiveRubric(null);
   };
 
+  const handleViewMenu = () => {
+    setActiveRubric('menu');
+    setTimeout(() => {
+      document.getElementById('rubrics')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen" data-testid="home-page">
       <Header onNavigate={handleRubricSelect} />
       <main className="pt-[68px]">
         <Hero />
+        <BestSellers onViewMenu={handleViewMenu} />
         <AboutSection />
         <RubricsSection 
           onRubricSelect={handleRubricSelect}
