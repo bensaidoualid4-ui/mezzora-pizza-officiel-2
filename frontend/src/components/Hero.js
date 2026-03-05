@@ -16,13 +16,12 @@ const Hero = () => {
         data-testid="hero-img"
       />
 
-      {/* Dark overlays for elegance */}
-      <div className="absolute inset-0 bg-black/55" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-[#0B0B0B]/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/70 via-transparent to-transparent" />
+      {/* Subtle dark overlays */}
+      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-[#0B0B0B]/40" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5)' }}>
         <div className="w-12 h-[1px] bg-[var(--gold)] mb-6 opacity-60" />
         <p className="text-[var(--gold)] text-xs tracking-[0.35em] uppercase font-light mb-4" data-testid="hero-subtitle">
           Pizzeria Artisanale &mdash; Rueil-Malmaison
