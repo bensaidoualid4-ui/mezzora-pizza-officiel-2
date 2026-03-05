@@ -81,7 +81,7 @@ const Header = ({ onNavigate }) => {
               className="ml-2 bg-mz-red hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold transition-all flex items-center gap-2 text-sm"
             >
               <Phone className="w-4 h-4" />
-              01 47 49 49 04
+              Commander
             </a>
           </nav>
 
