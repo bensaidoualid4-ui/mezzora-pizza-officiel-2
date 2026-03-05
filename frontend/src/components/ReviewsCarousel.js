@@ -24,14 +24,14 @@ const ReviewsCarousel = () => {
   const a = avis[idx];
 
   return (
-    <section className="py-24 md:py-32 border-t border-white/5" data-testid="reviews-section">
+    <section className="py-24 md:py-32 bg-[var(--bg-card)]" data-testid="reviews-section">
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Avis Google</p>
+        <p className="text-[var(--red)] text-xs tracking-[0.3em] uppercase mb-4">Avis Google</p>
         <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-3">
           Nos Clients
         </h2>
         <div className="flex justify-center gap-1 mb-2">
-          {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-[var(--gold)] text-[var(--gold)]" />)}
+          {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />)}
         </div>
         <p className="text-[var(--cream-muted)] text-sm mb-10">4.4/5 sur Google &middot; 199 avis</p>
 
@@ -47,14 +47,14 @@ const ReviewsCarousel = () => {
             <p className="font-serif text-xl md:text-2xl italic text-[var(--cream)] leading-relaxed mb-8">
               "{a.comment}"
             </p>
-            <p className="text-[var(--gold)] text-sm tracking-[0.1em]">&mdash; {a.name}</p>
+            <p className="text-[var(--red)] text-sm tracking-[0.1em]">&mdash; {a.name}</p>
           </div>
         </div>
 
         <div className="flex justify-center gap-2 mt-8">
           {avis.map((_, i) => (
             <button key={i} onClick={() => { setIdx(i); setAuto(false); }} data-testid={`review-dot-${i}`}
-              className={`rounded-full transition-all duration-300 ${i === idx ? 'bg-[var(--gold)] w-5 h-1.5' : 'bg-white/20 w-1.5 h-1.5'}`} />
+              className={`rounded-full transition-all duration-300 ${i === idx ? 'bg-[var(--red)] w-5 h-1.5' : 'bg-[var(--cream)]/20 w-1.5 h-1.5'}`} />
           ))}
         </div>
       </div>

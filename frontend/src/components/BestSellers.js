@@ -15,7 +15,7 @@ const BestSellers = ({ onViewMenu }) => {
     <section className="py-24 md:py-32" id="bestsellers" data-testid="bestsellers-section">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Nos incontournables</p>
+          <p className="text-[var(--red)] text-xs tracking-[0.3em] uppercase mb-4">Nos incontournables</p>
           <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)]">
             Les Plus Demandées
           </h2>
@@ -26,7 +26,7 @@ const BestSellers = ({ onViewMenu }) => {
           {bestSellers.map((item) => (
             <div key={item.id} data-testid={`bestseller-${item.id}`}
               className="group cursor-pointer" onClick={() => onViewMenu && onViewMenu()}>
-              <div className="aspect-square rounded-lg overflow-hidden mb-4">
+              <div className="aspect-square rounded-lg overflow-hidden mb-4 shadow-md">
                 <img src={item.image} alt={item.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
@@ -35,7 +35,7 @@ const BestSellers = ({ onViewMenu }) => {
                   <h3 className="font-serif text-xl text-[var(--cream)] mb-1">{item.name}</h3>
                   <p className="text-[var(--cream-muted)] text-xs leading-relaxed max-w-[200px]">{item.desc}</p>
                 </div>
-                <span className="text-[var(--gold)] font-serif text-lg">{item.price}€</span>
+                <span className="text-[var(--red)] font-serif text-lg font-medium">{item.price}€</span>
               </div>
             </div>
           ))}
@@ -43,7 +43,7 @@ const BestSellers = ({ onViewMenu }) => {
 
         <div className="text-center">
           <button onClick={() => onViewMenu && onViewMenu()} data-testid="view-full-menu-btn"
-            className="inline-flex items-center gap-3 text-[var(--gold)] hover:text-[var(--cream)] text-sm tracking-[0.15em] uppercase font-light transition-colors border-b border-[var(--gold)]/30 hover:border-[var(--cream)]/30 pb-1">
+            className="inline-flex items-center gap-3 text-[var(--red)] hover:text-[var(--cream)] text-sm tracking-[0.15em] uppercase font-light transition-colors border-b border-[var(--red)]/30 hover:border-[var(--cream)]/30 pb-1">
             Voir toute la carte <ArrowRight className="w-4 h-4" />
           </button>
         </div>

@@ -29,9 +29,9 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
 
   if (!activeRubric) {
     return (
-      <section className="py-24 md:py-32 border-t border-white/5" id="rubrics" data-testid="rubrics-section">
+      <section className="py-24 md:py-32 border-t border-[var(--cream)]/10" id="rubrics" data-testid="rubrics-section">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Découvrir</p>
+          <p className="text-[var(--red)] text-xs tracking-[0.3em] uppercase mb-4">Découvrir</p>
           <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-8">
             Notre Carte
           </h2>
@@ -40,7 +40,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             {tabs.map((t) => (
               <button key={t.id} onClick={() => onRubricSelect(t.id)} data-testid={`rubric-btn-${t.id}`}
-                className="text-[var(--cream-muted)] hover:text-[var(--cream)] text-base sm:text-lg tracking-[0.15em] uppercase font-light transition-colors border-b border-white/10 hover:border-[var(--gold)] pb-2">
+                className="text-[var(--cream-muted)] hover:text-[var(--cream)] text-base sm:text-lg tracking-[0.15em] uppercase font-light transition-colors border-b border-[var(--cream)]/10 hover:border-[var(--red)] pb-2">
                 {t.label}
               </button>
             ))}
@@ -53,7 +53,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
   return (
     <section className="min-h-screen" id="rubrics" data-testid="rubrics-active-section">
       {/* Sticky nav */}
-      <div className="sticky top-16 md:top-20 z-40 bg-[#0B0B0B]/95 backdrop-blur-md border-b border-white/5">
+      <div className="sticky top-16 md:top-20 z-40 bg-[var(--bg)]/95 backdrop-blur-md border-b border-[var(--cream)]/10 shadow-sm">
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center gap-4">
             <button onClick={onCloseMenu} data-testid="close-menu-btn"
@@ -65,7 +65,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
               {tabs.map((t) => (
                 <button key={t.id} onClick={() => onRubricSelect(t.id)} data-testid={`tab-${t.id}`}
                   className={`text-xs tracking-[0.15em] uppercase font-light whitespace-nowrap transition-colors pb-0.5 ${
-                    activeRubric === t.id ? 'text-[var(--gold)] border-b border-[var(--gold)]' : 'text-[var(--cream-muted)] hover:text-[var(--cream)]'
+                    activeRubric === t.id ? 'text-[var(--red)] border-b border-[var(--red)]' : 'text-[var(--cream-muted)] hover:text-[var(--cream)]'
                   }`}>
                   {t.label}
                 </button>
@@ -79,7 +79,7 @@ const RubricsSection = ({ onRubricSelect, activeRubric, onCloseMenu }) => {
                 <button key={c.id} onClick={() => { setActiveCategory(c.id); document.getElementById('menu-content')?.scrollIntoView({ behavior: 'smooth' }); }}
                   data-testid={`cat-${c.id}`}
                   className={`text-xs sm:text-sm tracking-wider uppercase whitespace-nowrap px-2 py-1 transition-colors ${
-                    activeCategory === c.id ? 'text-[var(--cream)]' : 'text-[var(--cream-muted)] hover:text-[var(--cream)]'
+                    activeCategory === c.id ? 'text-[var(--cream)] font-medium' : 'text-[var(--cream-muted)] hover:text-[var(--cream)]'
                   }`}>
                   {c.label}
                 </button>

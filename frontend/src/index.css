@@ -5,12 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg: #0B0B0B;
-  --bg-card: #141414;
-  --bg-subtle: #1A1A1A;
-  --cream: #F5F0E8;
-  --cream-muted: #A89F91;
-  --gold: #C8A96E;
+  --bg: #FDF6EE;
+  --bg-card: #F5EDE0;
+  --bg-subtle: #EDE4D6;
+  --cream: #3B2316;
+  --cream-muted: #8B7355;
+  --gold: #B8860B;
   --red: #C41E3A;
   --green: #4A7C5C;
 }
@@ -27,25 +27,25 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 40 30% 93%;
-    --card: 0 0% 8%;
-    --card-foreground: 40 30% 93%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 40 30% 93%;
-    --primary: 0 0% 93%;
-    --primary-foreground: 0 0% 4%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 40 30% 93%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 30 10% 60%;
-    --accent: 0 0% 10%;
-    --accent-foreground: 40 30% 93%;
+    --background: 35 50% 96%;
+    --foreground: 18 40% 16%;
+    --card: 32 40% 92%;
+    --card-foreground: 18 40% 16%;
+    --popover: 32 40% 92%;
+    --popover-foreground: 18 40% 16%;
+    --primary: 18 40% 16%;
+    --primary-foreground: 35 50% 96%;
+    --secondary: 32 30% 88%;
+    --secondary-foreground: 18 40% 16%;
+    --muted: 32 30% 88%;
+    --muted-foreground: 30 20% 45%;
+    --accent: 32 30% 88%;
+    --accent-foreground: 18 40% 16%;
     --destructive: 350 70% 50%;
-    --destructive-foreground: 40 30% 93%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 37 35% 61%;
+    --destructive-foreground: 35 50% 96%;
+    --border: 30 25% 82%;
+    --input: 30 25% 82%;
+    --ring: 37 80% 38%;
     --radius: 0.5rem;
   }
 }

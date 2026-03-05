@@ -1,11 +1,10 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section className="py-24 md:py-32 border-t border-white/5" id="about" data-testid="about-section">
+    <section className="py-24 md:py-32 border-t border-[var(--cream)]/10" id="about" data-testid="about-section">
       <div className="container mx-auto px-6 max-w-3xl text-center">
-        <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Depuis 1997</p>
+        <p className="text-[var(--red)] text-xs tracking-[0.3em] uppercase mb-4">Depuis 1997</p>
         <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-6">
           Notre Histoire
         </h2>
@@ -23,15 +22,15 @@ const AboutSection = () => {
 
         <div className="flex flex-col sm:flex-row justify-center gap-12 text-center">
           <div>
-            <p className="font-serif text-4xl text-[var(--gold)]">28</p>
+            <p className="font-serif text-4xl text-[var(--red)]">28</p>
             <p className="text-[var(--cream-muted)] text-xs tracking-[0.2em] uppercase mt-1">Ans d'expérience</p>
           </div>
           <div>
-            <p className="font-serif text-4xl text-[var(--gold)]">100%</p>
+            <p className="font-serif text-4xl text-[var(--red)]">100%</p>
             <p className="text-[var(--cream-muted)] text-xs tracking-[0.2em] uppercase mt-1">Pâte fraîche</p>
           </div>
           <div>
-            <p className="font-serif text-4xl text-[var(--gold)]">1997</p>
+            <p className="font-serif text-4xl text-[var(--red)]">1997</p>
             <p className="text-[var(--cream-muted)] text-xs tracking-[0.2em] uppercase mt-1">Depuis</p>
           </div>
         </div>

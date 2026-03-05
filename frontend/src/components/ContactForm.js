@@ -22,13 +22,13 @@ const ContactForm = () => {
     finally { setSending(false); }
   };
 
-  const inputCls = "w-full bg-transparent border-b border-white/15 focus:border-[var(--gold)] py-3 text-[var(--cream)] text-sm outline-none placeholder:text-white/20 transition-colors";
+  const inputCls = "w-full bg-transparent border-b border-[var(--cream)]/15 focus:border-[var(--red)] py-3 text-[var(--cream)] text-sm outline-none placeholder:text-[var(--cream-muted)]/50 transition-colors";
 
   return (
-    <section className="py-24 md:py-32 border-t border-white/5" id="contact" data-testid="contact-section">
+    <section className="py-24 md:py-32 border-t border-[var(--cream)]/10" id="contact" data-testid="contact-section">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <p className="text-[var(--gold)] text-xs tracking-[0.3em] uppercase mb-4">Nous contacter</p>
+          <p className="text-[var(--red)] text-xs tracking-[0.3em] uppercase mb-4">Nous contacter</p>
           <h2 className="font-serif text-4xl md:text-5xl font-normal italic text-[var(--cream)] mb-3">Contact</h2>
           <div className="sep mt-6"></div>
         </div>
@@ -37,7 +37,7 @@ const ContactForm = () => {
         <div className="text-center mb-16" data-testid="phone-cta-banner">
           <p className="text-[var(--cream-muted)] text-sm mb-3">Pour commander ou réserver</p>
           <a href="tel:0147494904" data-testid="contact-phone-cta"
-            className="font-serif text-3xl md:text-4xl text-[var(--cream)] hover:text-[var(--gold)] transition-colors inline-flex items-center gap-4">
+            className="font-serif text-3xl md:text-4xl text-[var(--cream)] hover:text-[var(--red)] transition-colors inline-flex items-center gap-4">
             <Phone className="w-7 h-7" /> 01 47 49 49 04
           </a>
         </div>
@@ -52,19 +52,19 @@ const ContactForm = () => {
               </div>
               <input type="tel" name="phone" value={form.phone} onChange={onChange} placeholder="Téléphone" data-testid="contact-phone-input" className={inputCls} />
               <select name="subject" value={form.subject} onChange={onChange} data-testid="contact-subject-select"
-                className="w-full bg-transparent border-b border-white/15 focus:border-[var(--gold)] py-3 text-[var(--cream)] text-sm outline-none transition-colors">
-                <option value="contact" className="bg-[#141414]">Question générale</option>
-                <option value="reclamation" className="bg-[#141414]">Réclamation</option>
-                <option value="commande" className="bg-[#141414]">Question commande</option>
+                className="w-full bg-transparent border-b border-[var(--cream)]/15 focus:border-[var(--red)] py-3 text-[var(--cream)] text-sm outline-none transition-colors">
+                <option value="contact" className="bg-[var(--bg)]">Question générale</option>
+                <option value="reclamation" className="bg-[var(--bg)]">Réclamation</option>
+                <option value="commande" className="bg-[var(--bg)]">Question commande</option>
               </select>
               <textarea name="message" value={form.message} onChange={onChange} required rows="4" placeholder="Votre message..." data-testid="contact-message-textarea"
                 className={`${inputCls} resize-none`}></textarea>
 
-              {status === 'ok' && <p className="text-green-400 text-sm" data-testid="contact-success-msg">Merci, message envoyé.</p>}
-              {status === 'err' && <p className="text-red-400 text-sm" data-testid="contact-error-msg">Erreur. Appelez-nous.</p>}
+              {status === 'ok' && <p className="text-green-600 text-sm" data-testid="contact-success-msg">Merci, message envoyé.</p>}
+              {status === 'err' && <p className="text-red-500 text-sm" data-testid="contact-error-msg">Erreur. Appelez-nous.</p>}
 
               <button type="submit" disabled={sending} data-testid="contact-submit-btn"
-                className="inline-flex items-center gap-2 text-[var(--gold)] hover:text-[var(--cream)] text-sm tracking-[0.15em] uppercase font-light transition-colors border-b border-[var(--gold)]/30 pb-1 disabled:opacity-40">
+                className="inline-flex items-center gap-2 text-[var(--red)] hover:text-[var(--cream)] text-sm tracking-[0.15em] uppercase font-light transition-colors border-b border-[var(--red)]/30 pb-1 disabled:opacity-40">
                 <Send className="w-3.5 h-3.5" /> {sending ? 'Envoi...' : 'Envoyer'}
               </button>
             </form>
@@ -73,14 +73,14 @@ const ContactForm = () => {
           {/* Info */}
           <div className="space-y-8">
             <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 text-[var(--gold)] mt-1 flex-shrink-0" />
+              <MapPin className="w-5 h-5 text-[var(--red)] mt-1 flex-shrink-0" />
               <div>
                 <p className="text-[var(--cream)] text-sm font-medium mb-1">Adresse</p>
                 <p className="text-[var(--cream-muted)] text-sm leading-relaxed">4-6 Avenue du Président Georges Pompidou<br/>92500 Rueil-Malmaison</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Clock className="w-5 h-5 text-[var(--gold)] mt-1 flex-shrink-0" />
+              <Clock className="w-5 h-5 text-[var(--red)] mt-1 flex-shrink-0" />
               <div>
                 <p className="text-[var(--cream)] text-sm font-medium mb-1">Horaires</p>
                 <p className="text-[var(--cream-muted)] text-sm">Lun-Sam : 11h-14h30 / 18h-22h30</p>
@@ -88,16 +88,16 @@ const ContactForm = () => {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Phone className="w-5 h-5 text-[var(--gold)] mt-1 flex-shrink-0" />
+              <Phone className="w-5 h-5 text-[var(--red)] mt-1 flex-shrink-0" />
               <div>
                 <p className="text-[var(--cream)] text-sm font-medium mb-1">Téléphone</p>
-                <a href="tel:0147494904" className="text-[var(--gold)] text-sm hover:text-[var(--cream)] transition-colors">01 47 49 49 04</a>
+                <a href="tel:0147494904" className="text-[var(--red)] text-sm hover:text-[var(--cream)] transition-colors">01 47 49 49 04</a>
               </div>
             </div>
 
-            <div className="rounded-lg overflow-hidden mt-4" data-testid="google-maps-embed">
+            <div className="rounded-lg overflow-hidden mt-4 shadow-md" data-testid="google-maps-embed">
               <iframe title="Mezzora Pizza" src="https://www.google.com/maps?q=Mezzora+Pizza+Rueil-Malmaison&output=embed"
-                width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" className="w-full opacity-80"></iframe>
+                width="100%" height="200" style={{ border: 0 }} allowFullScreen="" loading="lazy" className="w-full"></iframe>
             </div>
           </div>
         </div>
